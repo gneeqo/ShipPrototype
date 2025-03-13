@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf6pmexlsnyg8"]
+
+[ext_resource type="Script" uid="uid://c1emfsvho7rg2" path="res://Action System/Debug/action_progress.gd" id="1_xvvgv"]
+
+[node name="ActionProgress" type="ProgressBar" node_paths=PackedStringArray("affected_node_name", "action_name")]
+offset_right = 104.0
+offset_bottom = 27.0
+max_value = 1.0
+show_percentage = false
+script = ExtResource("1_xvvgv")
+affected_node_name = NodePath("AffectedNodeName")
+action_name = NodePath("ActionName")
+
+[node name="AffectedNodeName" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 112.0
+offset_bottom = 72.0
+text = "affected node"
+fit_content = true
+scroll_active = false
+
+[node name="ActionName" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 104.0
+offset_bottom = 48.0
+text = "action name"
+fit_content = true
+scroll_active = false

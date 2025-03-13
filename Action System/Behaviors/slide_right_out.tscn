@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqb8wrc8jlbv6"]
+
+[ext_resource type="Script" uid="uid://b4lvd7lh6bymw" path="res://Action System/Executors/exec_auto_activate.gd" id="1_3h120"]
+[ext_resource type="Script" uid="uid://cj258kueu8ura" path="res://Action System/Actions/Translate.gd" id="2_lh48h"]
+[ext_resource type="Script" uid="uid://bemgi0ogghif3" path="res://Action System/Actions/destroy.gd" id="3_6j4g5"]
+[ext_resource type="Script" uid="uid://drluoba4f6b71" path="res://Action System/Actions/callback.gd" id="4_wee4p"]
+
+[node name="SlideRightOut" type="Node"]
+script = ExtResource("1_3h120")
+globalList = 1
+metadata/_custom_type_script = "uid://b4lvd7lh6bymw"
+
+[node name="Translate" type="Node" parent="."]
+script = ExtResource("2_lh48h")
+target = Vector2(2000, 100)
+duration = 1.0
+blocking = true
+eased = true
+metadata/_custom_type_script = "uid://cj258kueu8ura"
+
+[node name="Destroy" type="Node" parent="."]
+script = ExtResource("3_6j4g5")
+duration = 0.1
+metadata/_custom_type_script = "uid://bemgi0ogghif3"
+
+[node name="Callback" type="Node" parent="."]
+script = ExtResource("4_wee4p")
+duration = 0.1
+metadata/_custom_type_script = "uid://drluoba4f6b71"

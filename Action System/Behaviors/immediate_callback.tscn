@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://e4elbgq854uy"]
+
+[ext_resource type="Script" uid="uid://drluoba4f6b71" path="res://Action System/Actions/callback.gd" id="1_67f38"]
+
+[node name="ImmediateCallback" type="Node"]
+script = ExtResource("1_67f38")
+duration = 0.01
+metadata/_custom_type_script = "uid://drluoba4f6b71"

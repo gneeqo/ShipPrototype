@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpbbng3e38hxc"]
+
+[ext_resource type="Script" uid="uid://cr52urkjin0hk" path="res://Action System/Base Objects/executor.gd" id="1_fyrd7"]
+
+[node name="Executor" type="Node"]
+script = ExtResource("1_fyrd7")

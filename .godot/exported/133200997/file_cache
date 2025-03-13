@@ -1,0 +1,23 @@
+res://Base Objects/action.tscn::27ddbdb8738cc1e8823ce04264c521a9::1741503028::res://.godot/exported/133200997/export-768808ea4267fd4dc6b74b186c996ce6-action.scn
+res://Base Objects/action_list.tscn::8b7450a0f03b23b9e54eb24b25d6f17c::1741503028::res://.godot/exported/133200997/export-ee6766f09cb0a4e2943e8242b5297db7-action_list.scn
+res://Base Objects/executor.tscn::8d2b37964e4e97fcab369335c64acd16::1741503028::res://.godot/exported/133200997/export-f0f818c456649c568872595a6c4bb2cf-executor.scn
+res://Behaviors/immediate_callback.tscn::3d242e10b126c12a5ca83718be2c2ae4::1741503029::res://.godot/exported/133200997/export-99ce74d249bc20fe3d195d1d64534c84-immediate_callback.scn
+res://Game Logic/Scenes/Play Spaces/four_players.tscn::2a202dc5010b2604fdb1754b11bb3c8d::1741583118::res://.godot/exported/133200997/export-ad91dea9f917914bd53ac51d50c91509-four_players.scn
+res://Game Logic/Scenes/Play Spaces/six_players.tscn::219feab5e4e7e283fe621f1078203b77::1741503029::res://.godot/exported/133200997/export-876134a8689f3469485232a245a536e2-six_players.scn
+res://Game Logic/Scenes/Play Spaces/two_players.tscn::e6f35c909661f56e702cd8e6c093708c::1741583117::res://.godot/exported/133200997/export-22229bd49d6ef6cbfcc08bcbbc55b793-two_players.scn
+res://Game Logic/Scenes/card.tscn::755dd85b3bd96dcb426c0355f1baccb9::1741503028::res://.godot/exported/133200997/export-2afb76afc250f3409ce3a39a461fa928-card.scn
+res://Game Logic/Scenes/main.tscn::7ab0853aeb07ebcacb3d10a2d4cd56de::1741583109::res://.godot/exported/133200997/export-53e4f586d652c6f317fae49a52534857-main.scn
+res://Game Logic/Scenes/menu.tscn::76a9348bc2b29c8285835c3e464ad0a1::1741583116::res://.godot/exported/133200997/export-5428d366e873cf5cce3c05077b65caab-menu.scn
+res://Game Logic/Scenes/gameover.tscn::782f200e41fd98faf35c198a197c4846::1741586334::res://.godot/exported/133200997/export-cde4255b0b318a864e8f14bc049cbc4f-gameover.scn
+res://Behaviors/fade_in_UI.tscn::4b14ee5b7d9835aedb2339baf8fc44af::1741583110::res://.godot/exported/133200997/export-44ca6f2647f018803615ff942750b1f4-fade_in_UI.scn
+res://Behaviors/fade_out_UI.tscn::7fb529cbfed1b7ad0989abe34d303574::1741583113::res://.godot/exported/133200997/export-91e310c0f2a22c32b528d28318d32a6c-fade_out_UI.scn
+res://Behaviors/shrink_in_UI.tscn::a1282d6ea165982963fbc969a16e6792::1741583115::res://.godot/exported/133200997/export-75ef9b8dae860216978c954165ab883f-shrink_in_UI.scn
+res://Behaviors/shrink_out_UI.tscn::2f1ead80bfec6a1cdd86e7f1b276d3e8::1741583116::res://.godot/exported/133200997/export-83ad3435c34e7bdef3de422e3be38ec6-shrink_out_UI.scn
+res://Behaviors/slide_left_in_UI.tscn::714f23947453e6edaeed61c70d073508::1741583112::res://.godot/exported/133200997/export-4fd5c4b74800ace5b23cdd718afa26c1-slide_left_in_UI.scn
+res://Behaviors/slide_left_out_UI.tscn::83dd1b5b2ebef1dcbef9adaab6eaebc4::1741583113::res://.godot/exported/133200997/export-290586d2e3e201dd203bc1ca0a895dbb-slide_left_out_UI.scn
+res://Behaviors/slide_right_in_UI.tscn::a4d85b0ab5ef68bdc27ac8f43114790d::1741583114::res://.godot/exported/133200997/export-fc755f3d61b633eca13a4835cbc23a53-slide_right_in_UI.scn
+res://Behaviors/slide_right_out.tscn::a92c2645cb066016caa5617d042367d3::1741583115::res://.godot/exported/133200997/export-9b6d08feb2c1a069715d6a439cd01c1a-slide_right_out.scn
+res://Debug/action_progress.tscn::b5773cd511fff326a774b9ee7afb910e::1741503029::res://.godot/exported/133200997/export-7e1e498b9a2b25c15a064610aa5b58d5-action_progress.scn
+res://Debug/debug_menu.tscn::853b697aed404841834e32a900f7018a::1741503029::res://.godot/exported/133200997/export-8531f2e0a32e0a83035396c77850cb7a-debug_menu.scn
+res://Game Logic/hand_angle.tres::d917260d483427f7d41eb1c257a58c91::1741572440::res://.godot/exported/133200997/export-667fca6274c276fbe661ce445639f5f2-hand_angle.res
+res://Game Logic/hand_offset.tres::8fece272f1681372b9d2f28d41bba509::1741548651::res://.godot/exported/133200997/export-90fe2ce6aeacbad9dc1da64ed001ee8a-hand_offset.res

@@ -1,0 +1,80 @@
+[gd_scene load_steps=2 format=3 uid="uid://pmy5107y2im8"]
+
+[ext_resource type="Script" uid="uid://bfur6mfjkecnr" path="res://Action System/Debug/debug_menu.gd" id="1_u3ugm"]
+
+[node name="DebugMenu" type="Control" node_paths=PackedStringArray("containers")]
+top_level = true
+z_index = 1000
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 2
+size_flags_vertical = 2
+script = ExtResource("1_u3ugm")
+containers = [NodePath("BoxContainer"), NodePath("BoxContainer2"), NodePath("BoxContainer3"), NodePath("BoxContainer4"), NodePath("BoxContainer5"), NodePath("BoxContainer6"), NodePath("BoxContainer7"), NodePath("BoxContainer8"), NodePath("BoxContainer9")]
+containerVMax = 5
+
+[node name="BoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 40.0
+theme_override_constants/separation = 100
+
+[node name="BoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 256.0
+offset_bottom = 40.0
+theme_override_constants/separation = 100
+
+[node name="BoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 384.0
+offset_bottom = 40.0
+theme_override_constants/separation = 100
+
+[node name="BoxContainer4" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_right = 512.0
+offset_bottom = 40.0
+theme_override_constants/separation = 100
+
+[node name="BoxContainer5" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_right = 640.0
+offset_bottom = 40.0
+theme_override_constants/separation = 100
+
+[node name="BoxContainer6" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_right = 768.0
+offset_bottom = 40.0
+theme_override_constants/separation = 100
+
+[node name="BoxContainer7" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_right = 896.0
+offset_bottom = 40.0
+theme_override_constants/separation = 100
+
+[node name="BoxContainer8" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 896.0
+offset_right = 1024.0
+offset_bottom = 40.0
+theme_override_constants/separation = 100
+
+[node name="BoxContainer9" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1024.0
+offset_right = 1152.0
+offset_bottom = 40.0
+theme_override_constants/separation = 100

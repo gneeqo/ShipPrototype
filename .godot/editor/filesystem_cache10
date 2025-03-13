@@ -1,0 +1,111 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1741910218
+export_presets.cfg::TextFile/TextFile::-1::1741586998::0::1::::<><><>0<>0<><>::
+ship.ico::OtherFile::-1::1741910009::0::1::::<><><>0<>0<><>::
+ship_icon.png::CompressedTexture2D::5342240145620969443::1741909118::1741910238::1::::<><><>0<>0<>7ca5956fafdb880d6703d028ad9e6bd8<>res://.godot/imported/ship_icon.png-454568597136d83871f104f2a24afcc2.ctex::
+telemetry_collector.gd::GDScript/GDScript::733330062729667918::1741583081::0::1::::TelemetryCollector<>Node<><>0<>0<><>::
+::res://Action System/::1741907828
+::res://Action System/Actions/::1741907420
+callback.gd::GDScript/GDScript::8376419943039388870::1741583080::0::1::::Callback<>Action<><>0<>0<><>::
+destroy.gd::GDScript/GDScript::2692328514593716414::1741583080::0::1::::Destroy<>Action<><>0<>0<><>::
+fade.gd::GDScript/GDScript::4866553554536088033::1741583080::0::1::::Fade<>Action<><>0<>0<><>::
+rotate.gd::GDScript/GDScript::3286577372221657927::1741583081::0::1::::Rotate<>Action<><>0<>0<><>::
+scale.gd::GDScript/GDScript::71311240331756874::1741583081::0::1::::Scale<>Action<><>0<>0<><>::
+Translate.gd::GDScript/GDScript::5462160156809341914::1741583081::0::1::::Translate<>Action<><>0<>0<><>::
+translate_to_anchor.gd::GDScript/GDScript::2507631428395841350::1740095299::0::1::::TranslateToAnchor<>Action<><>0<>0<><>::
+translate_to_mouse.gd::GDScript/GDScript::8451746335754020450::1741583081::0::1::::TranslateToMouse<>Action<><>0<>0<><>::
+::res://Action System/Base Objects/::1741907815
+action.gd::GDScript/GDScript::7855457209509461795::1741583079::0::1::::Action<>Node<><>0<>0<><>::
+action.tscn::PackedScene/PackedScene::5767057643731828169::1741907815::0::1::::<><><>0<>0<><>::uid://dj6ih5254m6st::::res://Action System/Base Objects/action.gd
+action_list.gd::GDScript/GDScript::4910779005122659407::1741583080::0::1::::ActionList<>Node<><>0<>0<><>::
+action_list.tscn::PackedScene/PackedScene::4003629409258847948::1741907815::0::1::::<><><>0<>0<><>::uid://cb722vr7q1rwp::::res://Action System/Base Objects/action_list.gd
+executor.gd::GDScript/GDScript::6029659025302484580::1741584188::0::1::::Executor<>Node<><>0<>0<><>::
+executor.tscn::PackedScene/PackedScene::8214243374332468340::1741907815::0::1::::<><><>0<>0<><>::uid://cr52urkjin0hk::::res://Action System/Base Objects/executor.gd
+global_executor_list.gd::GDScript/GDScript::5431996511511705097::1741583081::0::1::::GlobalExecutorList<>Node<><>0<>0<><>::
+level_loader.gd::GDScript/GDScript::967771897165397733::1741907656::0::1::::LevelLoader<>Node<><>0<>0<><>::
+::res://Action System/Behaviors/::1741907812
+fade_in_UI.tscn::PackedScene/PackedScene::3249526462008700746::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cblnoqqylx6wr::::res://Action System/Actions/fade.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
+fade_out_UI.tscn::PackedScene/PackedScene::246806917058131241::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cblnoqqylx6wr::::res://Action System/Actions/fade.gd<>uid://bemgi0ogghif3::::res://Action System/Actions/destroy.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
+immediate_callback.tscn::PackedScene/PackedScene::340884903688338612::1741907812::0::1::::<><><>0<>0<><>::uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
+shrink_in_UI.tscn::PackedScene/PackedScene::7243248443668748424::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cblnoqqylx6wr::::res://Action System/Actions/fade.gd<>uid://basqrqlf4npa::::res://Action System/Actions/scale.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
+shrink_out_UI.tscn::PackedScene/PackedScene::3171050183401979317::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://basqrqlf4npa::::res://Action System/Actions/scale.gd<>uid://bemgi0ogghif3::::res://Action System/Actions/destroy.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
+slide_left_in_UI.tscn::PackedScene/PackedScene::6113341189293009865::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cj258kueu8ura::::res://Action System/Actions/Translate.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd<>uid://cblnoqqylx6wr::::res://Action System/Actions/fade.gd
+slide_left_out_UI.tscn::PackedScene/PackedScene::7967867608503413928::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cj258kueu8ura::::res://Action System/Actions/Translate.gd<>uid://bemgi0ogghif3::::res://Action System/Actions/destroy.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
+slide_right_in_UI.tscn::PackedScene/PackedScene::4171503672042974349::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cj258kueu8ura::::res://Action System/Actions/Translate.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd<>uid://cblnoqqylx6wr::::res://Action System/Actions/fade.gd
+slide_right_out.tscn::PackedScene/PackedScene::3513550405381271541::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cj258kueu8ura::::res://Action System/Actions/Translate.gd<>uid://bemgi0ogghif3::::res://Action System/Actions/destroy.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
+::res://Action System/Debug/::1741907822
+action_progress.gd::GDScript/GDScript::6606747324073234859::1741583080::0::1::::ActionProgress<>ProgressBar<><>0<>0<><>::
+action_progress.tscn::PackedScene/PackedScene::2802293042825756533::1741907822::0::1::::<><><>0<>0<><>::uid://c1emfsvho7rg2::::res://Action System/Debug/action_progress.gd
+debug_menu.gd::GDScript/GDScript::2779740643879206131::1741583080::0::1::::DebugMenu<>Control<><>0<>0<><>::
+debug_menu.tscn::PackedScene/PackedScene::1079117374977035761::1741907822::0::1::::<><><>0<>0<><>::uid://bfur6mfjkecnr::::res://Action System/Debug/debug_menu.gd
+::res://Action System/Executors/::1741907421
+exec_auto_activate.gd::GDScript/GDScript::4445887416820103206::1741583080::0::1::::ExecAutoActivate<>Executor<><>0<>0<><>::
+exec_mouse_clicked.gd::GDScript/GDScript::2374287438383372036::1741584188::0::1::::ExecMouseClicked<>Executor<><>0<>0<><>::
+exec_mouse_held.gd::GDScript/GDScript::3366521492011074992::1741584188::0::1::::ExecMouseHeld<>Executor<><>0<>0<><>::
+exec_on_collide.gd::GDScript/GDScript::669613231666669316::1741583080::0::1::::ExecCollide<>Executor<><>0<>0<><>::
+::res://Action System/Factories/::1741907421
+action_factory.gd::GDScript/GDScript::8564935097691519285::1741583079::0::1::::ActionFactory<>Node<><>0<>0<><>::
+behavior_factory.gd::GDScript/GDScript::1094473878763621887::1741583080::0::1::::BehaviorFactory<>Node<><>0<>0<><>::
+::res://Assets/::1741910231
+common_bg.png::CompressedTexture2D/CompressedTexture2D::6933550812339914771::1741581955::1741582238::1::::<><><>0<>0<>b845f02e7c9f64afe8287d917528ffe5<>res://.godot/imported/common_bg.png-b044a3e54a384858b1da806f106a27aa.ctex::
+::res://Assets/Enemies/::1741909572
+Abyssal_1_B_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::6592442161936234987::1741909524::1741909524::1::::<><><>0<>0<>11e3cb272313f6f0f88ec4f7a256348c<>res://.godot/imported/Abyssal_1_B_Medium_NoLight.png-65320e423382cf0ffdfaab2137ba7647.ctex::
+Abyssal_2_B_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::5213215367795105633::1741909527::1741909527::1::::<><><>0<>0<>fecc56c3d6a5087f00af4b8ced025629<>res://.godot/imported/Abyssal_2_B_Medium_NoLight.png-eba398aa64d18ad08e9c2f281e10ca6e.ctex::
+Abyssal_3_B_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::6343161553729961978::1741909539::1741909539::1::::<><><>0<>0<>34611526e6665487284eef5498c276cf<>res://.godot/imported/Abyssal_3_B_Medium_NoLight.png-563edaefb4af5012373cd473222b703c.ctex::
+Abyssal_4_B_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::1439188675469475924::1741909539::1741909539::1::::<><><>0<>0<>5a23779284472d4ca1825b5518db387b<>res://.godot/imported/Abyssal_4_B_Medium_NoLight.png-593cc75cecf7d114801839617b14c780.ctex::
+Abyssal_5_B_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::1578094748296945509::1741909539::1741909539::1::::<><><>0<>0<>db53a7e149632ace7403e2acfdbea485<>res://.godot/imported/Abyssal_5_B_Medium_NoLight.png-aa18a413115187ca96bdff5ab4fde10b.ctex::
+Abyssal_6_B_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::1702182461809404195::1741909539::1741909539::1::::<><><>0<>0<>0de8c0fa717bb49837c2fc8408566dd4<>res://.godot/imported/Abyssal_6_B_Medium_NoLight.png-e536d40bfa0c7983870e5b00eb9faba2.ctex::
+Abyssal_Boss_1_B_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::6795981571728059842::1741909539::1741909539::1::::<><><>0<>0<>2fd4921559211b61b2613f18740dca66<>res://.godot/imported/Abyssal_Boss_1_B_Medium_NoLight.png-89d981a64599789618b45a8f479079b6.ctex::
+Abyssal_Boss_2_B_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::7157841992146991050::1741909539::1741909539::1::::<><><>0<>0<>33d2fd9295746c2db5d358858a703180<>res://.godot/imported/Abyssal_Boss_2_B_Medium_NoLight.png-c09318ec5448d6c4f0b1c009ad3360b0.ctex::
+Abyssal_Boss_3_B_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::6630962067084688819::1741909539::1741909539::1::::<><><>0<>0<>d9a6ff060e6cef3ea632cd1e20950137<>res://.godot/imported/Abyssal_Boss_3_B_Medium_NoLight.png-72ee6c86e39692e76ab39774795e9bb5.ctex::
+Abyssal_Boss_4_B_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::2646040536081918509::1741909539::1741909540::1::::<><><>0<>0<>c871da1793b8b376270592bad418e9ce<>res://.godot/imported/Abyssal_Boss_4_B_Medium_NoLight.png-0e0f4f0f72510662dbf5e06bab9f8f0b.ctex::
+::res://Assets/Enemies/Chunks/::1741909604
+Abyssal_Part_1_B_Medium.png::CompressedTexture2D/CompressedTexture2D::3387733039686316520::1741909604::1741909604::1::::<><><>0<>0<>8e3c4670fa47a88796b590d29f639656<>res://.godot/imported/Abyssal_Part_1_B_Medium.png-1e3fa42a6a5f1f78f2c24635b822aae7.ctex::
+Abyssal_Part_2_B_Medium.png::CompressedTexture2D/CompressedTexture2D::7016465113227882077::1741909604::1741909604::1::::<><><>0<>0<>69f25c7c4fc332bda084ab8de4ba4665<>res://.godot/imported/Abyssal_Part_2_B_Medium.png-13deed708954365b5b9bd98bf0cfa3bc.ctex::
+Abyssal_Part_3_B_Medium.png::CompressedTexture2D/CompressedTexture2D::1402210789107654203::1741909604::1741909604::1::::<><><>0<>0<>7888c2e9e5e8fceb3e09eb7d01194b71<>res://.godot/imported/Abyssal_Part_3_B_Medium.png-fcb422adbf945f06f0f37dab53331a3d.ctex::
+Abyssal_Part_4_A_Medium.png::CompressedTexture2D/CompressedTexture2D::5747083514960106185::1741909604::1741909604::1::::<><><>0<>0<>b15ad6f33b3fea7b3084ec8b14cdb71d<>res://.godot/imported/Abyssal_Part_4_A_Medium.png-eaf428dec9305f408e96daa557292b66.ctex::
+Abyssal_Part_5_B_Medium.png::CompressedTexture2D/CompressedTexture2D::5382865921284982351::1741909604::1741909604::1::::<><><>0<>0<>1af140a10c317749c9e4d3642ba4416a<>res://.godot/imported/Abyssal_Part_5_B_Medium.png-2e62bbe7ce97643a6ffd370897b8fcd5.ctex::
+Abyssal_Part_6_B_Medium.png::CompressedTexture2D/CompressedTexture2D::6489926824243656152::1741909604::1741909604::1::::<><><>0<>0<>b5e9591879679f417391911ead27e6f6<>res://.godot/imported/Abyssal_Part_6_B_Medium.png-26ba70af7dc60c500a7d9b3bebed34d9.ctex::
+Abyssal_Part_7_B_Medium.png::CompressedTexture2D/CompressedTexture2D::547221303452939316::1741909604::1741909604::1::::<><><>0<>0<>591c47cf737316a9e90ba30761801aac<>res://.godot/imported/Abyssal_Part_7_B_Medium.png-21927920f39534f01136d87818536a0b.ctex::
+Abyssal_Part_8_B_Medium.png::CompressedTexture2D/CompressedTexture2D::1924337476975439930::1741909604::1741909604::1::::<><><>0<>0<>8903faa112b7885627b8ce74f598ba91<>res://.godot/imported/Abyssal_Part_8_B_Medium.png-7e6c9fe6f79050b8303746f45b4df41c.ctex::
+Abyssal_Part_9_B_Medium.png::CompressedTexture2D/CompressedTexture2D::8607260031083323822::1741909604::1741909604::1::::<><><>0<>0<>af10ecd814f5a7303df9199ba263070e<>res://.godot/imported/Abyssal_Part_9_B_Medium.png-8b1921cada0628b4a4a392151b8eb01a.ctex::
+Abyssal_Part_10_B_Medium.png::CompressedTexture2D/CompressedTexture2D::218693832004812296::1741909604::1741909604::1::::<><><>0<>0<>0ef33eca13e1773dccbd9074156c32ee<>res://.godot/imported/Abyssal_Part_10_B_Medium.png-441eb5cfc9ab83549154eee8c04118d9.ctex::
+Abyssal_Part_11_B_Medium.png::CompressedTexture2D/CompressedTexture2D::6733289348743774498::1741909604::1741909604::1::::<><><>0<>0<>c4603935c24cc87984b9c779301869dc<>res://.godot/imported/Abyssal_Part_11_B_Medium.png-7e98771fcc912eae422cad1e4eb798ae.ctex::
+Abyssal_Part_13_C_Medium.png::CompressedTexture2D/CompressedTexture2D::3680229986681921029::1741909604::1741909604::1::::<><><>0<>0<>2d9bd19b225baa463ae8ae294d4d7155<>res://.godot/imported/Abyssal_Part_13_C_Medium.png-03efaab5e1409836f70cd402e8204d8e.ctex::
+Abyssal_Part_14_B_Medium.png::CompressedTexture2D/CompressedTexture2D::1294778104197524801::1741909604::1741909604::1::::<><><>0<>0<>160e42a4f903e094320984f6b729e08c<>res://.godot/imported/Abyssal_Part_14_B_Medium.png-be8b8ae3fe5842e2565a6bc39748bef5.ctex::
+Abyssal_Part_15_B_Medium.png::CompressedTexture2D/CompressedTexture2D::4796058909526846479::1741909604::1741909604::1::::<><><>0<>0<>874b8dda9937c43d0cbe151b9615f986<>res://.godot/imported/Abyssal_Part_15_B_Medium.png-8370efc53fda1de273f53a1a5b81e6b3.ctex::
+Abyssal_Part_16_B_Medium.png::CompressedTexture2D/CompressedTexture2D::2184455309130277528::1741909604::1741909604::1::::<><><>0<>0<>f113c3352b3eba89b53c4da560a88844<>res://.godot/imported/Abyssal_Part_16_B_Medium.png-abf45f7fadeddd8cb4c5f00b5c8731a5.ctex::
+::res://Assets/Missiles/::1741909407
+Missile_2_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::5763453635788423183::1741909407::1741909407::1::::<><><>0<>0<>2492b2a87495f8ee294490d4c3253242<>res://.godot/imported/Missile_2_C_Medium_NoLight.png-6df9e51b831f8cad5e1703e328e11718.ctex::
+Missile_4_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::8660096305188504450::1741909384::1741909384::1::::<><><>0<>0<>fca486c0b21221713729e6e80913cdbd<>res://.godot/imported/Missile_4_C_Medium_NoLight.png-a8cbe12f805e939654b247873e87ea06.ctex::
+Missile_4_E_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::7747027117748559819::1741909397::1741909398::1::::<><><>0<>0<>98f4d8543e1f1dee3b4a3b6663b787ed<>res://.godot/imported/Missile_4_E_Medium_NoLight.png-7ba2726d406d70eaa6c3d5b7aa9da4fc.ctex::
+::res://Assets/Projectiles/::1741909450
+Projectile_1_B.png::CompressedTexture2D/CompressedTexture2D::1327758557642770629::1741909449::1741909450::1::::<><><>0<>0<>9dcbe81fbd97bfc5b768a187596ded2d<>res://.godot/imported/Projectile_1_B.png-8ba457dfe9b73a994ad3633dba50cbbf.ctex::
+Projectile_1_D.png::CompressedTexture2D/CompressedTexture2D::535646721106682285::1741909436::1741909437::1::::<><><>0<>0<>8be50a45bc7baf9eab9fe7a2124e64ff<>res://.godot/imported/Projectile_1_D.png-8957f6d874aaab3e5c2375fcdc17e704.ctex::
+Projectile_2_B.png::CompressedTexture2D/CompressedTexture2D::1967289144528358955::1741909449::1741909450::1::::<><><>0<>0<>6992e3879e762c313b77eaf742314f76<>res://.godot/imported/Projectile_2_B.png-68f7ba6a2256009a4e6cb29f988ae1bc.ctex::
+Projectile_2_D.png::CompressedTexture2D/CompressedTexture2D::1626805687184568611::1741909436::1741909437::1::::<><><>0<>0<>27b2f7af18a15b7c184f99963d8ac9b8<>res://.godot/imported/Projectile_2_D.png-ef22d31fa884e33a3208545e9b187009.ctex::
+Projectile_3_B.png::CompressedTexture2D/CompressedTexture2D::2275109336935953628::1741909449::1741909450::1::::<><><>0<>0<>b3c73d063a12885a2367a445acd66f07<>res://.godot/imported/Projectile_3_B.png-6231116fddb936940e95a436f25a0184.ctex::
+Projectile_3_D.png::CompressedTexture2D/CompressedTexture2D::1694081039222632219::1741909436::1741909437::1::::<><><>0<>0<>dd51fe0910966821cc6105eb1d39bdeb<>res://.godot/imported/Projectile_3_D.png-0b0d132769fa329ae949b785623935e9.ctex::
+Projectile_4_B.png::CompressedTexture2D/CompressedTexture2D::3137626143914606048::1741909449::1741909450::1::::<><><>0<>0<>6e21382953d274d73c085022e62e1786<>res://.godot/imported/Projectile_4_B.png-3a803c50268df81afbd422982a3c1de3.ctex::
+Projectile_4_D.png::CompressedTexture2D/CompressedTexture2D::6974522341548016000::1741909436::1741909437::1::::<><><>0<>0<>1b2507c46a7fe6abc1f6e920c6dd8f7d<>res://.godot/imported/Projectile_4_D.png-0fcf225eb2e17de4c3e63b2bf4bf31b6.ctex::
+Projectile_5_B.png::CompressedTexture2D/CompressedTexture2D::194035565221223442::1741909449::1741909450::1::::<><><>0<>0<>ae72c52109193f2befecfba7d2cee734<>res://.godot/imported/Projectile_5_B.png-5f76a36a999fe4c659a06635caf5b5a9.ctex::
+Projectile_5_D.png::CompressedTexture2D/CompressedTexture2D::9099670595577666404::1741909436::1741909437::1::::<><><>0<>0<>4d6e799a3b2a7fccb4925ba7940a7d17<>res://.godot/imported/Projectile_5_D.png-03290cecd821ba9be8a68c810168d98f.ctex::
+Projectile_6_B.png::CompressedTexture2D/CompressedTexture2D::2853525129293668988::1741909449::1741909450::1::::<><><>0<>0<>912b719053bee41fff755e94d6404217<>res://.godot/imported/Projectile_6_B.png-657822baa97699a53f63838b74000ad7.ctex::
+Projectile_6_D.png::CompressedTexture2D/CompressedTexture2D::597713125184645315::1741909436::1741909437::1::::<><><>0<>0<>a005d7fd6ea5b5040c32b8b4cedf6888<>res://.godot/imported/Projectile_6_D.png-a62721d1d14b3912b7bc8d487a3a56e1.ctex::
+Projectile_7_B.png::CompressedTexture2D/CompressedTexture2D::8830186550353954451::1741909449::1741909450::1::::<><><>0<>0<>1e7dc006ced5d171a20a6c80b6dfae37<>res://.godot/imported/Projectile_7_B.png-4cadace8c6f37df00ab6e7436c8bb593.ctex::
+Projectile_7_D.png::CompressedTexture2D/CompressedTexture2D::7835638945158817108::1741909436::1741909437::1::::<><><>0<>0<>7e602c0ac9ac912709e7b903fbfc9f78<>res://.godot/imported/Projectile_7_D.png-0c4c88f980c81ac781ea8a059a5ec0c8.ctex::
+::res://Assets/Ships/::1741909366
+Ship_1_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::1028461867067049789::1741909366::1741909366::1::::<><><>0<>0<>db6e58d880e4109f43f3d719b2623ee1<>res://.godot/imported/Ship_1_C_Medium_NoLight.png-6de39c13188a5eea9ebd4cbd3407d7ff.ctex::
+Ship_2_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::5599963009515373641::1741909363::1741909363::1::::<><><>0<>0<>c83229931abb58a2bb9fe9ebdcc1b888<>res://.godot/imported/Ship_2_C_Medium_NoLight.png-67b5e1cf3de099d8ad9cc5550195785a.ctex::
+Ship_3_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::7457881372908314749::1741909358::1741909358::1::::<><><>0<>0<>192e25738fb9a2090c1438425802be67<>res://.godot/imported/Ship_3_C_Medium_NoLight.png-b901e6397b869c87619962e91533573b.ctex::
+Ship_4_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::3257113398533059889::1741909351::1741909352::1::::<><><>0<>0<>fe29ef41e8ddee37db47f8b562f4bf13<>res://.godot/imported/Ship_4_C_Medium_NoLight.png-98eb4351799c3e7c1155c3fa390388b8.ctex::
+Ship_5_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::3829454828405692557::1741909348::1741909348::1::::<><><>0<>0<>b4c146bd7ccc40cd6ca0abe628f5f0f3<>res://.godot/imported/Ship_5_C_Medium_NoLight.png-76cd432accfb99a8676f5fb7fa68cac5.ctex::
+Ship_6_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::2111377712698684088::1741909340::1741909341::1::::<><><>0<>0<>a670ee6aca342ac8761bb7bef673af1c<>res://.godot/imported/Ship_6_C_Medium_NoLight.png-4688f690611c361876a2d23d9c359a4a.ctex::
+Ship_7_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::5372416011499726223::1741909336::1741909336::1::::<><><>0<>0<>2d3cd3f4613f75cbdad207224d003212<>res://.godot/imported/Ship_7_C_Medium_NoLight.png-37276fb546297e763ccb10dc47aa49eb.ctex::
+Ship_8_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::1244414171045138453::1741909326::1741909326::1::::<><><>0<>0<>286e4e137d399d314ce719206a185652<>res://.godot/imported/Ship_8_C_Medium_NoLight.png-385153f3b5c192183cba3e53a7d26775.ctex::
+Ship_9_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::8412717727004425435::1741909322::1741909322::1::::<><><>0<>0<>22bc78c562a3b0e7f3530dfc6dd7bba8<>res://.godot/imported/Ship_9_C_Medium_NoLight.png-656accacdd2a4ebea1baf9a059a068eb.ctex::
+Ship_10_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::1623766458216838229::1741909305::1741909309::1::::<><><>0<>0<>4aa22245ce3ba562e617f0f737ee7d29<>res://.godot/imported/Ship_10_C_Medium_NoLight.png-50bea6b8acd6a5735d47c9c506e5bdcc.ctex::
+::res://Game Logic/::1741909751
+main.tscn::PackedScene::181713881576555489::1741909751::0::1::::<><><>0<>0<><>::
+::res://Game Logic/Ships/::1741907871
+::res://Game Logic/World/::1741907888

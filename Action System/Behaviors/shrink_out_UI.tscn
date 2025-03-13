@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://blgcy6uwfsbpt"]
+
+[ext_resource type="Script" uid="uid://b4lvd7lh6bymw" path="res://Action System/Executors/exec_auto_activate.gd" id="1_8gklg"]
+[ext_resource type="Script" uid="uid://basqrqlf4npa" path="res://Action System/Actions/scale.gd" id="2_281nq"]
+[ext_resource type="Script" uid="uid://bemgi0ogghif3" path="res://Action System/Actions/destroy.gd" id="3_7ek2b"]
+[ext_resource type="Script" uid="uid://drluoba4f6b71" path="res://Action System/Actions/callback.gd" id="4_xubsl"]
+
+[node name="ShrinkOut" type="Node"]
+script = ExtResource("1_8gklg")
+globalList = 1
+metadata/_custom_type_script = "uid://b4lvd7lh6bymw"
+
+[node name="Scale" type="Node" parent="."]
+script = ExtResource("2_281nq")
+duration = 1.0
+blocking = true
+eased = true
+metadata/_custom_type_script = "uid://basqrqlf4npa"
+
+[node name="Destroy" type="Node" parent="."]
+script = ExtResource("3_7ek2b")
+duration = 0.1
+metadata/_custom_type_script = "uid://bemgi0ogghif3"
+
+[node name="Callback" type="Node" parent="."]
+script = ExtResource("4_xubsl")
+duration = 0.1
+metadata/_custom_type_script = "uid://drluoba4f6b71"
