@@ -1,3 +1,10 @@
-[gd_scene format=3 uid="uid://cua2ibxfojkj"]
+[gd_scene load_steps=2 format=3 uid="uid://cua2ibxfojkj"]
+
+[ext_resource type="PackedScene" uid="uid://l3f57l1uh623" path="res://Game Logic/Ships/Base Ship.tscn" id="1_yb1ur"]
 
 [node name="Main" type="Node2D"]
+
+[node name="BaseShip" parent="." instance=ExtResource("1_yb1ur")]
+position = Vector2(530, 196)
+gravity_scale = 0.0
+turn_decel_jerk = 2.0

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://l3f57l1uh623"]
+
+[ext_resource type="Script" uid="uid://dc6mxmiub0qrg" path="res://Game Logic/Ships/ship.gd" id="1_0hbqr"]
+[ext_resource type="Texture2D" uid="uid://owgu75nvnljh" path="res://Assets/Ships/Ship_1_C_Medium_NoLight.png" id="1_5j4gq"]
+
+[node name="BaseShip" type="RigidBody2D"]
+script = ExtResource("1_0hbqr")
+thrust_jerk = 1.0
+decel_jerk = 2.0
+max_thrust = 10.0
+turn_jerk = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_5j4gq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(-109, -3, -64, -46, -55, -108, 52, -107, 67, -47, 112, 0, 108, 57, 73, 82, 24, 112, -46, 111, -110, 36)

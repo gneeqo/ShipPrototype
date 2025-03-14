@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1741910692
+::res://::1741912482
 export_presets.cfg::TextFile/TextFile::-1::1741586998::0::1::::<><><>0<>0<><>::
 ship.ico::OtherFile/OtherFile::-1::1741910009::0::1::::<><><>0<>0<><>::
 ship_icon.png::CompressedTexture2D/CompressedTexture2D::5342240145620969443::1741909118::1741910238::1::::<><><>0<>0<>7ca5956fafdb880d6703d028ad9e6bd8<>res://.godot/imported/ship_icon.png-454568597136d83871f104f2a24afcc2.ctex::
@@ -24,7 +24,7 @@ level_loader.gd::GDScript/GDScript::967771897165397733::1741907656::0::1::::Leve
 ::res://Action System/Behaviors/::1741910627
 fade_in_UI.tscn::PackedScene/PackedScene::3249526462008700746::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cblnoqqylx6wr::::res://Action System/Actions/fade.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
 fade_out_UI.tscn::PackedScene/PackedScene::246806917058131241::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cblnoqqylx6wr::::res://Action System/Actions/fade.gd<>uid://bemgi0ogghif3::::res://Action System/Actions/destroy.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
-immediate_callback.tscn::PackedScene::340884903688338612::1741910627::0::1::::<><><>0<>0<><>::uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
+immediate_callback.tscn::PackedScene/PackedScene::340884903688338612::1741910627::0::1::::<><><>0<>0<><>::uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
 shrink_in_UI.tscn::PackedScene/PackedScene::7243248443668748424::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cblnoqqylx6wr::::res://Action System/Actions/fade.gd<>uid://basqrqlf4npa::::res://Action System/Actions/scale.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
 shrink_out_UI.tscn::PackedScene/PackedScene::3171050183401979317::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://basqrqlf4npa::::res://Action System/Actions/scale.gd<>uid://bemgi0ogghif3::::res://Action System/Actions/destroy.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
 slide_left_in_UI.tscn::PackedScene/PackedScene::6113341189293009865::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cj258kueu8ura::::res://Action System/Actions/Translate.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd<>uid://cblnoqqylx6wr::::res://Action System/Actions/fade.gd
@@ -34,7 +34,7 @@ slide_right_out.tscn::PackedScene/PackedScene::3513550405381271541::1741907812::
 ::res://Action System/Debug/::1741910627
 action_progress.gd::GDScript/GDScript::6606747324073234859::1741583080::0::1::::ActionProgress<>ProgressBar<><>0<>0<><>::
 action_progress.tscn::PackedScene/PackedScene::2802293042825756533::1741907822::0::1::::<><><>0<>0<><>::uid://c1emfsvho7rg2::::res://Action System/Debug/action_progress.gd
-debug_menu.gd::GDScript::2779740643879206131::1741910627::0::1::::DebugMenu<>Control<><>0<>0<><>::
+debug_menu.gd::GDScript/GDScript::2779740643879206131::1741910627::0::1::::DebugMenu<>Control<><>0<>0<><>::
 debug_menu.tscn::PackedScene/PackedScene::1079117374977035761::1741907822::0::1::::<><><>0<>0<><>::uid://bfur6mfjkecnr::::res://Action System/Debug/debug_menu.gd
 ::res://Action System/Executors/::1741910491
 exec_auto_activate.gd::GDScript/GDScript::4445887416820103206::1741583080::0::1::::ExecAutoActivate<>Executor<><>0<>0<><>::
