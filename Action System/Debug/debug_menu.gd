@@ -9,4 +9,6 @@ func add_action_debug(debug :ActionProgress):
             container.add_child(debug)
             break
 func _process(_delta: float) -> void:
-    visible = InputProcessor.debug_menu_open
+    #visible = InputProcessor.debug_menu_open
+    pass
+    #TODO: reimplement input processing

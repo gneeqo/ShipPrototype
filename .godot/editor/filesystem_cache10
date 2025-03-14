@@ -1,21 +1,19 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1741910218
+::res://::1741910692
 export_presets.cfg::TextFile/TextFile::-1::1741586998::0::1::::<><><>0<>0<><>::
-ship.ico::OtherFile::-1::1741910009::0::1::::<><><>0<>0<><>::
-ship_icon.png::CompressedTexture2D::5342240145620969443::1741909118::1741910238::1::::<><><>0<>0<>7ca5956fafdb880d6703d028ad9e6bd8<>res://.godot/imported/ship_icon.png-454568597136d83871f104f2a24afcc2.ctex::
+ship.ico::OtherFile/OtherFile::-1::1741910009::0::1::::<><><>0<>0<><>::
+ship_icon.png::CompressedTexture2D/CompressedTexture2D::5342240145620969443::1741909118::1741910238::1::::<><><>0<>0<>7ca5956fafdb880d6703d028ad9e6bd8<>res://.godot/imported/ship_icon.png-454568597136d83871f104f2a24afcc2.ctex::
 telemetry_collector.gd::GDScript/GDScript::733330062729667918::1741583081::0::1::::TelemetryCollector<>Node<><>0<>0<><>::
 ::res://Action System/::1741907828
-::res://Action System/Actions/::1741907420
+::res://Action System/Actions/::1741910440
 callback.gd::GDScript/GDScript::8376419943039388870::1741583080::0::1::::Callback<>Action<><>0<>0<><>::
 destroy.gd::GDScript/GDScript::2692328514593716414::1741583080::0::1::::Destroy<>Action<><>0<>0<><>::
 fade.gd::GDScript/GDScript::4866553554536088033::1741583080::0::1::::Fade<>Action<><>0<>0<><>::
 rotate.gd::GDScript/GDScript::3286577372221657927::1741583081::0::1::::Rotate<>Action<><>0<>0<><>::
 scale.gd::GDScript/GDScript::71311240331756874::1741583081::0::1::::Scale<>Action<><>0<>0<><>::
 Translate.gd::GDScript/GDScript::5462160156809341914::1741583081::0::1::::Translate<>Action<><>0<>0<><>::
-translate_to_anchor.gd::GDScript/GDScript::2507631428395841350::1740095299::0::1::::TranslateToAnchor<>Action<><>0<>0<><>::
-translate_to_mouse.gd::GDScript/GDScript::8451746335754020450::1741583081::0::1::::TranslateToMouse<>Action<><>0<>0<><>::
-::res://Action System/Base Objects/::1741907815
-action.gd::GDScript/GDScript::7855457209509461795::1741583079::0::1::::Action<>Node<><>0<>0<><>::
+::res://Action System/Base Objects/::1741910474
+action.gd::GDScript/GDScript::7855457209509461795::1741910474::0::1::::Action<>Node<><>0<>0<><>::
 action.tscn::PackedScene/PackedScene::5767057643731828169::1741907815::0::1::::<><><>0<>0<><>::uid://dj6ih5254m6st::::res://Action System/Base Objects/action.gd
 action_list.gd::GDScript/GDScript::4910779005122659407::1741583080::0::1::::ActionList<>Node<><>0<>0<><>::
 action_list.tscn::PackedScene/PackedScene::4003629409258847948::1741907815::0::1::::<><><>0<>0<><>::uid://cb722vr7q1rwp::::res://Action System/Base Objects/action_list.gd
@@ -23,31 +21,29 @@ executor.gd::GDScript/GDScript::6029659025302484580::1741584188::0::1::::Executo
 executor.tscn::PackedScene/PackedScene::8214243374332468340::1741907815::0::1::::<><><>0<>0<><>::uid://cr52urkjin0hk::::res://Action System/Base Objects/executor.gd
 global_executor_list.gd::GDScript/GDScript::5431996511511705097::1741583081::0::1::::GlobalExecutorList<>Node<><>0<>0<><>::
 level_loader.gd::GDScript/GDScript::967771897165397733::1741907656::0::1::::LevelLoader<>Node<><>0<>0<><>::
-::res://Action System/Behaviors/::1741907812
+::res://Action System/Behaviors/::1741910627
 fade_in_UI.tscn::PackedScene/PackedScene::3249526462008700746::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cblnoqqylx6wr::::res://Action System/Actions/fade.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
 fade_out_UI.tscn::PackedScene/PackedScene::246806917058131241::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cblnoqqylx6wr::::res://Action System/Actions/fade.gd<>uid://bemgi0ogghif3::::res://Action System/Actions/destroy.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
-immediate_callback.tscn::PackedScene/PackedScene::340884903688338612::1741907812::0::1::::<><><>0<>0<><>::uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
+immediate_callback.tscn::PackedScene::340884903688338612::1741910627::0::1::::<><><>0<>0<><>::uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
 shrink_in_UI.tscn::PackedScene/PackedScene::7243248443668748424::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cblnoqqylx6wr::::res://Action System/Actions/fade.gd<>uid://basqrqlf4npa::::res://Action System/Actions/scale.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
 shrink_out_UI.tscn::PackedScene/PackedScene::3171050183401979317::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://basqrqlf4npa::::res://Action System/Actions/scale.gd<>uid://bemgi0ogghif3::::res://Action System/Actions/destroy.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
 slide_left_in_UI.tscn::PackedScene/PackedScene::6113341189293009865::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cj258kueu8ura::::res://Action System/Actions/Translate.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd<>uid://cblnoqqylx6wr::::res://Action System/Actions/fade.gd
 slide_left_out_UI.tscn::PackedScene/PackedScene::7967867608503413928::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cj258kueu8ura::::res://Action System/Actions/Translate.gd<>uid://bemgi0ogghif3::::res://Action System/Actions/destroy.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
 slide_right_in_UI.tscn::PackedScene/PackedScene::4171503672042974349::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cj258kueu8ura::::res://Action System/Actions/Translate.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd<>uid://cblnoqqylx6wr::::res://Action System/Actions/fade.gd
 slide_right_out.tscn::PackedScene/PackedScene::3513550405381271541::1741907812::0::1::::<><><>0<>0<><>::uid://b4lvd7lh6bymw::::res://Action System/Executors/exec_auto_activate.gd<>uid://cj258kueu8ura::::res://Action System/Actions/Translate.gd<>uid://bemgi0ogghif3::::res://Action System/Actions/destroy.gd<>uid://drluoba4f6b71::::res://Action System/Actions/callback.gd
-::res://Action System/Debug/::1741907822
+::res://Action System/Debug/::1741910627
 action_progress.gd::GDScript/GDScript::6606747324073234859::1741583080::0::1::::ActionProgress<>ProgressBar<><>0<>0<><>::
 action_progress.tscn::PackedScene/PackedScene::2802293042825756533::1741907822::0::1::::<><><>0<>0<><>::uid://c1emfsvho7rg2::::res://Action System/Debug/action_progress.gd
-debug_menu.gd::GDScript/GDScript::2779740643879206131::1741583080::0::1::::DebugMenu<>Control<><>0<>0<><>::
+debug_menu.gd::GDScript::2779740643879206131::1741910627::0::1::::DebugMenu<>Control<><>0<>0<><>::
 debug_menu.tscn::PackedScene/PackedScene::1079117374977035761::1741907822::0::1::::<><><>0<>0<><>::uid://bfur6mfjkecnr::::res://Action System/Debug/debug_menu.gd
-::res://Action System/Executors/::1741907421
+::res://Action System/Executors/::1741910491
 exec_auto_activate.gd::GDScript/GDScript::4445887416820103206::1741583080::0::1::::ExecAutoActivate<>Executor<><>0<>0<><>::
-exec_mouse_clicked.gd::GDScript/GDScript::2374287438383372036::1741584188::0::1::::ExecMouseClicked<>Executor<><>0<>0<><>::
-exec_mouse_held.gd::GDScript/GDScript::3366521492011074992::1741584188::0::1::::ExecMouseHeld<>Executor<><>0<>0<><>::
 exec_on_collide.gd::GDScript/GDScript::669613231666669316::1741583080::0::1::::ExecCollide<>Executor<><>0<>0<><>::
 ::res://Action System/Factories/::1741907421
 action_factory.gd::GDScript/GDScript::8564935097691519285::1741583079::0::1::::ActionFactory<>Node<><>0<>0<><>::
 behavior_factory.gd::GDScript/GDScript::1094473878763621887::1741583080::0::1::::BehaviorFactory<>Node<><>0<>0<><>::
-::res://Assets/::1741910231
-common_bg.png::CompressedTexture2D/CompressedTexture2D::6933550812339914771::1741581955::1741582238::1::::<><><>0<>0<>b845f02e7c9f64afe8287d917528ffe5<>res://.godot/imported/common_bg.png-b044a3e54a384858b1da806f106a27aa.ctex::
+::res://Assets/::1741910412
+common_bg.png::CompressedTexture2D/CompressedTexture2D::6933550812339914771::1741581955::1741910412::1::::<><><>0<>0<>b845f02e7c9f64afe8287d917528ffe5<>res://.godot/imported/common_bg.png-b044a3e54a384858b1da806f106a27aa.ctex::
 ::res://Assets/Enemies/::1741909572
 Abyssal_1_B_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::6592442161936234987::1741909524::1741909524::1::::<><><>0<>0<>11e3cb272313f6f0f88ec4f7a256348c<>res://.godot/imported/Abyssal_1_B_Medium_NoLight.png-65320e423382cf0ffdfaab2137ba7647.ctex::
 Abyssal_2_B_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::5213215367795105633::1741909527::1741909527::1::::<><><>0<>0<>fecc56c3d6a5087f00af4b8ced025629<>res://.godot/imported/Abyssal_2_B_Medium_NoLight.png-eba398aa64d18ad08e9c2f281e10ca6e.ctex::
@@ -105,7 +101,7 @@ Ship_7_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::5372416011
 Ship_8_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::1244414171045138453::1741909326::1741909326::1::::<><><>0<>0<>286e4e137d399d314ce719206a185652<>res://.godot/imported/Ship_8_C_Medium_NoLight.png-385153f3b5c192183cba3e53a7d26775.ctex::
 Ship_9_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::8412717727004425435::1741909322::1741909322::1::::<><><>0<>0<>22bc78c562a3b0e7f3530dfc6dd7bba8<>res://.godot/imported/Ship_9_C_Medium_NoLight.png-656accacdd2a4ebea1baf9a059a068eb.ctex::
 Ship_10_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::1623766458216838229::1741909305::1741909309::1::::<><><>0<>0<>4aa22245ce3ba562e617f0f737ee7d29<>res://.godot/imported/Ship_10_C_Medium_NoLight.png-50bea6b8acd6a5735d47c9c506e5bdcc.ctex::
-::res://Game Logic/::1741909751
-main.tscn::PackedScene::181713881576555489::1741909751::0::1::::<><><>0<>0<><>::
+::res://Game Logic/::1741910499
+main.tscn::PackedScene/PackedScene::181713881576555489::1741910499::0::1::::<><><>0<>0<><>::
 ::res://Game Logic/Ships/::1741907871
 ::res://Game Logic/World/::1741907888

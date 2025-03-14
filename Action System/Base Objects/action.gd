@@ -33,9 +33,10 @@ var spawned_by_clone : bool = false
 var first_update : bool = true
 
 ##How fast does time move for this action?
+#TODO: reimplement time scale
 var time_scale : float = 1.0 :
     get:
-        return InputProcessor.time_scale
+        return 1
 ##Is this action infinite duration?
 var inf : bool :
     get: return duration == 0.0
