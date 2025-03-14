@@ -1,5 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1741912482
+::res://::1741926453
+common_bg.png::CompressedTexture2D::6933550812339914771::1741581955::1741927351::1::::<><><>0<>0<>c49fa4fe8194d8ffc041d84488a334cc<>res://.godot/imported/common_bg.png-318fd3ac1824bdf0818c315e31a9c9cc.ctex::
 export_presets.cfg::TextFile/TextFile::-1::1741586998::0::1::::<><><>0<>0<><>::
 ship.ico::OtherFile/OtherFile::-1::1741910009::0::1::::<><><>0<>0<><>::
 ship_icon.png::CompressedTexture2D/CompressedTexture2D::5342240145620969443::1741909118::1741910238::1::::<><><>0<>0<>7ca5956fafdb880d6703d028ad9e6bd8<>res://.godot/imported/ship_icon.png-454568597136d83871f104f2a24afcc2.ctex::
@@ -42,8 +43,7 @@ exec_on_collide.gd::GDScript/GDScript::669613231666669316::1741583080::0::1::::E
 ::res://Action System/Factories/::1741907421
 action_factory.gd::GDScript/GDScript::8564935097691519285::1741583079::0::1::::ActionFactory<>Node<><>0<>0<><>::
 behavior_factory.gd::GDScript/GDScript::1094473878763621887::1741583080::0::1::::BehaviorFactory<>Node<><>0<>0<><>::
-::res://Assets/::1741910412
-common_bg.png::CompressedTexture2D/CompressedTexture2D::6933550812339914771::1741581955::1741910412::1::::<><><>0<>0<>b845f02e7c9f64afe8287d917528ffe5<>res://.godot/imported/common_bg.png-b044a3e54a384858b1da806f106a27aa.ctex::
+::res://Assets/::1741925445
 ::res://Assets/Enemies/::1741909572
 Abyssal_1_B_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::6592442161936234987::1741909524::1741909524::1::::<><><>0<>0<>11e3cb272313f6f0f88ec4f7a256348c<>res://.godot/imported/Abyssal_1_B_Medium_NoLight.png-65320e423382cf0ffdfaab2137ba7647.ctex::
 Abyssal_2_B_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::5213215367795105633::1741909527::1741909527::1::::<><><>0<>0<>fecc56c3d6a5087f00af4b8ced025629<>res://.godot/imported/Abyssal_2_B_Medium_NoLight.png-eba398aa64d18ad08e9c2f281e10ca6e.ctex::
@@ -101,7 +101,10 @@ Ship_7_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::5372416011
 Ship_8_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::1244414171045138453::1741909326::1741909326::1::::<><><>0<>0<>286e4e137d399d314ce719206a185652<>res://.godot/imported/Ship_8_C_Medium_NoLight.png-385153f3b5c192183cba3e53a7d26775.ctex::
 Ship_9_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::8412717727004425435::1741909322::1741909322::1::::<><><>0<>0<>22bc78c562a3b0e7f3530dfc6dd7bba8<>res://.godot/imported/Ship_9_C_Medium_NoLight.png-656accacdd2a4ebea1baf9a059a068eb.ctex::
 Ship_10_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::1623766458216838229::1741909305::1741909309::1::::<><><>0<>0<>4aa22245ce3ba562e617f0f737ee7d29<>res://.godot/imported/Ship_10_C_Medium_NoLight.png-50bea6b8acd6a5735d47c9c506e5bdcc.ctex::
-::res://Game Logic/::1741910499
-main.tscn::PackedScene/PackedScene::181713881576555489::1741910499::0::1::::<><><>0<>0<><>::
-::res://Game Logic/Ships/::1741907871
+::res://Game Logic/::1741927319
+main.tscn::PackedScene::181713881576555489::1741927319::0::1::::<><><>0<>0<><>::uid://l3f57l1uh623::::res://Game Logic/Ships/Base Ship.tscn<>uid://dye8qq4klr1mj::::res://Game Logic/ship_tracking_camera.gd<>uid://c51wtlvb4fbqx::::res://common_bg.png
+ship_tracking_camera.gd::GDScript::8854084928514774081::1741926904::0::1::::<>Camera2D<><>0<>0<><>::
+::res://Game Logic/Ships/::1741927319
+Base Ship.tscn::PackedScene::830238714861421990::1741927319::0::1::::<><><>0<>0<><>::uid://dc6mxmiub0qrg::::res://Game Logic/Ships/ship.gd<>uid://owgu75nvnljh::::res://Assets/Ships/Ship_1_C_Medium_NoLight.png
+ship.gd::GDScript/GDScript::7364405769453914720::1741922928::0::1::::Ship<>RigidBody2D<><>0<>0<><>::
 ::res://Game Logic/World/::1741907888
