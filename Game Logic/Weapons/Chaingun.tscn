@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://de4wkrhmcyimi"]
+
+[ext_resource type="Script" uid="uid://xrdio04a2gr2" path="res://Game Logic/Weapons/chaingun.gd" id="1_t7xqd"]
+[ext_resource type="PackedScene" uid="uid://b0lrms8bw06qn" path="res://Game Logic/Weapons/bullet.tscn" id="2_x1eny"]
+
+[node name="Chaingun" type="Node2D"]
+script = ExtResource("1_t7xqd")
+bullet_scene = ExtResource("2_x1eny")

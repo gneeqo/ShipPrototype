@@ -1,7 +1,7 @@
-res://Game Logic/Ships/Base Ship.tscn
 res://Game Logic/main.tscn
 res://Game Logic/Ships/ship.gd
-res://Game Logic/ship_tracking_camera.gd
-res://addons/phantom_camera/examples/example_scenes/2D/2d_example_scene.tscn
-res://texture_tile.tres
-res://texture_tile.gdshader
+res://Game Logic/Ships/Base Ship.tscn
+res://Game Logic/Weapons/Chaingun.tscn
+res://Game Logic/Weapons/bullet.tscn
+res://Debug/control_automator.gd
+res://Action System/Base Objects/action.gd

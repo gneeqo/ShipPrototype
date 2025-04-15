@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0lrms8bw06qn"]
+
+[ext_resource type="Script" uid="uid://bw13ocsytqts2" path="res://Game Logic/Weapons/bullet.gd" id="1_eg7y3"]
+[ext_resource type="Texture2D" uid="uid://hvqa14llanub" path="res://Assets/Projectiles/Projectile_1_D.png" id="2_aawxh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eg7y3"]
+radius = 24.0
+height = 64.0
+
+[node name="Bullet" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_eg7y3")
+thrust_jerk = 500.0
+max_thrust = 1500.0
+max_vel = 9000.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_aawxh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_eg7y3")
