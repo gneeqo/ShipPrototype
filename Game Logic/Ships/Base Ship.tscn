@@ -6,10 +6,14 @@
 
 [node name="BaseShip" type="RigidBody2D" node_paths=PackedStringArray("weapon_1")]
 script = ExtResource("1_0hbqr")
-thrust_jerk = 1.0
-decel_jerk = 2.0
-max_thrust = 10.0
-turn_jerk = 1.0
+thrust_jerk = 10.0
+decel_jerk = 20.0
+max_thrust = 500.0
+max_vel = 750.0
+turn_jerk = 5.0
+turn_decel_jerk = 10.0
+max_turn_accel = 5.0
+max_turn_vel = 25.0
 weapon_1 = NodePath("Chaingun")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

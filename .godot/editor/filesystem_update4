@@ -5,3 +5,9 @@ res://Game Logic/Weapons/bullet.tscn
 res://Debug/ship_telemetry.gd
 res://Debug/telemetry_collector.gd
 res://Debug/control_automator.gd
+res://Game Logic/main.tscn
+res://Game Logic/referee.gd
+res://Game Logic/ship_tracking_camera.gd
+res://Game Logic/Ships/sluggish_ship.tscn
+res://Game Logic/Ships/rocket_ship.tscn
+res://Game Logic/Ships/nimble_ship.tscn

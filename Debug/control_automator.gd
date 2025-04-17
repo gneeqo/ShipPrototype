@@ -10,6 +10,14 @@ var max_automation_trigger_duration:float = 5.0
 
 var random : RandomNumberGenerator
 
+#input actions that the automator should not use.
+var excluded_actions : Array[String]\
+=["toggle_automation",\
+"escape",\
+"switch_ship_1",\
+"switch_ship_2",\
+"switch_ship_3"]
+
 func _ready():
     action_names = InputMap.get_actions()
     random = RandomNumberGenerator.new()
@@ -47,7 +55,6 @@ func basic_ship_behavior():
     do_all_actions_random()
     
 func do_all_actions_random():
-    
     for action in action_names:
         if action == "toggle_automation" or action == "escape":
             pass

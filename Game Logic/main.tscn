@@ -1,23 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://cua2ibxfojkj"]
+[gd_scene load_steps=9 format=3 uid="uid://cua2ibxfojkj"]
 
-[ext_resource type="PackedScene" uid="uid://l3f57l1uh623" path="res://Game Logic/Ships/Base Ship.tscn" id="1_yb1ur"]
 [ext_resource type="Script" uid="uid://dye8qq4klr1mj" path="res://Game Logic/ship_tracking_camera.gd" id="2_p1nsy"]
 [ext_resource type="Texture2D" uid="uid://ctlsmiwiou8q7" path="res://Assets/2k_stars.jpg" id="3_s6dj5"]
 [ext_resource type="Script" uid="uid://dpj28oaiyi1je" path="res://Debug/control_automator.gd" id="4_sqdhe"]
 [ext_resource type="Script" uid="uid://bfur6mfjkecnr" path="res://Action System/Debug/debug_menu.gd" id="5_cfu14"]
+[ext_resource type="Script" uid="uid://dfnoar87808dk" path="res://Game Logic/referee.gd" id="5_dlona"]
+[ext_resource type="PackedScene" uid="uid://drwoigjg68e3n" path="res://Game Logic/Ships/nimble_ship.tscn" id="6_fy1hb"]
+[ext_resource type="PackedScene" uid="uid://bhr2ynx1pfg3q" path="res://Game Logic/Ships/rocket_ship.tscn" id="7_quovy"]
+[ext_resource type="PackedScene" uid="uid://dyv2kp70n18bu" path="res://Game Logic/Ships/sluggish_ship.tscn" id="8_bleop"]
 
 [node name="Main" type="Node2D"]
-
-[node name="BaseShip" parent="." instance=ExtResource("1_yb1ur")]
-position = Vector2(576, 320)
-gravity_scale = 0.0
-turn_jerk = 0.05
-turn_decel_jerk = 2.0
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("ship")]
 position = Vector2(576, 320)
 script = ExtResource("2_p1nsy")
-ship = NodePath("../BaseShip")
+ship = NodePath("")
 zoom_factor = 6000.0
 zoom_max = 0.1
 
@@ -45,3 +42,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("5_cfu14")
 metadata/_custom_type_script = "uid://bfur6mfjkecnr"
+
+[node name="referee" type="Node" parent="." node_paths=PackedStringArray("Camera")]
+script = ExtResource("5_dlona")
+ship_types = Array[PackedScene]([ExtResource("6_fy1hb"), ExtResource("7_quovy"), ExtResource("8_bleop")])
+Camera = NodePath("../Camera2D")
+metadata/_custom_type_script = "uid://dfnoar87808dk"

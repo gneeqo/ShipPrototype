@@ -15,9 +15,10 @@ static var telemetry_active : bool = false
 
 
 static func refresh_telemetry():
-    finish_collecting()
-    start_collecting()
-    
+    if telemetry_active:
+        finish_collecting()
+        start_collecting()
+        
 static func new_ship_instance(new_ship:Ship):
     spaceship = new_ship
     num_instances += 1   

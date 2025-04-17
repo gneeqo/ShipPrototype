@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://drwoigjg68e3n"]
+
+[ext_resource type="PackedScene" uid="uid://l3f57l1uh623" path="res://Game Logic/Ships/Base Ship.tscn" id="1_ltohy"]
+[ext_resource type="Texture2D" uid="uid://cl1wtp6srl0hp" path="res://Assets/Ships/Ship_2_C_Medium_NoLight.png" id="2_ueofk"]
+
+[node name="NimbleShip" instance=ExtResource("1_ltohy")]
+thrust_jerk = 20.0
+decel_jerk = 40.0
+max_vel = 1000.0
+turn_jerk = 1.0
+turn_decel_jerk = 2.0
+max_turn_accel = 4.0
+max_turn_vel = 8.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ueofk")

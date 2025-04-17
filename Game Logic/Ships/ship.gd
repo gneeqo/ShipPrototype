@@ -81,13 +81,18 @@ func process_input()->void:
     else:
         curr_turn_accel = 0
         angular_decel_active = false
-        
+    
+    #enforce maximums
+    curr_thrust_accel = clampf(curr_thrust_accel,-max_thrust,max_thrust)
+    curr_turn_accel = clampf(curr_turn_accel,-max_turn_accel,max_turn_accel)
+    
     #fire chaingun
     if Input.is_action_just_pressed("fire_weapon_1"):
         weapon_1._start_firing()
     if Input.is_action_just_released("fire_weapon_1"):
         weapon_1._stop_firing()
     
+    #record this for next frame
     prev_frame_thrust_vec = this_frame_thrust_vec
     this_frame_thrust_vec = facing_vec * mass * curr_thrust_accel
     
@@ -100,6 +105,15 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
     process_input()
     state.apply_central_force(this_frame_thrust_vec)
     state.apply_torque(this_frame_torque)
+    
+    #enforce maximums
+    if(state.linear_velocity.length() > max_vel):
+        var direction = state.linear_velocity.normalized()
+        state.linear_velocity = direction * max_vel
+    
+    state.angular_velocity = clampf(state.angular_velocity,-max_turn_vel,max_turn_vel)
+        
+    
     send_telemetry()
         
  
