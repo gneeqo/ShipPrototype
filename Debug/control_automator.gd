@@ -29,6 +29,12 @@ func press_and_hold(action_name:StringName,duration:float):
 func _process(dt:float):
     if Input.is_action_just_pressed("toggle_automation"):
         is_automating = !is_automating
+        if is_automating:
+            ShipTelemetry.start_collecting()
+            ShipTelemetry.add_event("Telemetry","Started","Manually")
+        else:
+            ShipTelemetry.add_event("Telemetry","Ended","Manually")
+            ShipTelemetry.finish_collecting()
     
     if is_automating:
         if time_since_last_automation_trigger > max_automation_trigger_duration:

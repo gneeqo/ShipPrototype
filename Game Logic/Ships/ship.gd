@@ -12,6 +12,15 @@ class_name Ship extends RigidBody2D
 
 @export var weapon_1: Weapon
 
+#for telemetry purposes
+@export var classification:int
+
+var time_last_telemetry_sent : float
+
+var linear_decel_active:bool = false
+var angular_decel_active:bool = false
+
+
 var facing_vec: Vector2:
     get:
         return Vector2.from_angle(global_rotation)
@@ -36,28 +45,42 @@ var ship_inertia:float:
         return 1.0 / PhysicsServer2D.body_get_direct_state(get_rid()).inverse_inertia
 
 
+
+func _ready():
+    if ShipTelemetry.telemetry_active:
+        ShipTelemetry.new_ship_instance(self)
+        time_last_telemetry_sent = Time.get_unix_time_from_system()
+
 func process_input()->void:
     #accel or decel
     if Input.is_action_pressed("accelerate"):
         curr_thrust_accel += thrust_jerk
+        linear_decel_active = false
     elif Input.is_action_pressed("decelerate"):
         curr_thrust_accel -= decel_jerk
+        linear_decel_active = true
     else:
         curr_thrust_accel = 0
+        linear_decel_active = false
     
     #turn left or right
     if Input.is_action_pressed("turn_left"):
         if sign(prev_frame_torque) == 1:
             curr_turn_accel -= turn_decel_jerk
+            angular_decel_active = true
         else:
             curr_turn_accel -= turn_jerk
+            angular_decel_active = false
     elif Input.is_action_pressed("turn_right"):
         if sign(prev_frame_torque) == -1:
+            angular_decel_active = true
             curr_turn_accel += turn_decel_jerk
         else:
+            angular_decel_active = false
             curr_turn_accel += turn_jerk
     else:
         curr_turn_accel = 0
+        angular_decel_active = false
         
     #fire chaingun
     if Input.is_action_just_pressed("fire_weapon_1"):
@@ -77,6 +100,37 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
     process_input()
     state.apply_central_force(this_frame_thrust_vec)
     state.apply_torque(this_frame_torque)
+    send_telemetry()
         
-    
-    
+ 
+func kill():
+    #respawn, etc.
+    ShipTelemetry.add_event("Ship","Died","")
+    ShipTelemetry.refresh_telemetry()
+    queue_free()
+
+func send_telemetry():
+    if not ShipTelemetry.telemetry_active:
+        return
+    if Time.get_unix_time_from_system() - time_last_telemetry_sent > 0.2:
+        time_last_telemetry_sent = Time.get_unix_time_from_system()
+        var physics_body = PhysicsServer2D.body_get_direct_state(get_rid())
+        
+        ShipTelemetry.add_event("Linear Velocity",str(physics_body.linear_velocity.x),str(physics_body.linear_velocity.y))
+        ShipTelemetry.add_event("Linear Velocity Magnitude",str(physics_body.linear_velocity.length()),"")
+        ShipTelemetry.add_event("Linear Acceleration",str(curr_thrust_accel),"")
+        
+        if linear_decel_active:
+            ShipTelemetry.add_event("Linear Jerk",str(decel_jerk),"")
+        else:
+            ShipTelemetry.add_event("Linear Jerk",str(thrust_jerk),"")
+        
+       
+        ShipTelemetry.add_event("Angular Velocity",str(physics_body.angular_velocity),"")
+        ShipTelemetry.add_event("Angular Acceleration",str(curr_turn_accel),"")
+        
+        if linear_decel_active:
+            ShipTelemetry.add_event("Angular Jerk",str(turn_decel_jerk),"")
+        else:
+            ShipTelemetry.add_event("Angular Jerk",str(turn_jerk),"")
+     

@@ -1,7 +1,7 @@
-res://Game Logic/main.tscn
-res://Game Logic/Ships/ship.gd
 res://Game Logic/Ships/Base Ship.tscn
+res://Game Logic/Ships/ship.gd
 res://Game Logic/Weapons/Chaingun.tscn
 res://Game Logic/Weapons/bullet.tscn
+res://Debug/ship_telemetry.gd
+res://Debug/telemetry_collector.gd
 res://Debug/control_automator.gd
-res://Action System/Base Objects/action.gd
