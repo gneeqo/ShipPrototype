@@ -15,3 +15,9 @@ max_turn_vel = 0.5
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_vb8kn")
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(-109, -3, -64, -46, -40.0006, -168, 47.9994, -176, 67, -47, 112, 0, 208, 95.9992, 224.001, 191.999, 24, 112, -46, 111, -223.999, 192.001)
+
+[node name="Chaingun" parent="." index="2"]
+position = Vector2(224, 0)

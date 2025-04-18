@@ -1,11 +1,12 @@
-class_name chain_gun extends Weapon
+class_name MissileLauncher extends Weapon
+
 
 @export var fire_rate_accel : float = 1
 @export var fire_rate_decel : float = 1
 @export var max_fire_rate : float = 10
-@export var bullet_scene : PackedScene
+@export var missile_scene : PackedScene
 
-var loaded_bullet:Bullet
+var loaded_bullet:Missile
 
 
 var curr_fire_rate:float
@@ -43,7 +44,5 @@ func _process(delta:float)->void:
     
 
 func fire_weapon():
-    var new_bullet : Bullet = bullet_scene.instantiate()
-    add_child(new_bullet)
-    new_bullet.linear_velocity = get_parent().linear_velocity
-    
+    var new_missile : Missile = missile_scene.instantiate()
+    add_child(new_missile)

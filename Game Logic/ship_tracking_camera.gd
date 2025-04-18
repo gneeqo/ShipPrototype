@@ -12,7 +12,9 @@ func _process(_delta:float):
     
     if not is_instance_valid(body):
         return
+    
     var ship_speed = body.linear_velocity.length()
+    
     var zoom_amount:float = 1/((1+(ship_speed/zoom_factor)))
     
     if zoom_amount < zoom_max:

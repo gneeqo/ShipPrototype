@@ -33,6 +33,9 @@ auto_selectable="can have options selected by input automation"
 referee=""
 resume_button=""
 InputProcessor=""
+player_bullet=""
+fence=""
+enemy=""
 
 [input]
 

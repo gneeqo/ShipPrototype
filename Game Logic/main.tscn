@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cua2ibxfojkj"]
+[gd_scene load_steps=11 format=3 uid="uid://cua2ibxfojkj"]
 
 [ext_resource type="Script" uid="uid://dye8qq4klr1mj" path="res://Game Logic/ship_tracking_camera.gd" id="2_p1nsy"]
 [ext_resource type="Texture2D" uid="uid://ctlsmiwiou8q7" path="res://Assets/2k_stars.jpg" id="3_s6dj5"]
@@ -8,15 +8,21 @@
 [ext_resource type="PackedScene" uid="uid://drwoigjg68e3n" path="res://Game Logic/Ships/nimble_ship.tscn" id="6_fy1hb"]
 [ext_resource type="PackedScene" uid="uid://bhr2ynx1pfg3q" path="res://Game Logic/Ships/rocket_ship.tscn" id="7_quovy"]
 [ext_resource type="PackedScene" uid="uid://dyv2kp70n18bu" path="res://Game Logic/Ships/sluggish_ship.tscn" id="8_bleop"]
+[ext_resource type="PackedScene" uid="uid://34nkbjn03rf1" path="res://Game Logic/Enemies/base_enemy.tscn" id="9_bleop"]
+[ext_resource type="PackedScene" uid="uid://bv28fjqqk08lw" path="res://Game Logic/Fence.tscn" id="10_bwen8"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("ship")]
 position = Vector2(576, 320)
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
 script = ExtResource("2_p1nsy")
 ship = NodePath("")
-zoom_factor = 6000.0
-zoom_max = 0.1
+zoom_factor = 500.0
+zoom_max = 0.4
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -47,4 +53,8 @@ metadata/_custom_type_script = "uid://bfur6mfjkecnr"
 script = ExtResource("5_dlona")
 ship_types = Array[PackedScene]([ExtResource("6_fy1hb"), ExtResource("7_quovy"), ExtResource("8_bleop")])
 Camera = NodePath("../Camera2D")
+enemy_types = Array[PackedScene]([ExtResource("9_bleop")])
+fence_scene = ExtResource("10_bwen8")
+num_enemies = 100
+BorderSize = 15000.0
 metadata/_custom_type_script = "uid://dfnoar87808dk"

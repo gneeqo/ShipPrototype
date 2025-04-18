@@ -11,6 +11,7 @@ class_name Ship extends RigidBody2D
 @export var max_turn_vel:float
 
 @export var weapon_1: Weapon
+@export var weapon_2: Weapon
 
 #for telemetry purposes
 @export var classification:int
@@ -91,6 +92,13 @@ func process_input()->void:
         weapon_1._start_firing()
     if Input.is_action_just_released("fire_weapon_1"):
         weapon_1._stop_firing()
+        
+        
+    #fire missiles
+    if Input.is_action_just_pressed("fire_weapon_2"):
+        weapon_2._start_firing()
+    if Input.is_action_just_released("fire_weapon_2"):
+        weapon_2._stop_firing()
     
     #record this for next frame
     prev_frame_thrust_vec = this_frame_thrust_vec

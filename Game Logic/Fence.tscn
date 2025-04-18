@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv28fjqqk08lw"]
+
+[ext_resource type="Texture2D" uid="uid://b8mjsbiur3pbf" path="res://Assets/popup_btn_f.png" id="1_kc8xp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lojs"]
+size = Vector2(20, 112)
+
+[node name="Fence" type="RigidBody2D" groups=["fence"]]
+freeze = true
+contact_monitor = true
+max_contacts_reported = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -64)
+texture = ExtResource("1_kc8xp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_6lojs")

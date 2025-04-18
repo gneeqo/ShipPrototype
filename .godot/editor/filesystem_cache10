@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1744829145
+::res://::1744930487
 common_bg.png::CompressedTexture2D/CompressedTexture2D::6933550812339914771::1741581955::1741927351::1::::<><><>0<>0<>c49fa4fe8194d8ffc041d84488a334cc<>res://.godot/imported/common_bg.png-318fd3ac1824bdf0818c315e31a9c9cc.ctex::
 export_presets.cfg::TextFile/TextFile::-1::1741586998::0::1::::<><><>0<>0<><>::
 ship.ico::OtherFile/OtherFile::-1::1741910009::0::1::::<><><>0<>0<><>::
@@ -202,9 +202,10 @@ camera_3d_resource.gd::GDScript/GDScript::8709123079292188217::1741923886::0::1:
 phantom_camera_noise_2d.gd::GDScript/GDScript::1965745086190430314::1741923886::0::1::::PhantomCameraNoise2D<>Resource<><>0<>1<><>::
 phantom_camera_noise_3d.gd::GDScript/GDScript::3438099956697508201::1741923886::0::1::::PhantomCameraNoise3D<>Resource<><>0<>1<><>::
 tween_resource.gd::GDScript/GDScript::6894056345491015910::1741923886::0::1::::PhantomCameraTween<>Resource<><>0<>0<><>::
-::res://Assets/::1744733655
+::res://Assets/::1744931081
 2k_stars.jpg::CompressedTexture2D/CompressedTexture2D::6130252341755645252::1744733655::1744733655::1::::<><><>0<>0<>dde681bf72069b3211e78a3d27d2e3d5<>res://.godot/imported/2k_stars.jpg-1379f44de722fd03c43a5f6017e8a5a9.ctex::
 2k_stars_milky_way.jpg::CompressedTexture2D/CompressedTexture2D::3186216856446639753::1744733580::1744733581::1::::<><><>0<>0<>675b21acab799c3121f42f23f69a3943<>res://.godot/imported/2k_stars_milky_way.jpg-745df51bb091a3977384ded1cbbc5777.ctex::
+popup_btn_f.png::CompressedTexture2D::4728003719836402899::1744931081::1744931081::1::::<><><>0<>0<>745f438ed29287faa8f58eec5552718b<>res://.godot/imported/popup_btn_f.png-c8c714851393c4a45eff348f551ce400.ctex::
 ::res://Assets/Enemies/::1741909572
 Abyssal_1_B_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::6592442161936234987::1741909524::1741909524::1::::<><><>0<>0<>11e3cb272313f6f0f88ec4f7a256348c<>res://.godot/imported/Abyssal_1_B_Medium_NoLight.png-65320e423382cf0ffdfaab2137ba7647.ctex::
 Abyssal_2_B_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::5213215367795105633::1741909527::1741909527::1::::<><><>0<>0<>fecc56c3d6a5087f00af4b8ced025629<>res://.godot/imported/Abyssal_2_B_Medium_NoLight.png-eba398aa64d18ad08e9c2f281e10ca6e.ctex::
@@ -262,20 +263,28 @@ Ship_7_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::5372416011
 Ship_8_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::1244414171045138453::1741909326::1741909326::1::::<><><>0<>0<>286e4e137d399d314ce719206a185652<>res://.godot/imported/Ship_8_C_Medium_NoLight.png-385153f3b5c192183cba3e53a7d26775.ctex::
 Ship_9_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::8412717727004425435::1741909322::1741909322::1::::<><><>0<>0<>22bc78c562a3b0e7f3530dfc6dd7bba8<>res://.godot/imported/Ship_9_C_Medium_NoLight.png-656accacdd2a4ebea1baf9a059a068eb.ctex::
 Ship_10_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::1623766458216838229::1741909305::1741909309::1::::<><><>0<>0<>4aa22245ce3ba562e617f0f737ee7d29<>res://.godot/imported/Ship_10_C_Medium_NoLight.png-50bea6b8acd6a5735d47c9c506e5bdcc.ctex::
-::res://Debug/::1744829385
-control_automator.gd::GDScript/GDScript::8232373131162685278::1744742854::0::1::::ControlAutomator<>Node<><>0<>0<><>::
-physics_telemetry.gd::GDScript::7871607777917284174::1744829385::0::1::::<>Node<><>0<>0<><>::
-telemetry_collector.gd::GDScript::733330062729667918::1741583081::0::1::::TelemetryCollector<>Node<><>0<>0<><>::
-::res://Game Logic/::1744742854
-main.tscn::PackedScene/PackedScene::181713881576555489::1744742854::0::1::::<><><>0<>0<><>::uid://l3f57l1uh623::::res://Game Logic/Ships/Base Ship.tscn<>uid://dye8qq4klr1mj::::res://Game Logic/ship_tracking_camera.gd<>uid://ctlsmiwiou8q7::::res://Assets/2k_stars.jpg<>uid://dpj28oaiyi1je::::res://Debug/control_automator.gd<>uid://bfur6mfjkecnr::::res://Action System/Debug/debug_menu.gd
-ship_tracking_camera.gd::GDScript/GDScript::8854084928514774081::1741985475::0::1::::<>Camera2D<><>0<>0<><>::
-::res://Game Logic/Ships/::1744829148
-Base Ship.tscn::PackedScene::830238714861421990::1744829148::0::1::::<><><>0<>0<><>::uid://dc6mxmiub0qrg::::res://Game Logic/Ships/ship.gd<>uid://owgu75nvnljh::::res://Assets/Ships/Ship_1_C_Medium_NoLight.png<>uid://de4wkrhmcyimi::::res://Game Logic/Weapons/Chaingun.tscn
-ship.gd::GDScript::7364405769453914720::1744829148::0::1::::Ship<>RigidBody2D<><>0<>0<><>::
-::res://Game Logic/Weapons/::1744829148
+::res://Debug/::1744862111
+control_automator.gd::GDScript::8232373131162685278::1744859609::0::1::::ControlAutomator<>Node<><>0<>0<><>::
+ship_telemetry.gd::GDScript::7871607777917284174::1744862111::0::1::::ShipTelemetry<>Node<><>0<>0<><>::
+telemetry_collector.gd::GDScript::733330062729667918::1744829987::0::1::::TelemetryCollector<>Node<><>0<>0<><>::
+::res://Game Logic/::1744930995
+main.tscn::PackedScene::181713881576555489::1744930925::0::1::::<><><>0<>0<><>::uid://dye8qq4klr1mj::::res://Game Logic/ship_tracking_camera.gd<>uid://ctlsmiwiou8q7::::res://Assets/2k_stars.jpg<>uid://dpj28oaiyi1je::::res://Debug/control_automator.gd<>uid://bfur6mfjkecnr::::res://Action System/Debug/debug_menu.gd<>uid://dfnoar87808dk::::res://Game Logic/referee.gd<>uid://drwoigjg68e3n::::res://Game Logic/Ships/nimble_ship.tscn<>uid://bhr2ynx1pfg3q::::res://Game Logic/Ships/rocket_ship.tscn<>uid://dyv2kp70n18bu::::res://Game Logic/Ships/sluggish_ship.tscn
+referee.gd::GDScript::7537894163345524364::1744930925::0::1::::referee<>Node<><>0<>0<><>::
+Fence.tscn::PackedScene::3918137687350586104::1744930995::0::1::::<><><>0<>0<><>::
+ship_tracking_camera.gd::GDScript::8854084928514774081::1744908928::0::1::::ShipTrackingCamera<>Camera2D<><>0<>0<><>::
+::res://Game Logic/Enemies/::1744930925
+base_enemy.gd::GDScript::4092610841984545551::1744930669::0::1::::BaseEnemy<>RigidBody2D<><>0<>0<><>::
+base_enemy.tscn::PackedScene::2025961822629432408::1744930925::0::1::::<><><>0<>0<><>::uid://bykqx5iff5n1h::::res://Game Logic/Enemies/base_enemy.gd<>uid://c06otaqlr2gpn::::res://Assets/Enemies/Abyssal_1_B_Medium_NoLight.png
+::res://Game Logic/Ships/::1744930925
+Base Ship.tscn::PackedScene::830238714861421990::1744930925::0::1::::<><><>0<>0<><>::uid://dc6mxmiub0qrg::::res://Game Logic/Ships/ship.gd<>uid://owgu75nvnljh::::res://Assets/Ships/Ship_1_C_Medium_NoLight.png<>uid://de4wkrhmcyimi::::res://Game Logic/Weapons/Chaingun.tscn
+nimble_ship.tscn::PackedScene::8398753357123820621::1744930925::0::1::::<><><>0<>0<><>::uid://l3f57l1uh623::::res://Game Logic/Ships/Base Ship.tscn<>uid://cl1wtp6srl0hp::::res://Assets/Ships/Ship_2_C_Medium_NoLight.png
+rocket_ship.tscn::PackedScene::2914519948372379896::1744930925::0::1::::<><><>0<>0<><>::uid://l3f57l1uh623::::res://Game Logic/Ships/Base Ship.tscn<>uid://xetgw7u7ycw8::::res://Assets/Ships/Ship_10_C_Medium_NoLight.png
+ship.gd::GDScript::7364405769453914720::1744862535::0::1::::Ship<>RigidBody2D<><>0<>0<><>::
+sluggish_ship.tscn::PackedScene::8888804286409390714::1744930925::0::1::::<><><>0<>0<><>::uid://l3f57l1uh623::::res://Game Logic/Ships/Base Ship.tscn<>uid://butatderogagr::::res://Assets/Ships/Ship_5_C_Medium_NoLight.png
+::res://Game Logic/Weapons/::1744930925
 bullet.gd::GDScript/GDScript::3985974276217169019::1741986277::0::1::::Bullet<>RigidBody2D<><>0<>0<><>::
-bullet.tscn::PackedScene::4164904544817158961::1744829148::0::1::::<><><>0<>0<><>::uid://bw13ocsytqts2::::res://Game Logic/Weapons/bullet.gd<>uid://hvqa14llanub::::res://Assets/Projectiles/Projectile_1_D.png
+bullet.tscn::PackedScene::4164904544817158961::1744930925::0::1::::<><><>0<>0<><>::uid://bw13ocsytqts2::::res://Game Logic/Weapons/bullet.gd<>uid://hvqa14llanub::::res://Assets/Projectiles/Projectile_1_D.png
 chaingun.gd::GDScript/GDScript::1649635038089008045::1741993512::0::1::::chain_gun<>Weapon<><>0<>0<><>::
-Chaingun.tscn::PackedScene::7501238916538511456::1744829148::0::1::::<><><>0<>0<><>::uid://xrdio04a2gr2::::res://Game Logic/Weapons/chaingun.gd<>uid://b0lrms8bw06qn::::res://Game Logic/Weapons/bullet.tscn
+Chaingun.tscn::PackedScene::7501238916538511456::1744930925::0::1::::<><><>0<>0<><>::uid://xrdio04a2gr2::::res://Game Logic/Weapons/chaingun.gd<>uid://b0lrms8bw06qn::::res://Game Logic/Weapons/bullet.tscn
 weapon.gd::GDScript/GDScript::262605665963748031::1741984093::0::1::::Weapon<>Node<><>0<>0<><>::
 ::res://Game Logic/World/::1741907888

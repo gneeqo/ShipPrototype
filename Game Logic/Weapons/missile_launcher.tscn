@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqvloc8vxdnl0"]
+
+[ext_resource type="Script" uid="uid://dmirb2guxm4dr" path="res://Game Logic/Weapons/missile_launcher.gd" id="1_w08k3"]
+
+[node name="MissileLauncher" type="Node"]
+script = ExtResource("1_w08k3")
+metadata/_custom_type_script = "uid://dmirb2guxm4dr"

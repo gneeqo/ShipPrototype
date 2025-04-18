@@ -11,3 +11,12 @@ res://Game Logic/ship_tracking_camera.gd
 res://Game Logic/Ships/sluggish_ship.tscn
 res://Game Logic/Ships/rocket_ship.tscn
 res://Game Logic/Ships/nimble_ship.tscn
+res://Game Logic/Enemies/base_enemy.tscn
+res://Game Logic/Enemies/base_enemy.gd
+res://Game Logic/Fence.tscn
+res://Game Logic/Weapons/chaingun.gd
+res://Game Logic/Weapons/bullet.gd
+res://Game Logic/Weapons/missile.gd
+res://Game Logic/Weapons/missile.tscn
+res://Game Logic/Weapons/missile_launcher.tscn
+res://Game Logic/Weapons/missile_launcher.gd
