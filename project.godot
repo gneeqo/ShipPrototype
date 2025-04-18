@@ -36,6 +36,7 @@ InputProcessor=""
 player_bullet=""
 fence=""
 enemy=""
+player=""
 
 [input]
 

@@ -1,3 +1,5 @@
+CPUParticles2D
+GPUParticles2D
 Node2D
 chain_gun
 MissileLauncher
@@ -10,6 +12,3 @@ DebugMenu
 ControlAutomator
 ParallaxLayer
 ParallaxBackground
-Parallax2D
-TileMapLayer
-TileMap

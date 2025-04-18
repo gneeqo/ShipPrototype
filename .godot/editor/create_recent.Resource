@@ -1,3 +1,4 @@
+SpriteFrames
 ShaderMaterial
 Curve
 AnimationLibrary

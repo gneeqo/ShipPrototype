@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://l3f57l1uh623"]
+[gd_scene load_steps=7 format=3 uid="uid://l3f57l1uh623"]
 
 [ext_resource type="Script" uid="uid://dc6mxmiub0qrg" path="res://Game Logic/Ships/ship.gd" id="1_0hbqr"]
 [ext_resource type="Texture2D" uid="uid://owgu75nvnljh" path="res://Assets/Ships/Ship_1_C_Medium_NoLight.png" id="1_5j4gq"]
 [ext_resource type="PackedScene" uid="uid://de4wkrhmcyimi" path="res://Game Logic/Weapons/Chaingun.tscn" id="3_ild35"]
 [ext_resource type="Script" uid="uid://dmirb2guxm4dr" path="res://Game Logic/Weapons/missile_launcher.gd" id="4_ild35"]
 [ext_resource type="PackedScene" uid="uid://cjkqbnu43mbe3" path="res://Game Logic/Weapons/missile.tscn" id="5_3r8jj"]
+[ext_resource type="PackedScene" uid="uid://b2amyuvnayfwc" path="res://Assets/Particles/ship_damage_trail.tscn" id="6_pvrli"]
 
-[node name="BaseShip" type="RigidBody2D" node_paths=PackedStringArray("weapon_1", "weapon_2")]
+[node name="BaseShip" type="RigidBody2D" node_paths=PackedStringArray("weapon_1", "weapon_2", "damage_level_particles") groups=["player"]]
+contact_monitor = true
+max_contacts_reported = 3
 script = ExtResource("1_0hbqr")
 thrust_jerk = 10.0
 decel_jerk = 20.0
@@ -18,6 +21,9 @@ max_turn_accel = 5.0
 max_turn_vel = 25.0
 weapon_1 = NodePath("Chaingun")
 weapon_2 = NodePath("Missile Launcher")
+damage_level_particles = [null, NodePath("ShipDamageTrail"), NodePath("ShipDamageTrail2")]
+jerk_decrease_per_damage = 2.0
+turn_jerk_decrease_per_damage = 0.4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
@@ -37,3 +43,19 @@ max_fire_rate = 8.0
 position = Vector2(128, 0)
 script = ExtResource("4_ild35")
 missile_scene = ExtResource("5_3r8jj")
+
+[node name="ShipDamageTrail" parent="." instance=ExtResource("6_pvrli")]
+position = Vector2(0, 96)
+scale = Vector2(25, 25)
+emitting = false
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="ShipDamageTrail2" parent="." instance=ExtResource("6_pvrli")]
+position = Vector2(0, -104)
+scale = Vector2(25, 25)
+emitting = false
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

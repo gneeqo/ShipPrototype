@@ -108,3 +108,11 @@ func _process(dt:float):
     if enemy_timer >= 5:
         enemy_timer = 0
         spread_enemies(1)
+
+
+func ship_killed():
+    destroy_ship()
+    var newSpawn = Callable(self,"spawn_ship")
+    add_child(BehaviorFactory.delayed_callback(newSpawn,2))
+    
+    

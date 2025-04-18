@@ -16,6 +16,11 @@ class_name Ship extends RigidBody2D
 #for telemetry purposes
 @export var classification:int
 
+@export var damage_level_particles:Array[CPUParticles2D]
+@export var max_damage : int = 3
+@export var jerk_decrease_per_damage : float = 0.5
+@export var turn_jerk_decrease_per_damage : float = 0.1
+
 var time_last_telemetry_sent : float
 
 var linear_decel_active:bool = false
@@ -46,6 +51,28 @@ var ship_inertia:float:
         return 1.0 / PhysicsServer2D.body_get_direct_state(get_rid()).inverse_inertia
 
 
+var damage_level = 0
+var maneuverability_decrease = 1
+
+
+
+
+func heal_damage():
+    if damage_level >0:
+        damage_level_particles[damage_level].emitting = false
+        damage_level -= 1
+        maneuverability_decrease -=1
+
+func take_damage():
+    damage_level +=1
+    maneuverability_decrease+=1
+    if damage_level == max_damage:
+        var ref:referee = get_tree().get_first_node_in_group("referee")
+        ref.ship_killed()
+    else:  
+        damage_level_particles[damage_level].emitting = true
+    
+
 
 func _ready():
     if ShipTelemetry.telemetry_active:
@@ -53,12 +80,14 @@ func _ready():
         time_last_telemetry_sent = Time.get_unix_time_from_system()
 
 func process_input()->void:
+    var modifier = (jerk_decrease_per_damage*maneuverability_decrease)
+    var turn_modifier = turn_jerk_decrease_per_damage*maneuverability_decrease
     #accel or decel
     if Input.is_action_pressed("accelerate"):
-        curr_thrust_accel += thrust_jerk
+        curr_thrust_accel += thrust_jerk - modifier
         linear_decel_active = false
     elif Input.is_action_pressed("decelerate"):
-        curr_thrust_accel -= decel_jerk
+        curr_thrust_accel -= decel_jerk - modifier
         linear_decel_active = true
     else:
         curr_thrust_accel = 0
@@ -67,18 +96,18 @@ func process_input()->void:
     #turn left or right
     if Input.is_action_pressed("turn_left"):
         if sign(prev_frame_torque) == 1:
-            curr_turn_accel -= turn_decel_jerk
+            curr_turn_accel -= turn_decel_jerk - turn_modifier
             angular_decel_active = true
         else:
-            curr_turn_accel -= turn_jerk
+            curr_turn_accel -= turn_jerk- turn_modifier
             angular_decel_active = false
     elif Input.is_action_pressed("turn_right"):
         if sign(prev_frame_torque) == -1:
             angular_decel_active = true
-            curr_turn_accel += turn_decel_jerk
+            curr_turn_accel += turn_decel_jerk- turn_modifier
         else:
             angular_decel_active = false
-            curr_turn_accel += turn_jerk
+            curr_turn_accel += turn_jerk- turn_modifier
     else:
         curr_turn_accel = 0
         angular_decel_active = false
@@ -156,3 +185,8 @@ func send_telemetry():
         else:
             ShipTelemetry.add_event("Angular Jerk",str(turn_jerk),"")
      
+
+
+func _on_body_entered(body: Node) -> void:
+    if(body.is_in_group("enemy")):
+        take_damage()

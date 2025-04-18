@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://xetgw7u7ycw8" path="res://Assets/Ships/Ship_10_C_Medium_NoLight.png" id="2_vb8kn"]
 
 [node name="RocketShip" instance=ExtResource("1_3wugu")]
+mass = 2.0
 thrust_jerk = 150.0
 decel_jerk = 5.0
 max_thrust = 2000.0
@@ -12,6 +13,7 @@ turn_jerk = 1.0
 turn_decel_jerk = 2.0
 max_turn_accel = 2.0
 max_turn_vel = 0.5
+classification = 1
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_vb8kn")

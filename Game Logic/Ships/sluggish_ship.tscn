@@ -4,12 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://butatderogagr" path="res://Assets/Ships/Ship_5_C_Medium_NoLight.png" id="2_81tlg"]
 
 [node name="SluggishShip" instance=ExtResource("1_ul3vw")]
+mass = 5.0
 max_thrust = 250.0
 max_vel = 500.0
 turn_jerk = 0.2
 turn_decel_jerk = 0.4
 max_turn_accel = 0.5
 max_turn_vel = 2.0
+classification = 2
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_81tlg")
