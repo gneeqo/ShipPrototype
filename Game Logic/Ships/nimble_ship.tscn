@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cl1wtp6srl0hp" path="res://Assets/Ships/Ship_2_C_Medium_NoLight.png" id="2_ueofk"]
 
 [node name="NimbleShip" instance=ExtResource("1_ltohy")]
-thrust_jerk = 20.0
-decel_jerk = 40.0
+thrust_jerk = 250.0
+decel_jerk = 500.0
 max_vel = 1000.0
 turn_jerk = 1.0
 turn_decel_jerk = 2.0

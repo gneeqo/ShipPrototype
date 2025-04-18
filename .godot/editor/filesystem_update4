@@ -20,3 +20,4 @@ res://Game Logic/Weapons/missile.gd
 res://Game Logic/Weapons/missile.tscn
 res://Game Logic/Weapons/missile_launcher.tscn
 res://Game Logic/Weapons/missile_launcher.gd
+res://Game Logic/Weapons/weapon.gd

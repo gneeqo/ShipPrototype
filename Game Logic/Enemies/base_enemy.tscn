@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c06otaqlr2gpn" path="res://Assets/Enemies/Abyssal_1_B_Medium_NoLight.png" id="2_5ev1f"]
 
 [node name="BaseEnemy" type="RigidBody2D" groups=["enemy"]]
+collision_layer = 3
+collision_mask = 7
 contact_monitor = true
 max_contacts_reported = 3
 script = ExtResource("1_va76w")

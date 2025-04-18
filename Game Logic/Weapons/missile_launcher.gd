@@ -1,48 +1,33 @@
 class_name MissileLauncher extends Weapon
 
 
-@export var fire_rate_accel : float = 1
-@export var fire_rate_decel : float = 1
-@export var max_fire_rate : float = 10
-@export var missile_scene : PackedScene
 
-var loaded_bullet:Missile
+@export var max_cooldown:float = 5.0
+@export var num_missles:int = 10
+@export var spread:float = 10
+@export var firing_time:float = 2
+@export var missile_scene: PackedScene
 
+var cooldown:float =0
 
-var curr_fire_rate:float
-
-
-var percent_of_second_to_fire:float:
-    get:
-        return 1.0 / curr_fire_rate
-
-var accumulated_delta:float = 0
-var firing_delta:float = 0
-
-
-
-func _process(delta:float)->void:
-    firing_delta += delta
-    accumulated_delta += delta
-    #every second, increase or decrease fire rate.
-    if(accumulated_delta >=1):
-        if is_firing:
-            curr_fire_rate += fire_rate_accel
-            if curr_fire_rate > max_fire_rate:
-                curr_fire_rate = max_fire_rate
-        else:
-            curr_fire_rate -= fire_rate_decel
-            if curr_fire_rate < 0:
-                curr_fire_rate = 0
-        accumulated_delta = 0
-    if curr_fire_rate >0:
-        #enough time has passed to fire another shot
-        if(firing_delta >= percent_of_second_to_fire):
-            fire_weapon()
-            firing_delta = 0
     
     
+func _start_firing():
+    if cooldown <=0:
+        cooldown = max_cooldown
+        for i in num_missles:
+            var offset_vec = Vector2(num_missles-i,randf_range(-i,i))
+            var rotated_offset = offset_vec.rotated(get_parent().global_rotation)
+            
+            var fire = Callable(self,"fire_weapon").bind(rotated_offset)
+            add_child(BehaviorFactory.delayed_callback(fire,0.1 + i/8.0))
+    
+    
+func _process(delta:float):
+    if cooldown > 0:
+        cooldown -= delta
 
-func fire_weapon():
+func fire_weapon(offset : Vector2):
     var new_missile : Missile = missile_scene.instantiate()
+    new_missile.global_position += offset*30
     add_child(new_missile)

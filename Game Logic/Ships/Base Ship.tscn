@@ -34,6 +34,6 @@ fire_rate_decel = 5.0
 max_fire_rate = 8.0
 
 [node name="Missile Launcher" type="Node2D" parent="."]
-position = Vector2(256, 0)
+position = Vector2(128, 0)
 script = ExtResource("4_ild35")
 missile_scene = ExtResource("5_3r8jj")
