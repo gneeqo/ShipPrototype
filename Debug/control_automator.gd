@@ -56,7 +56,7 @@ func basic_ship_behavior():
     
 func do_all_actions_random():
     for action in action_names:
-        if action == "toggle_automation" or action == "escape":
+        if excluded_actions.has(action):
             pass
         else:
             if random.randi_range(0,1):

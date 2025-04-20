@@ -48,5 +48,5 @@ static func write_telemetry():
         full_content = full_content + str(event[0])\
         + "," + event[1] +  "," + event[2] + "," + event[3] +"\n"
 
-    var file = FileAccess.open("user://ship_telemetry_instance_" +str(num_instances)+".csv", FileAccess.WRITE)
+    var file = FileAccess.open("res://ship_telemetry_instance_" +str(num_instances)+".csv", FileAccess.WRITE)
     file.store_string(full_content)

@@ -39,11 +39,13 @@ texture = ExtResource("2_uhr8a")
 position = Vector2(13.6001, -476)
 polygon = PackedVector2Array(-376, 928, -936, 968, -1016, 776, -888, 288, -976, -488, -864, -912, -624, -952, -272, -800, 0, -432, 248, -824, 600, -968, 800, -920, 944, -632, 944, -496, 856, 176, 976, 784, 952, 960, 384, 920, 0, 992)
 
-[node name="Tentacle1" type="Node2D" parent="."]
+[node name="Tentacle1" type="Node2D" parent="." groups=["enemy"]]
 show_behind_parent = true
 position = Vector2(368, 104)
 rotation = -0.43229
 script = ExtResource("3_mu1j6")
+max_health = 25
+death_particle = ExtResource("2_bcnsg")
 metadata/_custom_type_script = "uid://drsjq447ias1x"
 
 [node name="Collider" type="Area2D" parent="Tentacle1" groups=["enemy"]]
@@ -62,10 +64,12 @@ polygon = PackedVector2Array(-56, 48, -32, 8, 16, -8, 8, -32, -40, -24, -56, -40
 
 [node name="Tentacle2" type="Node2D" parent="." groups=["enemy"]]
 show_behind_parent = true
-position = Vector2(-344, 128)
+position = Vector2(-384, 80)
 rotation = -2.75631
 scale = Vector2(1, -1)
 script = ExtResource("3_mu1j6")
+max_health = 25
+death_particle = ExtResource("2_bcnsg")
 metadata/_custom_type_script = "uid://drsjq447ias1x"
 
 [node name="Collider" type="Area2D" parent="Tentacle2" groups=["enemy"]]
@@ -83,3 +87,5 @@ texture = ExtResource("4_bcnsg")
 polygon = PackedVector2Array(-56, 48, -32, 8, 16, -8, 8, -32, -40, -24, -56, -40, 0, -64, 48, -48, 56, -24, 56, -8, 32, 24, 32, 40, 24, 56, 16, 64, -40, 64)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Tentacle1/Collider" to="Tentacle1" method="_on_collider_body_entered"]
+[connection signal="body_entered" from="Tentacle2/Collider" to="Tentacle2" method="_on_collider_body_entered"]

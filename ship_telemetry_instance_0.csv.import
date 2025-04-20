@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bmht6um3qtqcw"
+
+[deps]
+
+files=["res://ship_telemetry_instance_0. Subject.translation", "res://ship_telemetry_instance_0. Verb.translation", "res://ship_telemetry_instance_0. Complement.translation"]
+
+source_file="res://ship_telemetry_instance_0.csv"
+dest_files=["res://ship_telemetry_instance_0. Subject.translation", "res://ship_telemetry_instance_0. Verb.translation", "res://ship_telemetry_instance_0. Complement.translation"]
+
+[params]
+
+compress=true
+delimiter=0

@@ -71,7 +71,9 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
         
     
     
+func destroy():
+    queue_free()
 
 func _on_body_entered(body: Node) -> void:
     if body.is_in_group("fence") or body.is_in_group("enemy"):
-        queue_free()
+        destroy()
