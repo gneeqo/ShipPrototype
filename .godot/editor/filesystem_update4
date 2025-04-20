@@ -1,6 +1,8 @@
-res://Game Logic/main.tscn
+res://Game Logic/Weapons/missile.tscn
 res://texture_tile.gdshader
+res://Game Logic/Weapons/missile.gd
 res://Game Logic/Enemies/elite_enemy.tscn
+res://Game Logic/main.tscn
 res://Game Logic/Enemies/base_enemy.tscn
 res://Game Logic/Ships/Base Ship.tscn
 res://Game Logic/Ships/nimble_ship.tscn
@@ -8,6 +10,8 @@ res://Game Logic/Ships/rocket_ship.tscn
 res://Game Logic/Enemies/boss_enemy.tscn
 res://Game Logic/Ships/sluggish_ship.tscn
 res://Game Logic/Weapons/bullet.tscn
-res://Game Logic/Enemies/boss_enemy.gd
-res://Game Logic/Enemies/boss_tentacle.gd
-res://Game Logic/Weapons/missile.gd
+res://Game Logic/Weapons/enemy_missile.tscn
+res://Assets/Particles/enemy_missile_explosion.tscn
+res://Assets/Particles/player_missile_explosion.tscn
+res://Game Logic/Weapons/enemy_missile.gd
+res://Game Logic/Ships/ship.gd

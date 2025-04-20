@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjkqbnu43mbe3"]
+[gd_scene load_steps=6 format=3 uid="uid://cjkqbnu43mbe3"]
 
 [ext_resource type="Texture2D" uid="uid://dvnaryfc18txa" path="res://Assets/Missiles/Missile_4_C_Medium_NoLight.png" id="1_2f0m1"]
 [ext_resource type="Script" uid="uid://b5qa87rjhhdhw" path="res://Game Logic/Weapons/missile.gd" id="1_adqcp"]
-[ext_resource type="PackedScene" uid="uid://ht65tgrt3vao" path="res://Assets/Particles/missile_trail.tscn" id="3_kcosh"]
+[ext_resource type="PackedScene" uid="uid://cgggn3ypu6qxm" path="res://Assets/Particles/player_missile_explosion.tscn" id="2_5ifmx"]
+[ext_resource type="PackedScene" uid="uid://cc14e4cwk5g23" path="res://Assets/Particles/player_missile_trail.tscn" id="4_5ifmx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adqcp"]
 size = Vector2(48.2648, 127.913)
@@ -10,15 +11,19 @@ size = Vector2(48.2648, 127.913)
 [node name="Missile" type="RigidBody2D" groups=["player_bullet"]]
 collision_layer = 8
 collision_mask = 22
+gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_adqcp")
 thrust_jerk = 300.0
 turn_jerk = 2.5
 max_thrust = 600.0
-max_vel = 500.0
+max_vel = 1500.0
 max_turn_vel = 5.0
 max_turn_accel = 2.5
+total_lifetime = 10.0
+explosion = ExtResource("2_5ifmx")
+total_retarget_time = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.57478
@@ -30,9 +35,9 @@ rotation = 1.57478
 scale = Vector2(0.509822, 0.493522)
 shape = SubResource("RectangleShape2D_adqcp")
 
-[node name="MissileTrail" parent="." instance=ExtResource("3_kcosh")]
+[node name="MissileTrail" parent="." instance=ExtResource("4_5ifmx")]
 position = Vector2(-32, 0)
-scale_amount_min = 0.5
-scale_amount_max = 0.5
+scale_amount_min = 0.3
+scale_amount_max = 0.3
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

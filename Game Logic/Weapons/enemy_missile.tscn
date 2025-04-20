@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn7mj0n7ar8uf"]
+
+[ext_resource type="Script" uid="uid://bxjsnyp5utr3s" path="res://Game Logic/Weapons/enemy_missile.gd" id="1_ygogd"]
+[ext_resource type="Texture2D" uid="uid://c06otaqlr2gpn" path="res://Assets/Enemies/Abyssal_1_B_Medium_NoLight.png" id="2_ygogd"]
+[ext_resource type="PackedScene" uid="uid://ht65tgrt3vao" path="res://Assets/Particles/enemy_missile_trail.tscn" id="3_4b7gx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adqcp"]
+size = Vector2(251.191, 226.422)
+
+[node name="Missile" type="RigidBody2D" groups=["player_bullet"]]
+collision_layer = 8
+collision_mask = 22
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_ygogd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.57478
+scale = Vector2(0.2, 0.194)
+texture = ExtResource("2_ygogd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7.87328, -0.19173)
+rotation = 1.57478
+scale = Vector2(0.509822, 0.493522)
+shape = SubResource("RectangleShape2D_adqcp")
+
+[node name="MissileTrail" parent="." instance=ExtResource("3_4b7gx")]
+position = Vector2(-24, 0)
+scale_amount_min = 0.3
+scale_amount_max = 0.3
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

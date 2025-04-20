@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1745175777
+::res://::1745180115
 common_bg.png::CompressedTexture2D/CompressedTexture2D::6933550812339914771::1741581955::1741927351::1::::<><><>0<>0<>c49fa4fe8194d8ffc041d84488a334cc<>res://.godot/imported/common_bg.png-318fd3ac1824bdf0818c315e31a9c9cc.ctex::
 export_presets.cfg::TextFile/TextFile::-1::1741586998::0::1::::<><><>0<>0<><>::
 ship.ico::OtherFile/OtherFile::-1::1741910009::0::1::::<><><>0<>0<><>::
@@ -8,7 +8,7 @@ ship_telemetry_instance_0. Complement.translation::OptimizedTranslation/Optimize
 ship_telemetry_instance_0. Subject.translation::OptimizedTranslation/OptimizedTranslation::5838860583022519128::1745171602::0::1::::<><><>0<>0<><>::
 ship_telemetry_instance_0. Verb.translation::OptimizedTranslation/OptimizedTranslation::1338419315715168878::1745171602::0::1::::<><><>0<>0<><>::
 ship_telemetry_instance_0.csv::Translation/Translation::3244347504400517170::1745171600::1745171602::1::::<><><>0<>0<>93da8855665b51a06cc5e46fc6451a34<>res://ship_telemetry_instance_0. Subject.translation<*>res://ship_telemetry_instance_0. Verb.translation<*>res://ship_telemetry_instance_0. Complement.translation::
-texture_tile.gdshader::Shader::5081592691867756669::1745175757::0::1::::<><><>0<>0<><>::
+texture_tile.gdshader::Shader::5081592691867756669::1745180091::0::1::::<><><>0<>0<><>::
 texture_tile.tres::ShaderMaterial/ShaderMaterial::4138148402985162297::1745013980::0::1::::<><><>0<>0<><>::uid://centdbed7swun::::res://texture_tile.gdshader
 ::res://Action System/::1741907828
 ::res://Action System/Actions/::1745169114
@@ -244,11 +244,15 @@ Abyssal_Part_16_B_Medium.png::CompressedTexture2D/CompressedTexture2D::218445530
 Missile_2_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::5763453635788423183::1741909407::1745011075::1::::<><><>0<>0<>2492b2a87495f8ee294490d4c3253242<>res://.godot/imported/Missile_2_C_Medium_NoLight.png-6df9e51b831f8cad5e1703e328e11718.ctex::
 Missile_4_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::8660096305188504450::1741909384::1745011075::1::::<><><>0<>0<>fca486c0b21221713729e6e80913cdbd<>res://.godot/imported/Missile_4_C_Medium_NoLight.png-a8cbe12f805e939654b247873e87ea06.ctex::
 Missile_4_E_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::7747027117748559819::1741909397::1745011075::1::::<><><>0<>0<>98f4d8543e1f1dee3b4a3b6663b787ed<>res://.godot/imported/Missile_4_E_Medium_NoLight.png-7ba2726d406d70eaa6c3d5b7aa9da4fc.ctex::
-::res://Assets/Particles/::1745125641
+::res://Assets/Particles/::1745179993
 enemy_death.tscn::PackedScene/PackedScene::1459733169872339251::1745125641::0::1::::<><><>0<>0<><>::uid://bojbp6irnu4gy::::res://Assets/Enemies/Chunks/Abyssal_Part_1_B_Medium.png<>uid://cixrarwpho1x0::::res://Assets/Enemies/Chunks/Abyssal_Part_5_B_Medium.png<>uid://duvokylwndoly::::res://Assets/Enemies/Chunks/Abyssal_Part_9_B_Medium.png<>uid://gn7qjfmslbsu::::res://Assets/Particles/RedExplosion.tscn<>uid://dll7xbietc32l::::res://Assets/Particles/Particle Textures/explosion_symmetrical_red.png
-missile_trail.tscn::PackedScene/PackedScene::532481891397666322::1745093645::0::1::::<><><>0<>0<><>::uid://wtg5cshusjca::::res://Assets/Particles/Particle Textures/explosion_small_white.png
+enemy_missile_explosion.tscn::PackedScene::2182611991069951018::1745179992::0::1::::<><><>0<>0<><>::uid://bojbp6irnu4gy::::res://Assets/Enemies/Chunks/Abyssal_Part_1_B_Medium.png<>uid://o87xt4ai88ik::::res://Assets/Particles/explosion.gd<>uid://cixrarwpho1x0::::res://Assets/Enemies/Chunks/Abyssal_Part_5_B_Medium.png<>uid://duvokylwndoly::::res://Assets/Enemies/Chunks/Abyssal_Part_9_B_Medium.png<>uid://gn7qjfmslbsu::::res://Assets/Particles/RedExplosion.tscn<>uid://dll7xbietc32l::::res://Assets/Particles/Particle Textures/explosion_symmetrical_red.png
+enemy_missile_trail.tscn::PackedScene::532481891397666322::1745093645::0::1::::<><><>0<>0<><>::uid://wtg5cshusjca::::res://Assets/Particles/Particle Textures/explosion_small_white.png
+explosion.gd::GDScript::1052753336599772390::1745178975::0::1::::Explosion<>Node2D<><>0<>0<><>::
 orange_explosion.tscn::PackedScene/PackedScene::3813695769131670076::1745125640::0::1::::<><><>0<>0<><>::uid://cic6pmj1msrt1::::res://Assets/Particles/Particle Textures/explosion_small_orange.png
 orange_explosion_2.tscn::PackedScene/PackedScene::3075222635940434085::1745125640::0::1::::<><><>0<>0<><>::uid://b1d0ujjwhwv7::::res://Assets/Particles/Particle Textures/explosion_stylized_orange.png
+player_missile_explosion.tscn::PackedScene::5206749721454723314::1745179993::0::1::::<><><>0<>0<><>::uid://o87xt4ai88ik::::res://Assets/Particles/explosion.gd<>uid://gn7qjfmslbsu::::res://Assets/Particles/RedExplosion.tscn
+player_missile_trail.tscn::PackedScene::4968662339514560794::1745179483::0::1::::<><><>0<>0<><>::uid://wtg5cshusjca::::res://Assets/Particles/Particle Textures/explosion_small_white.png
 RedExplosion.tscn::PackedScene/PackedScene::449941970105863220::1745125640::0::1::::<><><>0<>0<><>::uid://bfgx3gjmnnhvq::::res://Assets/Particles/Particle Textures/explosion_large_red.png
 ship_damage_trail.tscn::PackedScene/PackedScene::4282292008386396450::1745125640::0::1::::<><><>0<>0<><>::uid://wtg5cshusjca::::res://Assets/Particles/Particle Textures/explosion_small_white.png
 ::res://Assets/Particles/Particle Textures/::1745116236
@@ -284,35 +288,38 @@ Ship_8_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::1244414171
 Ship_9_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::8412717727004425435::1741909322::1741909322::1::::<><><>0<>0<>22bc78c562a3b0e7f3530dfc6dd7bba8<>res://.godot/imported/Ship_9_C_Medium_NoLight.png-656accacdd2a4ebea1baf9a059a068eb.ctex::
 Ship_10_C_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::1623766458216838229::1741909305::1741909309::1::::<><><>0<>0<>4aa22245ce3ba562e617f0f737ee7d29<>res://.godot/imported/Ship_10_C_Medium_NoLight.png-50bea6b8acd6a5735d47c9c506e5bdcc.ctex::
 ::res://Debug/::1745171590
-control_automator.gd::GDScript::8232373131162685278::1745171366::0::1::::ControlAutomator<>Node<><>0<>0<><>::
-ship_telemetry.gd::GDScript::7871607777917284174::1745171590::0::1::::ShipTelemetry<>Node<><>0<>0<><>::
+control_automator.gd::GDScript/GDScript::8232373131162685278::1745171366::0::1::::ControlAutomator<>Node<><>0<>0<><>::
+ship_telemetry.gd::GDScript/GDScript::7871607777917284174::1745171590::0::1::::ShipTelemetry<>Node<><>0<>0<><>::
 telemetry_collector.gd::GDScript/GDScript::733330062729667918::1744829987::0::1::::TelemetryCollector<>Node<><>0<>0<><>::
-::res://Game Logic/::1745175743
+::res://Game Logic/::1745179992
 Fence.tscn::PackedScene/PackedScene::3918137687350586104::1745125640::0::1::::<><><>0<>0<><>::uid://b8mjsbiur3pbf::::res://Assets/popup_btn_f.png
-main.tscn::PackedScene::181713881576555489::1745175743::0::1::::<><><>0<>0<><>::uid://dye8qq4klr1mj::::res://Game Logic/ship_tracking_camera.gd<>uid://ctlsmiwiou8q7::::res://Assets/2k_stars.jpg<>uid://dpj28oaiyi1je::::res://Debug/control_automator.gd<>uid://bfur6mfjkecnr::::res://Action System/Debug/debug_menu.gd<>uid://dfnoar87808dk::::res://Game Logic/referee.gd<>uid://ru81ywaf75m1::::res://Game Logic/Enemies/boss_enemy.tscn
-referee.gd::GDScript::7537894163345524364::1745170676::0::1::::referee<>Node<><>0<>0<><>::
+main.tscn::PackedScene::181713881576555489::1745179992::0::1::::<><><>0<>0<><>::uid://dye8qq4klr1mj::::res://Game Logic/ship_tracking_camera.gd<>uid://ctlsmiwiou8q7::::res://Assets/2k_stars.jpg<>uid://dpj28oaiyi1je::::res://Debug/control_automator.gd<>uid://bfur6mfjkecnr::::res://Action System/Debug/debug_menu.gd<>uid://dfnoar87808dk::::res://Game Logic/referee.gd<>uid://drwoigjg68e3n::::res://Game Logic/Ships/nimble_ship.tscn<>uid://bhr2ynx1pfg3q::::res://Game Logic/Ships/rocket_ship.tscn<>uid://dyv2kp70n18bu::::res://Game Logic/Ships/sluggish_ship.tscn<>uid://34nkbjn03rf1::::res://Game Logic/Enemies/base_enemy.tscn<>uid://cchhpijem6iw6::::res://Game Logic/Enemies/elite_enemy.tscn<>uid://bv28fjqqk08lw::::res://Game Logic/Fence.tscn<>uid://ru81ywaf75m1::::res://Game Logic/Enemies/boss_enemy.tscn
+referee.gd::GDScript/GDScript::7537894163345524364::1745170676::0::1::::referee<>Node<><>0<>0<><>::
 ship_tracking_camera.gd::GDScript/GDScript::8854084928514774081::1745130465::0::1::::ShipTrackingCamera<>Camera2D<><>0<>0<><>::
-::res://Game Logic/Enemies/::1745175743
+::res://Game Logic/Enemies/::1745179992
 base_enemy.gd::GDScript/GDScript::4092610841984545551::1745167566::0::1::::BaseEnemy<>RigidBody2D<><>0<>0<><>::
-base_enemy.tscn::PackedScene::2025961822629432408::1745175743::0::1::::<><><>0<>0<><>::uid://bykqx5iff5n1h::::res://Game Logic/Enemies/base_enemy.gd<>uid://c06otaqlr2gpn::::res://Assets/Enemies/Abyssal_1_B_Medium_NoLight.png<>uid://u2duenp3whw2::::res://Assets/Particles/enemy_death.tscn
-boss_enemy.gd::GDScript::3547442602766745258::1745175741::0::1::::BossEnemy<>BaseEnemy<><>0<>0<><>::
-boss_enemy.tscn::PackedScene::1236549282884641786::1745175743::0::1::::<><><>0<>0<><>::uid://bqsn4j0wyxxl7::::res://Game Logic/Enemies/boss_enemy.gd<>uid://u2duenp3whw2::::res://Assets/Particles/enemy_death.tscn<>uid://bdx05vunnok2p::::res://Assets/Enemies/Abyssal_Boss_4_B_Medium_NoLight.png<>uid://drsjq447ias1x::::res://Game Logic/Enemies/boss_tentacle.gd<>uid://cixrarwpho1x0::::res://Assets/Enemies/Chunks/Abyssal_Part_5_B_Medium.png
-boss_tentacle.gd::GDScript::8390207787577434387::1745175582::0::1::::BossTentacle<>Node2D<><>0<>0<><>::
+base_enemy.tscn::PackedScene::2025961822629432408::1745179992::0::1::::<><><>0<>0<><>::uid://bykqx5iff5n1h::::res://Game Logic/Enemies/base_enemy.gd<>uid://u2duenp3whw2::::res://Assets/Particles/enemy_death.tscn<>uid://cwmw7dkv5ewac::::res://Assets/Enemies/Abyssal_3_B_Medium_NoLight.png
+boss_enemy.gd::GDScript::3547442602766745258::1745178003::0::1::::BossEnemy<>BaseEnemy<><>0<>0<><>::
+boss_enemy.tscn::PackedScene::1236549282884641786::1745179992::0::1::::<><><>0<>0<><>::uid://bqsn4j0wyxxl7::::res://Game Logic/Enemies/boss_enemy.gd<>uid://u2duenp3whw2::::res://Assets/Particles/enemy_death.tscn<>uid://bdx05vunnok2p::::res://Assets/Enemies/Abyssal_Boss_4_B_Medium_NoLight.png<>uid://drsjq447ias1x::::res://Game Logic/Enemies/boss_tentacle.gd<>uid://cixrarwpho1x0::::res://Assets/Enemies/Chunks/Abyssal_Part_5_B_Medium.png
+boss_tentacle.gd::GDScript::8390207787577434387::1745177643::0::1::::BossTentacle<>Node2D<><>0<>0<><>::
 elite_enemy.gd::GDScript/GDScript::8377470164707636685::1745125233::0::1::::EliteEnemy<>BaseEnemy<><>0<>0<><>::
-elite_enemy.tscn::PackedScene::4928121939087671075::1745175743::0::1::::<><><>0<>0<><>::uid://drmdyembsm4q0::::res://Game Logic/Enemies/elite_enemy.gd<>uid://u2duenp3whw2::::res://Assets/Particles/enemy_death.tscn<>uid://yisxxdougm1p::::res://Assets/Enemies/Abyssal_6_B_Medium_NoLight.png
-::res://Game Logic/Ships/::1745175743
-Base Ship.tscn::PackedScene::830238714861421990::1745175743::0::1::::<><><>0<>0<><>::uid://dc6mxmiub0qrg::::res://Game Logic/Ships/ship.gd<>uid://owgu75nvnljh::::res://Assets/Ships/Ship_1_C_Medium_NoLight.png<>uid://gn7qjfmslbsu::::res://Assets/Particles/RedExplosion.tscn<>uid://bulnaoa0k4h1e::::res://Assets/Particles/orange_explosion.tscn<>uid://de4wkrhmcyimi::::res://Game Logic/Weapons/Chaingun.tscn<>uid://dmirb2guxm4dr::::res://Game Logic/Weapons/missile_launcher.gd<>uid://bj2wp5plrxixp::::res://Assets/Particles/orange_explosion_2.tscn<>uid://cjkqbnu43mbe3::::res://Game Logic/Weapons/missile.tscn<>uid://b2amyuvnayfwc::::res://Assets/Particles/ship_damage_trail.tscn
-nimble_ship.tscn::PackedScene::8398753357123820621::1745175743::0::1::::<><><>0<>0<><>::uid://l3f57l1uh623::::res://Game Logic/Ships/Base Ship.tscn<>uid://cl1wtp6srl0hp::::res://Assets/Ships/Ship_2_C_Medium_NoLight.png
-rocket_ship.tscn::PackedScene::2914519948372379896::1745175743::0::1::::<><><>0<>0<><>::uid://l3f57l1uh623::::res://Game Logic/Ships/Base Ship.tscn<>uid://xetgw7u7ycw8::::res://Assets/Ships/Ship_10_C_Medium_NoLight.png<>uid://b2amyuvnayfwc::::res://Assets/Particles/ship_damage_trail.tscn
+elite_enemy.tscn::PackedScene::4928121939087671075::1745179992::0::1::::<><><>0<>0<><>::uid://drmdyembsm4q0::::res://Game Logic/Enemies/elite_enemy.gd<>uid://u2duenp3whw2::::res://Assets/Particles/enemy_death.tscn<>uid://yisxxdougm1p::::res://Assets/Enemies/Abyssal_6_B_Medium_NoLight.png
+::res://Game Logic/Ships/::1745179992
+Base Ship.tscn::PackedScene::830238714861421990::1745179992::0::1::::<><><>0<>0<><>::uid://dc6mxmiub0qrg::::res://Game Logic/Ships/ship.gd<>uid://owgu75nvnljh::::res://Assets/Ships/Ship_1_C_Medium_NoLight.png<>uid://gn7qjfmslbsu::::res://Assets/Particles/RedExplosion.tscn<>uid://bulnaoa0k4h1e::::res://Assets/Particles/orange_explosion.tscn<>uid://de4wkrhmcyimi::::res://Game Logic/Weapons/Chaingun.tscn<>uid://dmirb2guxm4dr::::res://Game Logic/Weapons/missile_launcher.gd<>uid://bj2wp5plrxixp::::res://Assets/Particles/orange_explosion_2.tscn<>uid://cjkqbnu43mbe3::::res://Game Logic/Weapons/missile.tscn<>uid://b2amyuvnayfwc::::res://Assets/Particles/ship_damage_trail.tscn
+nimble_ship.tscn::PackedScene::8398753357123820621::1745179992::0::1::::<><><>0<>0<><>::uid://l3f57l1uh623::::res://Game Logic/Ships/Base Ship.tscn<>uid://cl1wtp6srl0hp::::res://Assets/Ships/Ship_2_C_Medium_NoLight.png
+rocket_ship.tscn::PackedScene::2914519948372379896::1745179992::0::1::::<><><>0<>0<><>::uid://l3f57l1uh623::::res://Game Logic/Ships/Base Ship.tscn<>uid://xetgw7u7ycw8::::res://Assets/Ships/Ship_10_C_Medium_NoLight.png<>uid://b2amyuvnayfwc::::res://Assets/Particles/ship_damage_trail.tscn
 ship.gd::GDScript/GDScript::7364405769453914720::1745133719::0::1::::Ship<>RigidBody2D<><>0<>0<><>::
-sluggish_ship.tscn::PackedScene::8888804286409390714::1745175743::0::1::::<><><>0<>0<><>::uid://l3f57l1uh623::::res://Game Logic/Ships/Base Ship.tscn<>uid://butatderogagr::::res://Assets/Ships/Ship_5_C_Medium_NoLight.png<>uid://b2amyuvnayfwc::::res://Assets/Particles/ship_damage_trail.tscn<>uid://de4wkrhmcyimi::::res://Game Logic/Weapons/Chaingun.tscn<>uid://b82b8uca05j70::::res://Game Logic/Weapons/triple_chaingun.tscn
-::res://Game Logic/Weapons/::1745175743
-bullet.gd::GDScript::3985974276217169019::1745175285::0::1::::Bullet<>RigidBody2D<><>0<>0<><>::
-bullet.tscn::PackedScene::4164904544817158961::1745175743::0::1::::<><><>0<>0<><>::uid://bw13ocsytqts2::::res://Game Logic/Weapons/bullet.gd<>uid://hvqa14llanub::::res://Assets/Projectiles/Projectile_1_D.png
+sluggish_ship.tscn::PackedScene::8888804286409390714::1745179992::0::1::::<><><>0<>0<><>::uid://l3f57l1uh623::::res://Game Logic/Ships/Base Ship.tscn<>uid://butatderogagr::::res://Assets/Ships/Ship_5_C_Medium_NoLight.png<>uid://b2amyuvnayfwc::::res://Assets/Particles/ship_damage_trail.tscn<>uid://de4wkrhmcyimi::::res://Game Logic/Weapons/Chaingun.tscn<>uid://b82b8uca05j70::::res://Game Logic/Weapons/triple_chaingun.tscn
+::res://Game Logic/Weapons/::1745180082
+Abyssal_3_B_Medium_NoLight.png::CompressedTexture2D/CompressedTexture2D::8052854509381797533::1745178536::1745178536::1::::<><><>0<>0<>cfe1e02b72161690912e78673ea92ec2<>res://.godot/imported/Abyssal_3_B_Medium_NoLight.png-5a76dcbcbdd61d7870af17f02cb1dfd1.ctex::
+bullet.gd::GDScript/GDScript::3985974276217169019::1745175285::0::1::::Bullet<>RigidBody2D<><>0<>0<><>::
+bullet.tscn::PackedScene::4164904544817158961::1745179992::0::1::::<><><>0<>0<><>::uid://bw13ocsytqts2::::res://Game Logic/Weapons/bullet.gd<>uid://hvqa14llanub::::res://Assets/Projectiles/Projectile_1_D.png
 chaingun.gd::GDScript/GDScript::1649635038089008045::1745109683::0::1::::chain_gun<>Weapon<><>0<>0<><>::
 Chaingun.tscn::PackedScene/PackedScene::7501238916538511456::1745125639::0::1::::<><><>0<>0<><>::uid://xrdio04a2gr2::::res://Game Logic/Weapons/chaingun.gd<>uid://b0lrms8bw06qn::::res://Game Logic/Weapons/bullet.tscn
-missile.gd::GDScript/GDScript::4525176675525322264::1744939325::0::1::::Missile<>RigidBody2D<><>0<>0<><>::
-missile.tscn::PackedScene/PackedScene::5426158710402417512::1745125640::0::1::::<><><>0<>0<><>::uid://dvnaryfc18txa::::res://Assets/Missiles/Missile_4_C_Medium_NoLight.png<>uid://b5qa87rjhhdhw::::res://Game Logic/Weapons/missile.gd<>uid://ht65tgrt3vao::::res://Assets/Particles/missile_trail.tscn
+enemy_missile.gd::GDScript::4020460893467970406::1745178383::0::1::::EnemyMissile<>RigidBody2D<><>0<>0<><>::
+enemy_missile.tscn::PackedScene::3365681749796628089::1745179992::0::1::::<><><>0<>0<><>::uid://bxjsnyp5utr3s::::res://Game Logic/Weapons/enemy_missile.gd<>uid://c06otaqlr2gpn::::res://Assets/Enemies/Abyssal_1_B_Medium_NoLight.png<>uid://ht65tgrt3vao::::res://Assets/Particles/enemy_missile_trail.tscn
+missile.gd::GDScript::4525176675525322264::1745180082::0::1::::Missile<>RigidBody2D<><>0<>0<><>::
+missile.tscn::PackedScene::5426158710402417512::1745180082::0::1::::<><><>0<>0<><>::uid://dvnaryfc18txa::::res://Assets/Missiles/Missile_4_C_Medium_NoLight.png<>uid://b5qa87rjhhdhw::::res://Game Logic/Weapons/missile.gd<>uid://cgggn3ypu6qxm::::res://Assets/Particles/player_missile_explosion.tscn<>uid://cc14e4cwk5g23::::res://Assets/Particles/player_missile_trail.tscn
 missile_launcher.gd::GDScript/GDScript::8019078599778334651::1745108684::0::1::::MissileLauncher<>Weapon<><>0<>0<><>::
 missile_launcher.tscn::PackedScene/PackedScene::5939907843475334187::1745125640::0::1::::<><><>0<>0<><>::uid://dmirb2guxm4dr::::res://Game Logic/Weapons/missile_launcher.gd
 triple_chaingun.gd::GDScript/GDScript::3539951566094443510::1745110368::0::1::::TripleChaingun<>Weapon<><>0<>0<><>::

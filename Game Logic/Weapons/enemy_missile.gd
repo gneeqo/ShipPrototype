@@ -1,4 +1,4 @@
-class_name Missile extends RigidBody2D
+class_name EnemyMissile extends RigidBody2D
 
 @export var thrust_jerk:float
 @export var turn_jerk:float 
@@ -19,9 +19,6 @@ class_name Missile extends RigidBody2D
 var curr_thrust:float = 0
 var curr_turn_accel: float =0
 
-@export var total_retarget_time:float
-@onready var retarget_time = total_retarget_time
-
 
 
 var target: Node2D
@@ -33,34 +30,15 @@ var missile_inertia:float:
 
 
 
-func _ready() -> void:
-    retarget()
-    
-    
-
 func _process(delta:float):
     lifetime -= delta
     if lifetime <=0:
         destroy()
-    retarget_time -= delta
-    if retarget_time <= 0:
-        retarget()
-        retarget_time = total_retarget_time
-    
-
-func retarget():
-    var enemies:Array[Node] = get_tree().get_nodes_in_group("enemy")
-    var closest_enemy = enemies.front()
-    var closest_distance = (closest_enemy.global_position - global_position).length()
-    for enemy in enemies:
-        var new_distance = (enemy.global_position - global_position).length()
-        if new_distance < closest_distance:
-            closest_distance = new_distance
-            closest_enemy = enemy
-    target = closest_enemy
-    
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+    
+    var ref:referee = get_tree().get_first_node_in_group("referee")
+    target = ref.player_ship
     
     var current_facing: Vector2 = Vector2.from_angle(global_rotation)
     var facing_toward_target:Vector2 = (target.global_position - global_position).normalized()
@@ -92,9 +70,9 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
     state.angular_velocity = clampf(state.angular_velocity,-max_turn_vel,max_turn_vel)
         
     
+    
 func kill():
     queue_free()
-    
     
 func add_explosion():
     add_child(explosion.instantiate())
@@ -103,8 +81,7 @@ func destroy():
     call_deferred("add_explosion")
     $Sprite2D.set_deferred("visible",false)
     add_child(BehaviorFactory.delayed_callback(Callable(self,"kill"),2))
-    
 
 func _on_body_entered(body: Node) -> void:
-    if body.is_in_group("fence") or body.is_in_group("enemy"):
+    if body.is_in_group("fence") or body.is_in_group("player"):
         destroy()

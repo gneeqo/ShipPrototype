@@ -46,10 +46,7 @@ func _process(delta: float) -> void:
 
 func invalidate_left():
     swing_left = false
-    #var pos = LeftTentacle.global_position
     
-   
-    #LeftTentacle.global_position = pos
 
 #don't really know why, but this doesn't work.
 #just leave the tentacles parented, it doesn't matter that much

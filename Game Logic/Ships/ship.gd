@@ -233,6 +233,9 @@ func kill():
         
         i += 0.4
     
+    
+    
+    
     var deleteFunc = Callable(self, "delete_ship")
     var hideFunc = Callable(self, "hide_ship")
     
