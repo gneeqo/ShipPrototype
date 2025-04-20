@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqldjhlddpewe"]
+
+[ext_resource type="Script" uid="uid://d4e120yl84rsi" path="res://Game Logic/Enemies/missile_shooter.gd" id="1_k06ll"]
+[ext_resource type="PackedScene" uid="uid://u2duenp3whw2" path="res://Assets/Particles/enemy_death.tscn" id="2_j0jn7"]
+[ext_resource type="Texture2D" uid="uid://urfhywsdr08w" path="res://Assets/Enemies/Abyssal_4_B_Medium_NoLight.png" id="2_k06ll"]
+[ext_resource type="PackedScene" uid="uid://bn7mj0n7ar8uf" path="res://Game Logic/Weapons/enemy_missile.tscn" id="3_j0jn7"]
+
+[node name="MissileShooter" type="RigidBody2D" groups=["enemy"]]
+collision_layer = 0
+collision_mask = 16
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 3
+script = ExtResource("1_k06ll")
+thrust_jerk = 300.0
+turn_jerk = 0.5
+max_thrust = 900.0
+max_vel = 2400.0
+max_turn_vel = 2.0
+max_turn_accel = 1.0
+max_health = 25
+death_particle = ExtResource("2_j0jn7")
+knockback_taken_percent = 0.4
+max_firing_interval = 6.0
+projectile = ExtResource("3_j0jn7")
+projectiles_per_salvo = 6
+salvo_spread = 60.0
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
+rotation = 1.5708
+collision_layer = 2
+collision_mask = 9
+
+[node name="NonPhysicsCollision" type="CollisionPolygon2D" parent="Area2D"]
+rotation = 1.5708
+scale = Vector2(4.09679, 3.62531)
+polygon = PackedVector2Array(-28.8579, 140.291, -126.495, 142.498, -155.788, -11.971, -126.497, -164.234, -32.7653, -159.821, 70.7302, -179.683, 113.691, -162.029, 150.793, -93.6216, 148.842, 87.3283, 119.551, 151.323)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(5, 5)
+texture = ExtResource("2_k06ll")
+
+[node name="PhysicsCollision" type="CollisionPolygon2D" parent="."]
+rotation = 3.14159
+scale = Vector2(4.09679, 3.62531)
+polygon = PackedVector2Array(-28.8579, 140.291, -126.495, 142.498, -155.788, -11.971, -126.497, -164.234, -32.7653, -159.821, 70.7302, -179.683, 113.691, -162.029, 150.793, -93.6216, 148.842, 87.3283, 119.551, 151.323)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

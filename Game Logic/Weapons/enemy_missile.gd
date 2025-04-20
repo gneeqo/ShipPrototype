@@ -40,6 +40,9 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
     var ref:referee = get_tree().get_first_node_in_group("referee")
     target = ref.player_ship
     
+    if not is_instance_valid(target):
+        return
+    
     var current_facing: Vector2 = Vector2.from_angle(global_rotation)
     var facing_toward_target:Vector2 = (target.global_position - global_position).normalized()
     var angle_diff = asin(current_facing.cross(facing_toward_target) /(abs(current_facing).dot(abs(facing_toward_target))))
@@ -78,9 +81,10 @@ func add_explosion():
     add_child(explosion.instantiate())
  
 func destroy():
-    call_deferred("add_explosion")
-    $Sprite2D.set_deferred("visible",false)
-    add_child(BehaviorFactory.delayed_callback(Callable(self,"kill"),2))
+    if $Sprite2D.visible:
+        call_deferred("add_explosion")
+        $Sprite2D.set_deferred("visible",false)
+        add_child(BehaviorFactory.delayed_callback(Callable(self,"kill"),2))
 
 func _on_body_entered(body: Node) -> void:
     if body.is_in_group("fence") or body.is_in_group("player"):

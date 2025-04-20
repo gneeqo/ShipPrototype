@@ -36,8 +36,5 @@ scale = Vector2(0.509822, 0.493522)
 shape = SubResource("RectangleShape2D_adqcp")
 
 [node name="MissileTrail" parent="." instance=ExtResource("4_5ifmx")]
-position = Vector2(-32, 0)
-scale_amount_min = 0.3
-scale_amount_max = 0.3
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

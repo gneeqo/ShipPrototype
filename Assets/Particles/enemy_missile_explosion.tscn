@@ -99,7 +99,7 @@ scale_amount_curve = SubResource("Curve_awbti")
 
 [node name="RedExplosion" parent="." instance=ExtResource("4_07ko1")]
 material = SubResource("CanvasItemMaterial_g1p2x")
-amount = 1
+amount = 5
 texture = ExtResource("5_dkafu")
 lifetime = 0.4
 color_ramp = SubResource("Gradient_483ol")

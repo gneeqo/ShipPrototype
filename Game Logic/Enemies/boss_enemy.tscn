@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://drsjq447ias1x" path="res://Game Logic/Enemies/boss_tentacle.gd" id="3_mu1j6"]
 [ext_resource type="Texture2D" uid="uid://cixrarwpho1x0" path="res://Assets/Enemies/Chunks/Abyssal_Part_5_B_Medium.png" id="4_bcnsg"]
 
-[node name="BossEnemy" type="RigidBody2D" node_paths=PackedStringArray("LeftTentacle", "RightTentacle") groups=["enemy"]]
+[node name="BossEnemy" type="RigidBody2D" node_paths=PackedStringArray("LeftTentacle", "RightTentacle") groups=["Boss", "enemy"]]
 z_index = 1
 collision_layer = 0
 collision_mask = 16
@@ -16,8 +16,11 @@ script = ExtResource("1_uhr8a")
 LeftTentacle = NodePath("Tentacle2")
 RightTentacle = NodePath("Tentacle1")
 thrust_jerk = 10.0
+turn_jerk = 0.2
 max_thrust = 50.0
 max_vel = 400.0
+max_turn_vel = 2.0
+max_turn_accel = 0.4
 max_health = 150
 death_particle = ExtResource("2_bcnsg")
 knockback_taken_percent = 0.0

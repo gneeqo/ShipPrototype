@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://c76p4oedqw4iw"]
+
+[ext_resource type="Script" uid="uid://cexc7e1i3xyb8" path="res://Game Logic/Enemies/bullet_shooter.gd" id="1_m5dgv"]
+[ext_resource type="PackedScene" uid="uid://u2duenp3whw2" path="res://Assets/Particles/enemy_death.tscn" id="2_dgsdj"]
+[ext_resource type="PackedScene" uid="uid://02kqmela448e" path="res://Game Logic/Weapons/enemy_bullet.tscn" id="3_m63rj"]
+[ext_resource type="Texture2D" uid="uid://c88ku2jvvcfdq" path="res://Assets/Enemies/Abyssal_Boss_2_B_Medium_NoLight.png" id="4_m63rj"]
+
+[node name="BulletShooter" type="RigidBody2D" groups=["enemy"]]
+collision_layer = 0
+collision_mask = 16
+gravity_scale = 2.0
+contact_monitor = true
+max_contacts_reported = 3
+script = ExtResource("1_m5dgv")
+thrust_jerk = 300.0
+turn_jerk = 0.5
+max_thrust = 900.0
+max_vel = 2400.0
+max_turn_vel = 2.0
+max_turn_accel = 1.0
+max_health = 25
+death_particle = ExtResource("2_dgsdj")
+knockback_taken_percent = 0.2
+max_firing_interval = 3.0
+projectile = ExtResource("3_m63rj")
+projectiles_per_salvo = 15
+salvo_spread = 25.0
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
+rotation = 1.5708
+collision_layer = 2
+collision_mask = 9
+
+[node name="NonPhysicsCollision" type="CollisionPolygon2D" parent="Area2D"]
+rotation = 1.5708
+scale = Vector2(4.09679, 3.62531)
+polygon = PackedVector2Array(-70.2971, 284.666, -289.005, 302.321, -302.676, -4.41094, -285.103, -297.903, -115.214, -313.352, 89.8245, -302.32, 289.005, -249.36, 302.678, 240.529)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(5, 5)
+texture = ExtResource("4_m63rj")
+
+[node name="PhysicsCollision" type="CollisionPolygon2D" parent="."]
+rotation = 3.14159
+scale = Vector2(4.09679, 3.62531)
+polygon = PackedVector2Array(-70.2971, 284.666, -289.005, 302.321, -302.676, -4.41094, -285.103, -297.903, -115.214, -313.352, 89.8245, -302.32, 289.005, -249.36, 302.678, 240.529)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

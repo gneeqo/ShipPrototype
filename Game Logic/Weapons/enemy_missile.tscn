@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn7mj0n7ar8uf"]
+[gd_scene load_steps=6 format=3 uid="uid://bn7mj0n7ar8uf"]
 
 [ext_resource type="Script" uid="uid://bxjsnyp5utr3s" path="res://Game Logic/Weapons/enemy_missile.gd" id="1_ygogd"]
+[ext_resource type="PackedScene" uid="uid://6djkhrfb5byw" path="res://Assets/Particles/enemy_missile_explosion.tscn" id="2_3pd5i"]
 [ext_resource type="Texture2D" uid="uid://c06otaqlr2gpn" path="res://Assets/Enemies/Abyssal_1_B_Medium_NoLight.png" id="2_ygogd"]
 [ext_resource type="PackedScene" uid="uid://ht65tgrt3vao" path="res://Assets/Particles/enemy_missile_trail.tscn" id="3_4b7gx"]
 
@@ -8,15 +9,24 @@
 size = Vector2(251.191, 226.422)
 
 [node name="Missile" type="RigidBody2D" groups=["player_bullet"]]
-collision_layer = 8
-collision_mask = 22
+collision_layer = 4
+collision_mask = 17
+gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_ygogd")
+thrust_jerk = 300.0
+turn_jerk = 2.5
+max_thrust = 800.0
+max_vel = 2500.0
+max_turn_vel = 7.5
+max_turn_accel = 5.0
+total_lifetime = 10.0
+explosion = ExtResource("2_3pd5i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.57478
-scale = Vector2(0.2, 0.194)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_ygogd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -25,9 +35,6 @@ rotation = 1.57478
 scale = Vector2(0.509822, 0.493522)
 shape = SubResource("RectangleShape2D_adqcp")
 
-[node name="MissileTrail" parent="." instance=ExtResource("3_4b7gx")]
-position = Vector2(-24, 0)
-scale_amount_min = 0.3
-scale_amount_max = 0.3
+[node name="MissileTrail2" parent="." instance=ExtResource("3_4b7gx")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

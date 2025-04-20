@@ -59,3 +59,26 @@ func reparent_right():
 func invalidate_right():
     swing_right = false
     
+func kill():
+    queue_free()
+    
+func hide_body():
+    $Sprite2D.visible = false
+
+func destroy_enemy():
+    var giblets = death_particle.instantiate()
+    add_child(giblets)
+    for gib in giblets.get_children():
+        gib.emitting = true
+    
+    var hide_func = Callable(self,"hide_body")
+    var kill_func = Callable(self, "kill")
+    
+    $PhysicsCollision.set_deferred("disabled",true)
+    
+    $Area2D/NonPhysicsCollision.set_deferred("disabled",true)
+    
+    add_child(BehaviorFactory.delayed_callback(hide_func,0.1))
+    add_child(BehaviorFactory.delayed_callback(kill_func,1))
+    
+    get_tree().get_first_node_in_group("camera").begin_shake(1,500)

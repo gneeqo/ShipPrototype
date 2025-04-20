@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqkrivu16jjhd"]
+
+[ext_resource type="PackedScene" uid="uid://ru81ywaf75m1" path="res://Game Logic/Enemies/boss_enemy.tscn" id="1_2ix1i"]
+[ext_resource type="PackedScene" uid="uid://dqldjhlddpewe" path="res://Game Logic/Enemies/MissileShooter.tscn" id="2_ap4y7"]
+[ext_resource type="PackedScene" uid="uid://c76p4oedqw4iw" path="res://Game Logic/Enemies/BulletShooter.tscn" id="3_1nmku"]
+
+[node name="full_boss_scene" type="Node2D"]
+
+[node name="BossEnemy" parent="." instance=ExtResource("1_2ix1i")]
+position = Vector2(3472, 360)
+
+[node name="MissileShooter" parent="." instance=ExtResource("2_ap4y7")]
+position = Vector2(9976, -3032)
+
+[node name="BulletShooter" parent="." instance=ExtResource("3_1nmku")]
+position = Vector2(-1400, 4312)

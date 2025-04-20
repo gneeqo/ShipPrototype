@@ -15,3 +15,12 @@ res://Assets/Particles/enemy_missile_explosion.tscn
 res://Assets/Particles/player_missile_explosion.tscn
 res://Game Logic/Weapons/enemy_missile.gd
 res://Game Logic/Ships/ship.gd
+res://Game Logic/Enemies/MissileShooter.tscn
+res://Game Logic/Enemies/missile_shooter.gd
+res://Action System/Actions/knockback.gd
+res://Game Logic/Enemies/BulletShooter.tscn
+res://Game Logic/Weapons/enemy_bullet.tscn
+res://Game Logic/Weapons/enemy_bullet.gd
+res://Game Logic/Enemies/bullet_shooter.gd
+res://Game Logic/Enemies/boss_enemy.gd
+res://full_boss_scene.tscn
