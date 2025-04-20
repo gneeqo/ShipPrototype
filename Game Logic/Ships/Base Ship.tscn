@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://l3f57l1uh623"]
+[gd_scene load_steps=10 format=3 uid="uid://l3f57l1uh623"]
 
 [ext_resource type="Script" uid="uid://dc6mxmiub0qrg" path="res://Game Logic/Ships/ship.gd" id="1_0hbqr"]
 [ext_resource type="Texture2D" uid="uid://owgu75nvnljh" path="res://Assets/Ships/Ship_1_C_Medium_NoLight.png" id="1_5j4gq"]
+[ext_resource type="PackedScene" uid="uid://gn7qjfmslbsu" path="res://Assets/Particles/RedExplosion.tscn" id="2_6ru6h"]
+[ext_resource type="PackedScene" uid="uid://bulnaoa0k4h1e" path="res://Assets/Particles/orange_explosion.tscn" id="2_7ysyj"]
 [ext_resource type="PackedScene" uid="uid://de4wkrhmcyimi" path="res://Game Logic/Weapons/Chaingun.tscn" id="3_ild35"]
 [ext_resource type="Script" uid="uid://dmirb2guxm4dr" path="res://Game Logic/Weapons/missile_launcher.gd" id="4_ild35"]
+[ext_resource type="PackedScene" uid="uid://bj2wp5plrxixp" path="res://Assets/Particles/orange_explosion_2.tscn" id="4_m5h8m"]
 [ext_resource type="PackedScene" uid="uid://cjkqbnu43mbe3" path="res://Game Logic/Weapons/missile.tscn" id="5_3r8jj"]
 [ext_resource type="PackedScene" uid="uid://b2amyuvnayfwc" path="res://Assets/Particles/ship_damage_trail.tscn" id="6_pvrli"]
 
 [node name="BaseShip" type="RigidBody2D" node_paths=PackedStringArray("weapon_1", "weapon_2", "damage_level_particles") groups=["player"]]
+collision_mask = 16
 contact_monitor = true
 max_contacts_reported = 3
 script = ExtResource("1_0hbqr")
@@ -22,16 +26,22 @@ max_turn_vel = 25.0
 weapon_1 = NodePath("Chaingun")
 weapon_2 = NodePath("Missile Launcher")
 damage_level_particles = [null, NodePath("ShipDamageTrail"), NodePath("ShipDamageTrail2")]
+death_particles = Array[PackedScene]([ExtResource("2_7ysyj"), ExtResource("2_6ru6h"), ExtResource("4_m5h8m")])
 jerk_decrease_per_damage = 2.0
 turn_jerk_decrease_per_damage = 0.4
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.5708
-texture = ExtResource("1_5j4gq")
+[node name="NonPhysicalCollision" type="Area2D" parent="." groups=["enemy_bullet"]]
+collision_layer = 0
+collision_mask = 6
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="NonPhysicalCollision"]
 rotation = 1.5708
 polygon = PackedVector2Array(-109, -3, -64, -46, -55, -108, 52, -107, 67, -47, 112, 0, 108, 57, 73, 82, 24, 112, -46, 111, -110, 36)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+rotation = 1.5708
+texture = ExtResource("1_5j4gq")
 
 [node name="Chaingun" parent="." instance=ExtResource("3_ild35")]
 position = Vector2(184, 0)
@@ -58,4 +68,10 @@ emitting = false
 scale_amount_min = 2.0
 scale_amount_max = 2.0
 
+[node name="PhysicalCollision" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(-109, -3, -64, -46, -55, -108, 52, -107, 67, -47, 112, 0, 108, 57, 73, 82, 24, 112, -46, 111, -110, 36)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="NonPhysicalCollision" to="." method="_on_non_physical_collision_area_entered"]
+[connection signal="body_entered" from="NonPhysicalCollision" to="." method="_on_non_physical_collision_body_entered"]

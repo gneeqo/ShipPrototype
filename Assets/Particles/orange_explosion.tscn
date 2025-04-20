@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bulnaoa0k4h1e"]
+
+[ext_resource type="Texture2D" uid="uid://cic6pmj1msrt1" path="res://Assets/Particles/Particle Textures/explosion_small_orange.png" id="1_1esk3"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_pl870"]
+particles_animation = true
+particles_anim_h_frames = 9
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[node name="OrangeExplosion" type="CPUParticles2D"]
+material = SubResource("CanvasItemMaterial_pl870")
+emitting = false
+amount = 25
+texture = ExtResource("1_1esk3")
+one_shot = true
+explosiveness = 0.58
+emission_shape = 1
+emission_sphere_radius = 105.25
+gravity = Vector2(0, 0)
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+anim_speed_min = 2.0
+anim_speed_max = 2.0

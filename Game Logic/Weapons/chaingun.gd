@@ -10,6 +10,7 @@ var loaded_bullet:Bullet
 
 var curr_fire_rate:float
 
+var kick_direction:int = -1
 
 var percent_of_second_to_fire:float:
     get:
@@ -46,4 +47,8 @@ func fire_weapon():
     var new_bullet : Bullet = bullet_scene.instantiate()
     add_child(new_bullet)
     new_bullet.linear_velocity = get_parent().linear_velocity
+    get_parent().take_knockback(-Vector2.from_angle(get_parent().global_rotation\
+    + randf_range(-curr_fire_rate,curr_fire_rate)),2)
+    get_parent().take_rotational_knockback(curr_fire_rate * kick_direction)
+    kick_direction = kick_direction * -1
     

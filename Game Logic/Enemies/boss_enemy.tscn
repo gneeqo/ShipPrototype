@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://ru81ywaf75m1"]
+
+[ext_resource type="Script" uid="uid://bqsn4j0wyxxl7" path="res://Game Logic/Enemies/boss_enemy.gd" id="1_uhr8a"]
+[ext_resource type="Texture2D" uid="uid://bdx05vunnok2p" path="res://Assets/Enemies/Abyssal_Boss_4_B_Medium_NoLight.png" id="2_uhr8a"]
+[ext_resource type="Script" uid="uid://drsjq447ias1x" path="res://Game Logic/Enemies/boss_tentacle.gd" id="3_mu1j6"]
+[ext_resource type="Texture2D" uid="uid://cixrarwpho1x0" path="res://Assets/Enemies/Chunks/Abyssal_Part_5_B_Medium.png" id="4_bcnsg"]
+
+[node name="BossEnemy" type="RigidBody2D" groups=["enemy"]]
+z_index = 1
+collision_layer = 0
+collision_mask = 16
+contact_monitor = true
+max_contacts_reported = 3
+script = ExtResource("1_uhr8a")
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
+collision_layer = 2
+collision_mask = 9
+
+[node name="NonPhysicsCollision" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-376, 928, -936, 968, -1016, 776, -888, 288, -976, -488, -864, -912, -624, -952, -272, -800, 0, -432, 248, -824, 600, -968, 800, -920, 944, -632, 944, -496, 856, 176, 976, 784, 952, 960, 384, 920, 0, 992)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_uhr8a")
+
+[node name="PhysicsCollision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-376, 928, -936, 968, -1016, 776, -888, 288, -976, -488, -864, -912, -624, -952, -272, -800, 0, -432, 248, -824, 600, -968, 800, -920, 944, -632, 944, -496, 856, 176, 976, 784, 952, 960, 384, 920, 0, 992)
+
+[node name="Tentacle1" type="Node2D" parent="."]
+show_behind_parent = true
+position = Vector2(480, 680)
+script = ExtResource("3_mu1j6")
+metadata/_custom_type_script = "uid://drsjq447ias1x"
+
+[node name="Collider" type="Area2D" parent="Tentacle1" groups=["enemy"]]
+show_behind_parent = true
+position = Vector2(656, -48)
+rotation = 1.42631
+scale = Vector2(5, 15)
+
+[node name="Sprite2D" type="Sprite2D" parent="Tentacle1/Collider"]
+texture = ExtResource("4_bcnsg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tentacle1/Collider"]
+polygon = PackedVector2Array(-56, 48, -32, 8, 16, -8, 8, -32, -40, -24, -56, -40, 0, -64, 48, -48, 56, -24, 56, -8, 32, 24, 32, 40, 24, 56, 16, 64, -40, 64)
+
+[node name="Tentacle2" type="Node2D" parent="."]
+show_behind_parent = true
+position = Vector2(-496, 640)
+scale = Vector2(-1, 1)
+script = ExtResource("3_mu1j6")
+metadata/_custom_type_script = "uid://drsjq447ias1x"
+
+[node name="Collider" type="Area2D" parent="Tentacle2" groups=["enemy"]]
+show_behind_parent = true
+position = Vector2(656, -48)
+rotation = 1.42631
+scale = Vector2(5, 15)
+
+[node name="Sprite2D" type="Sprite2D" parent="Tentacle2/Collider"]
+texture = ExtResource("4_bcnsg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tentacle2/Collider"]
+polygon = PackedVector2Array(-56, 48, -32, 8, 16, -8, 8, -32, -40, -24, -56, -40, 0, -64, 48, -48, 56, -24, 56, -8, 32, 24, 32, 40, 24, 56, 16, 64, -40, 64)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

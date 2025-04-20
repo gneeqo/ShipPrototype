@@ -1,0 +1,1 @@
+class_name BossTentacle extends Node2D

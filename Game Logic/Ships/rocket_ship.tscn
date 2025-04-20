@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhr2ynx1pfg3q"]
+[gd_scene load_steps=4 format=3 uid="uid://bhr2ynx1pfg3q"]
 
 [ext_resource type="PackedScene" uid="uid://l3f57l1uh623" path="res://Game Logic/Ships/Base Ship.tscn" id="1_3wugu"]
 [ext_resource type="Texture2D" uid="uid://xetgw7u7ycw8" path="res://Assets/Ships/Ship_10_C_Medium_NoLight.png" id="2_vb8kn"]
+[ext_resource type="PackedScene" uid="uid://b2amyuvnayfwc" path="res://Assets/Particles/ship_damage_trail.tscn" id="3_gfo02"]
 
-[node name="RocketShip" instance=ExtResource("1_3wugu")]
+[node name="RocketShip" node_paths=PackedStringArray("damage_level_particles") instance=ExtResource("1_3wugu")]
 mass = 2.0
 thrust_jerk = 150.0
 decel_jerk = 5.0
@@ -14,12 +15,42 @@ turn_decel_jerk = 2.0
 max_turn_accel = 2.0
 max_turn_vel = 0.5
 classification = 1
+damage_level_particles = [null, NodePath("ShipDamageTrail"), NodePath("ShipDamageTrail2"), NodePath("ShipDamageTrail3"), NodePath("ShipDamageTrail4")]
+max_damage = 5
+jerk_decrease_per_damage = 15.0
+turn_jerk_decrease_per_damage = 0.15
+percent_kick = 2.5
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="CollisionPolygon2D" parent="NonPhysicalCollision" index="0"]
+polygon = PackedVector2Array(-87.9999, 40.0003, -64, -46, -48.0006, -160, -0.000723998, -200, 47.9994, -160, 71.9998, -48.0003, 80.0001, 39.9997, 192, 55.9993, 224.001, 191.999, -223.999, 192.001, -192, 56.0007)
+
+[node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_vb8kn")
-
-[node name="CollisionPolygon2D" parent="." index="1"]
-polygon = PackedVector2Array(-109, -3, -64, -46, -40.0006, -168, 47.9994, -176, 67, -47, 112, 0, 208, 95.9992, 224.001, 191.999, 24, 112, -46, 111, -223.999, 192.001)
 
 [node name="Chaingun" parent="." index="2"]
 position = Vector2(224, 0)
+fire_rate_accel = 6.0
+max_fire_rate = 25.0
+
+[node name="ShipDamageTrail" parent="." index="4"]
+position = Vector2(-192, 224)
+
+[node name="ShipDamageTrail2" parent="." index="5"]
+position = Vector2(-192, -224)
+
+[node name="ShipDamageTrail3" parent="." index="6" instance=ExtResource("3_gfo02")]
+position = Vector2(-184, 0)
+scale = Vector2(25, 25)
+emitting = false
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="ShipDamageTrail4" parent="." index="7" instance=ExtResource("3_gfo02")]
+position = Vector2(192, 0)
+scale = Vector2(25, 25)
+emitting = false
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="PhysicalCollision" parent="." index="8"]
+polygon = PackedVector2Array(-192, 56.0007, -87.9999, 24.0003, -40.0006, -168, -0.000695038, -192, 47.9994, -160, 88.0001, 39.9997, 192, 55.9993, 224.001, 191.999, 40.0007, 192, -39.9993, 192, -223.999, 192.001)

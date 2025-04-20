@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b82b8uca05j70"]
+
+[ext_resource type="Script" uid="uid://bqo1qq1m3kyta" path="res://Game Logic/Weapons/triple_chaingun.gd" id="1_d63nj"]
+
+[node name="TripleChaingun" type="Node2D"]
+script = ExtResource("1_d63nj")

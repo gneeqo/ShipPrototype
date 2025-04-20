@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://l3f57l1uh623" path="res://Game Logic/Ships/Base Ship.tscn" id="1_ltohy"]
 [ext_resource type="Texture2D" uid="uid://cl1wtp6srl0hp" path="res://Assets/Ships/Ship_2_C_Medium_NoLight.png" id="2_ueofk"]
 
-[node name="NimbleShip" instance=ExtResource("1_ltohy")]
+[node name="NimbleShip" node_paths=PackedStringArray("damage_level_particles") instance=ExtResource("1_ltohy")]
 thrust_jerk = 400.0
 decel_jerk = 800.0
 max_thrust = 1200.0
@@ -12,12 +12,20 @@ turn_jerk = 2.0
 turn_decel_jerk = 4.0
 max_turn_accel = 4.0
 max_turn_vel = 8.0
+damage_level_particles = [null, NodePath("ShipDamageTrail"), NodePath("ShipDamageTrail2")]
+jerk_decrease_per_damage = 75.0
+turn_jerk_decrease_per_damage = 0.15
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="CollisionPolygon2D" parent="NonPhysicalCollision" index="0"]
+rotation = 1.56815
+polygon = PackedVector2Array(-119.975, 8.36029, -120.264, -87.6393, -80.1678, -55.7595, -64.1438, -47.8076, 39.8557, -48.1199, 63.8316, -56.1919, 95.7353, -88.2879, 108, 57, 73, 82, 24.2641, 87.9275, -103.759, 80.3119, -119.807, 64.36)
+
+[node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_ueofk")
-
-[node name="CollisionPolygon2D" parent="." index="1"]
-polygon = PackedVector2Array(-109, -3, -112, -95.9996, -64.0001, -31.9998, 0.4552, -47.166, 39.9999, -32.0001, 71.9998, -64.0003, 112, -88.0004, 112, 0, 108, 57, 80.0003, 87.9997, 0.000289599, 80, -63.9997, 96.0002, -120, 64.0004)
 
 [node name="Chaingun" parent="." index="2"]
 position = Vector2(128, 0)
+
+[node name="PhysicalCollision" parent="." index="6"]
+rotation = 1.5738
+polygon = PackedVector2Array(-119.975, 8.36029, -120.264, -87.6393, -80.1678, -55.7595, -64.1438, -47.8076, 39.8557, -48.1199, 63.8316, -56.1919, 95.7353, -88.2879, 108, 57, 73, 82, 24.2641, 87.9275, -103.759, 80.3119, -119.807, 64.36)

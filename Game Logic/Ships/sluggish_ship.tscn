@@ -1,23 +1,107 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyv2kp70n18bu"]
+[gd_scene load_steps=6 format=3 uid="uid://dyv2kp70n18bu"]
 
 [ext_resource type="PackedScene" uid="uid://l3f57l1uh623" path="res://Game Logic/Ships/Base Ship.tscn" id="1_ul3vw"]
 [ext_resource type="Texture2D" uid="uid://butatderogagr" path="res://Assets/Ships/Ship_5_C_Medium_NoLight.png" id="2_81tlg"]
+[ext_resource type="PackedScene" uid="uid://b2amyuvnayfwc" path="res://Assets/Particles/ship_damage_trail.tscn" id="3_pwp23"]
+[ext_resource type="PackedScene" uid="uid://de4wkrhmcyimi" path="res://Game Logic/Weapons/Chaingun.tscn" id="3_u6qm2"]
+[ext_resource type="PackedScene" uid="uid://b82b8uca05j70" path="res://Game Logic/Weapons/triple_chaingun.tscn" id="5_x0nke"]
 
-[node name="SluggishShip" instance=ExtResource("1_ul3vw")]
+[node name="SluggishShip" node_paths=PackedStringArray("weapon_1", "damage_level_particles") instance=ExtResource("1_ul3vw")]
 mass = 5.0
+thrust_jerk = 20.0
+decel_jerk = 40.0
 max_thrust = 250.0
 max_vel = 500.0
 turn_jerk = 0.2
 turn_decel_jerk = 0.4
 max_turn_accel = 0.5
 max_turn_vel = 2.0
+weapon_1 = NodePath("TripleChaingun")
 classification = 2
+damage_level_particles = [null, NodePath("ShipDamageTrail"), NodePath("ShipDamageTrail2"), NodePath("ShipDamageTrail3"), NodePath("ShipDamageTrail4"), NodePath("ShipDamageTrail5"), NodePath("ShipDamageTrail6"), NodePath("ShipDamageTrail7"), NodePath("ShipDamageTrail8"), NodePath("ShipDamageTrail9")]
+max_damage = 10
+jerk_decrease_per_damage = 1.5
+turn_jerk_decrease_per_damage = 0.01
+percent_kick = 0.05
 
-[node name="Sprite2D" parent="." index="0"]
+[node name="Sprite2D" parent="." index="1"]
 texture = ExtResource("2_81tlg")
-
-[node name="CollisionPolygon2D" parent="." index="1"]
-polygon = PackedVector2Array(-120, -7.99957, -104, -71.9996, -72.0003, -87.9997, 47.9997, -72.0002, 104, -72.0004, 112, 0, 108, 57, 73, 82, 24.0003, 95.9999, -79.9997, 80.0003, -112, 48.0004)
 
 [node name="Chaingun" parent="." index="2"]
 position = Vector2(120, 0)
+fire_rate_accel = 2.0
+max_fire_rate = 10.0
+
+[node name="Chaingun2" parent="." index="3" instance=ExtResource("3_u6qm2")]
+position = Vector2(120, -80)
+fire_rate_accel = 2.0
+fire_rate_decel = 5.0
+max_fire_rate = 7.0
+
+[node name="Chaingun3" parent="." index="4" instance=ExtResource("3_u6qm2")]
+position = Vector2(120, 72)
+fire_rate_accel = 2.0
+fire_rate_decel = 5.0
+max_fire_rate = 7.0
+
+[node name="ShipDamageTrail" parent="." index="6"]
+position = Vector2(72, 88)
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+
+[node name="ShipDamageTrail2" parent="." index="7"]
+position = Vector2(64, -104)
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+
+[node name="ShipDamageTrail3" parent="." index="8" instance=ExtResource("3_pwp23")]
+position = Vector2(88, -80)
+scale = Vector2(25, 25)
+emitting = false
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+
+[node name="ShipDamageTrail4" parent="." index="9" instance=ExtResource("3_pwp23")]
+position = Vector2(88, 72)
+scale = Vector2(25, 25)
+emitting = false
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+
+[node name="ShipDamageTrail5" parent="." index="10" instance=ExtResource("3_pwp23")]
+position = Vector2(-80, 80)
+scale = Vector2(25, 25)
+emitting = false
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+
+[node name="ShipDamageTrail6" parent="." index="11" instance=ExtResource("3_pwp23")]
+position = Vector2(-80, -80)
+scale = Vector2(25, 25)
+emitting = false
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+
+[node name="ShipDamageTrail7" parent="." index="12" instance=ExtResource("3_pwp23")]
+position = Vector2(-32, -120)
+scale = Vector2(25, 25)
+emitting = false
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+
+[node name="ShipDamageTrail8" parent="." index="13" instance=ExtResource("3_pwp23")]
+position = Vector2(-24, 120)
+scale = Vector2(25, 25)
+emitting = false
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+
+[node name="ShipDamageTrail9" parent="." index="14" instance=ExtResource("3_pwp23")]
+position = Vector2(-72, 0)
+scale = Vector2(25, 25)
+emitting = false
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+
+[node name="TripleChaingun" parent="." index="16" node_paths=PackedStringArray("guns") instance=ExtResource("5_x0nke")]
+guns = [NodePath("../Chaingun"), NodePath("../Chaingun2"), NodePath("../Chaingun3")]

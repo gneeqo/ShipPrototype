@@ -45,6 +45,20 @@ static func scale(new_scale:Vector2, duration:float , drift:float = 0,blocking:b
     
     return new_executor
     
+static func knockback(direction:Vector2, duration:float ,intensity:float, drift:float = 0,blocking:bool = false ,\
+ eased:bool = true, ease_type:Action.EaseType = Action.EaseType.easeInOutSine) -> Executor:
+    var new_executor = ExecAutoActivate.new()
+    new_executor.add_child(ActionFactory.knockback(direction,intensity,duration,eased,ease_type),true)
+    
+    return new_executor    
+
+    
+static func rotational_knockback(duration:float ,intensity:float, drift:float = 0,blocking:bool = false ,\
+ eased:bool = true, ease_type:Action.EaseType = Action.EaseType.easeInOutSine) -> Executor:
+    var new_executor = ExecAutoActivate.new()
+    new_executor.add_child(ActionFactory.rotational_knockback(intensity,duration,eased,ease_type),true)
+    
+    return new_executor  
     
 static func add_delay_to_behavior(delay:float, target:Executor):
     var delayAction = ActionFactory.delay(delay)
@@ -57,3 +71,11 @@ static func add_callback_to_behavior(function :Callable, target:Executor):
     
 static func add_action_to_behavior(action :Action, target:Executor):
     target.add_child(action,true)
+    
+    
+static func cam_shake(max_intensity:float, duration:float , drift:float = 0,blocking:bool = false ,\
+ eased:bool = true, ease_type:Action.EaseType = Action.EaseType.easeInOutSine) -> Executor:
+    var new_executor = ExecAutoActivate.new()
+    new_executor.add_child(ActionFactory.cam_shake(max_intensity,duration,eased,ease_type,drift,blocking),true)
+    
+    return new_executor

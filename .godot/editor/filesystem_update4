@@ -1,6 +1,7 @@
+res://Game Logic/Enemies/base_enemy.tscn
 res://Game Logic/Ships/ship.gd
-res://Assets/Particles/missile_trail.tscn
-res://Game Logic/Weapons/missile.tscn
+res://texture_tile.gdshader
+res://Assets/Particles/ship_damage_trail.tscn
 res://Game Logic/Ships/Base Ship.tscn
 res://Game Logic/Weapons/Chaingun.tscn
 res://Game Logic/Weapons/bullet.tscn
@@ -8,12 +9,29 @@ res://Game Logic/main.tscn
 res://Game Logic/Ships/nimble_ship.tscn
 res://Game Logic/Ships/rocket_ship.tscn
 res://Game Logic/Ships/sluggish_ship.tscn
-res://Game Logic/Enemies/base_enemy.tscn
 res://Game Logic/Fence.tscn
+res://Game Logic/Weapons/missile.tscn
 res://Game Logic/Weapons/missile_launcher.tscn
-res://Assets/Particles/ship_damage_trail.tscn
-res://Assets/Particles/Particle Textures/explosion.tres
-res://texture_tile.gdshader
-res://texture_tile.tres
-res://Game Logic/referee.gd
+res://Assets/Particles/missile_trail.tscn
+res://Game Logic/ship_tracking_camera.gd
 res://Game Logic/Enemies/base_enemy.gd
+res://Action System/Actions/knockback.gd
+res://Action System/Factories/action_factory.gd
+res://Action System/Factories/behavior_factory.gd
+res://Game Logic/Weapons/missile_launcher.gd
+res://Game Logic/Weapons/chaingun.gd
+res://Action System/Actions/rotational_knockback.gd
+res://Game Logic/Weapons/triple_chaingun.tscn
+res://Game Logic/Weapons/triple_chaingun.gd
+res://Assets/Particles/ship_death.tscn
+res://Assets/Particles/RedExplosion.tscn
+res://Assets/Particles/orange_explosion.tscn
+res://Assets/Particles/orange_explosion_2.tscn
+res://Game Logic/referee.gd
+res://Assets/Particles/enemy_death.tscn
+res://Action System/Actions/cam_shake.gd
+res://Game Logic/Enemies/elite_enemy.tscn
+res://Game Logic/Enemies/elite_enemy.gd
+res://Game Logic/Enemies/boss_enemy.tscn
+res://Game Logic/Enemies/boss_enemy.gd
+res://Game Logic/Enemies/boss_tentacle.gd

@@ -31,3 +31,4 @@ func fire_weapon(offset : Vector2):
     var new_missile : Missile = missile_scene.instantiate()
     new_missile.global_position += offset*30
     add_child(new_missile)
+    

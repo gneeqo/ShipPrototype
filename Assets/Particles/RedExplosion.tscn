@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://gn7qjfmslbsu"]
+
+[ext_resource type="Texture2D" uid="uid://bfgx3gjmnnhvq" path="res://Assets/Particles/Particle Textures/explosion_large_red.png" id="1_q5noe"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hj6lw"]
+particles_animation = true
+particles_anim_h_frames = 9
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[node name="RedExplosion" type="CPUParticles2D"]
+material = SubResource("CanvasItemMaterial_hj6lw")
+emitting = false
+texture = ExtResource("1_q5noe")
+one_shot = true
+explosiveness = 0.25
+emission_shape = 1
+emission_sphere_radius = 72.32
+gravity = Vector2(0, 0)
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+anim_speed_min = 2.0
+anim_speed_max = 2.0

@@ -53,6 +53,23 @@ eased:bool = true, ease_type:Action.EaseType = Action.EaseType.easeInOutSine,\
     
     return newAction
     
+    
+static func cam_shake(max_intensity:float,duration:float,\
+eased:bool = true, ease_type:Action.EaseType = Action.EaseType.easeInOutSine,\
+  blocking:bool = false,looping:bool = false, oscillating:bool = false)->CamShake:
+    var newAction = CamShake.new()
+    
+    newAction.max_shake = max_intensity
+    
+    newAction.duration = duration
+    newAction.eased = eased
+    newAction.ease_type = ease_type
+    newAction.blocking = blocking
+    newAction.looping = looping
+    newAction.oscillating = oscillating
+    
+    
+    return newAction
 
 static func scale_to(scale:Vector2,duration:float,\
 eased:bool = true, ease_type:Action.EaseType = Action.EaseType.easeInOutSine,\
@@ -94,3 +111,39 @@ static func delay(duration:float=0.01):
     newAction.blocking = true
     return newAction
     
+static func knockback(direction:Vector2,intensity:float,duration:float = 0.01,\
+eased:bool = false, ease_type:Action.EaseType = Action.EaseType.easeInOutSine,\
+ blocking:bool = false,looping:bool = false, oscillating:bool = false)->Knockback:
+    var newAction = Knockback.new()
+    
+    newAction.direction = direction
+    newAction.intensity = intensity
+    
+    newAction.duration = duration
+    newAction.eased = eased
+    newAction.ease_type = ease_type
+    newAction.blocking = blocking
+    newAction.looping = looping
+    newAction.oscillating = oscillating
+    
+    
+    return newAction
+
+
+static func rotational_knockback(intensity:float,duration:float = 0.01,\
+eased:bool = false, ease_type:Action.EaseType = Action.EaseType.easeInOutSine,\
+ blocking:bool = false,looping:bool = false, oscillating:bool = false)->RotationalKnockback:
+    var newAction = RotationalKnockback.new()
+    
+   
+    newAction.intensity = intensity
+    
+    newAction.duration = duration
+    newAction.eased = eased
+    newAction.ease_type = ease_type
+    newAction.blocking = blocking
+    newAction.looping = looping
+    newAction.oscillating = oscillating
+    
+    
+    return newAction

@@ -6,6 +6,8 @@
 size = Vector2(20, 112)
 
 [node name="Fence" type="RigidBody2D" groups=["fence"]]
+collision_layer = 16
+collision_mask = 15
 freeze = true
 contact_monitor = true
 max_contacts_reported = 2

@@ -5,6 +5,8 @@ class_name referee extends Node
 @export var enemy_types : Array[PackedScene]
 @export var fence_scene : PackedScene
 
+@export var boss_scene : Array[PackedScene]
+
 @export var num_enemies : int
 
 @export var BorderSize : float
@@ -81,27 +83,27 @@ func spawn_enemy(enemy:PackedScene,location:Vector2):
       
 
 func spawn_ship():
-    player_ship = ship_types[player_ship_type].instantiate()
-    get_parent().add_child.call_deferred(player_ship)
-    Camera.ship = player_ship
+    if not is_instance_valid(player_ship):
+        player_ship = ship_types[player_ship_type].instantiate()
+        get_parent().add_child.call_deferred(player_ship)
+        Camera.ship = player_ship
     
     
 func destroy_ship():
-    player_ship.kill()
+    if is_instance_valid(player_ship):
+        player_ship.kill()
 
 func _process(dt:float):
     if Input.is_action_just_pressed("switch_ship_1"):
-        destroy_ship()
-        player_ship_type = 0
-        spawn_ship()
+        switch_ship(0)
     elif Input.is_action_just_pressed("switch_ship_2"):
-        destroy_ship()
-        player_ship_type = 1
-        spawn_ship()
+        
+        switch_ship(1)
+        
     elif Input.is_action_just_pressed("switch_ship_3"):
-        destroy_ship()
-        player_ship_type = 2
-        spawn_ship()
+        
+        switch_ship(2)
+        
         
     enemy_timer +=dt
     
@@ -113,6 +115,11 @@ func _process(dt:float):
 func ship_killed():
     destroy_ship()
     var newSpawn = Callable(self,"spawn_ship")
-    add_child(BehaviorFactory.delayed_callback(newSpawn,2))
+    add_child(BehaviorFactory.delayed_callback(newSpawn,5.0))
     
+func switch_ship(new_type:int):
+    destroy_ship()
+    player_ship_type = new_type
     
+    var newSpawn = Callable(self,"spawn_ship")
+    add_child(BehaviorFactory.delayed_callback(newSpawn,5.0))  

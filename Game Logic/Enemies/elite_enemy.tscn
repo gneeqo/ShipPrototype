@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://cchhpijem6iw6"]
+
+[ext_resource type="Script" uid="uid://drmdyembsm4q0" path="res://Game Logic/Enemies/elite_enemy.gd" id="1_w8ypj"]
+[ext_resource type="PackedScene" uid="uid://u2duenp3whw2" path="res://Assets/Particles/enemy_death.tscn" id="2_dnvvf"]
+[ext_resource type="Texture2D" uid="uid://yisxxdougm1p" path="res://Assets/Enemies/Abyssal_6_B_Medium_NoLight.png" id="2_w8ypj"]
+
+[node name="EliteEnemy" type="RigidBody2D" groups=["enemy"]]
+collision_layer = 0
+collision_mask = 16
+contact_monitor = true
+max_contacts_reported = 3
+script = ExtResource("1_w8ypj")
+thrust_jerk = 10.0
+turn_jerk = 2.0
+max_thrust = 100.0
+max_vel = 500.0
+max_turn_vel = 10.0
+max_turn_accel = 3.0
+max_health = 4
+death_particle = ExtResource("2_dnvvf")
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
+rotation = 1.5708
+collision_layer = 2
+collision_mask = 9
+
+[node name="NonPhysicsCollision" type="CollisionPolygon2D" parent="Area2D"]
+rotation = 1.5708
+polygon = PackedVector2Array(-100.096, 264.796, -200.191, 231.697, -250.239, 115.848, -250.239, -99.2985, -233.556, -231.697, 0, -248.246, 233.556, -231.697, 250.239, -99.2985, 250.239, 115.848, 200.191, 231.697, 100.096, 264.796, 24.1332, 227.117, 0, 66.199, -25.3582, 227.725)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("2_w8ypj")
+
+[node name="PhysicsCollision" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(-100.096, 264.796, -200.191, 231.697, -250.239, 115.848, -250.239, -99.2985, -233.556, -231.697, 0, -248.246, 233.556, -231.697, 250.239, -99.2985, 250.239, 115.848, 200.191, 231.697, 100.096, 264.796, 24.1332, 227.117, 0, 66.199, -25.3582, 227.725)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
