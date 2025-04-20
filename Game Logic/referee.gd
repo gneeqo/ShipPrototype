@@ -5,7 +5,7 @@ class_name referee extends Node
 @export var enemy_types : Array[PackedScene]
 @export var fence_scene : PackedScene
 
-@export var boss_scene : Array[PackedScene]
+@export var boss:BossEnemy 
 
 @export var num_enemies : int
 

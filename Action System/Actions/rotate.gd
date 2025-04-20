@@ -6,6 +6,8 @@ class_name Rotate extends Action
 var initial_angle : float = 0.0
 
 var final_angle : float 
+
+var clockwise:bool = true
         
 
 func _begin_action():
@@ -21,16 +23,17 @@ func _begin_action():
     
     var counterclockwise_rot = (2*PI - abs(final_angle))
     
-    var clockwise_distance = initial_angle - clockwise_rot
-    var counterclockwise_distance = initial_angle - counterclockwise_rot
     
-    if abs(clockwise_distance) > abs(counterclockwise_distance):
-        final_angle = counterclockwise_rot
+    #var clockwise_distance = initial_angle - clockwise_rot
+    #var counterclockwise_distance = initial_angle - counterclockwise_rot
+    #
+    #if abs(clockwise_distance) > abs(counterclockwise_distance):
+        #final_angle = counterclockwise_rot
     
     super._begin_action()
 
-func _lerp_value(alpha:float):
-    affected_node.global_rotation = lerp(initial_angle,final_angle,alpha)
+func _lerp_value(alpha:float):    
+        affected_node.global_rotation = lerp(initial_angle,final_angle,alpha)
 
 func _clone():
     var new_action = super._clone()

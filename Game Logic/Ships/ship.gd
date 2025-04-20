@@ -24,6 +24,8 @@ class_name Ship extends RigidBody2D
 
 @export var percent_kick:float = 1
 
+@export var heal_interval:float = 6
+
 var input_disabled : bool = false
 var invincible = false
 
@@ -62,14 +64,22 @@ var ship_inertia:float:
 var damage_level = 0
 var maneuverability_decrease = 0
 
+var heal_timer :float = heal_interval
+
 
 
 
 func heal_damage():
     if damage_level >0:
-        damage_level_particles[damage_level].emitting = false
+        
+        if damage_level < damage_level_particles.size():
+            damage_level_particles[damage_level].emitting = false
         damage_level -= 1
         maneuverability_decrease -=1
+        
+        if(float(max_damage - damage_level) / float(max_damage)) > 0.25:
+            Engine.time_scale = 1
+        
 
 func take_damage():
     if invincible:
@@ -84,6 +94,8 @@ func take_damage():
     else:  
         if damage_level < max_damage:
             damage_level_particles[damage_level].emitting = true
+        if(float(max_damage - damage_level) / float(max_damage)) > 0.4:
+            Engine.time_scale = clampf(1.0/float(damage_level),0.4,0.8)
     
 
 
@@ -91,6 +103,12 @@ func _ready():
     if ShipTelemetry.telemetry_active:
         ShipTelemetry.new_ship_instance(self)
         time_last_telemetry_sent = Time.get_unix_time_from_system()
+
+func _process(delta: float) -> void:
+    heal_timer -= delta
+    if heal_timer <= 0:
+        heal_timer = heal_interval
+        heal_damage()
 
 func process_input()->void:
     if input_disabled:
@@ -228,6 +246,7 @@ func kill():
     add_child(BehaviorFactory.delayed_callback(hideFunc,1))
     
     get_tree().get_first_node_in_group("camera").begin_shake(1,100)
+    Engine.time_scale = 1
 
 func send_telemetry():
     if not ShipTelemetry.telemetry_active:

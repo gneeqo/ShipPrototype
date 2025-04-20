@@ -11,11 +11,12 @@ class_name BaseEnemy extends RigidBody2D
 @export var max_turn_vel : float
 @export var max_turn_accel : float
 
-@export var max_health:int = 2
+@export var max_health:int = 1
 @export var death_particle : PackedScene 
 
+@export var knockback_taken_percent: float = 1.0
 
-var health = max_health
+var health:int
 
 var curr_thrust:float = 0
 var curr_turn_accel: float =0
@@ -29,7 +30,8 @@ var enemy_inertia:float:
     get:
         return 1.0 / PhysicsServer2D.body_get_direct_state(get_rid()).inverse_inertia
 
-
+func _ready() -> void:
+    health = max_health
 
 func kill():
     queue_free()
@@ -62,7 +64,7 @@ func take_damage():
 
 
 func add_to_knockback(knockback:Vector2):
-    curr_knockback_vector += knockback
+    curr_knockback_vector += knockback*knockback_taken_percent
 
 func apply_knockback(state: PhysicsDirectBodyState2D):
     state.linear_velocity += curr_knockback_vector
@@ -112,10 +114,6 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
     apply_knockback(state)
     curr_knockback_vector = Vector2(0,0)  
     
-
-
-
-
 
 
     

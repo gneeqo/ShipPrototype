@@ -19,11 +19,11 @@ eased:bool = true, ease_type:Action.EaseType = Action.EaseType.easeInOutSine,\
     
     return newAction
 
-static func rotate_to(angle:float,duration:float,\
+static func rotate_to(isClockwise:bool,angle:float,duration:float,\
 eased:bool = true, ease_type:Action.EaseType = Action.EaseType.easeInOutSine,\
  drift:float = 0 ,blocking:bool = false,looping:bool = false, oscillating:bool = false)->Rotate:
     var newAction = Rotate.new()
-    
+    newAction.clockwise = isClockwise
     newAction.target_angle = angle
     newAction.drift = drift
     newAction.duration = duration

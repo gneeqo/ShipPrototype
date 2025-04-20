@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cua2ibxfojkj"]
+[gd_scene load_steps=13 format=3 uid="uid://cua2ibxfojkj"]
 
 [ext_resource type="Script" uid="uid://dye8qq4klr1mj" path="res://Game Logic/ship_tracking_camera.gd" id="2_p1nsy"]
 [ext_resource type="Texture2D" uid="uid://ctlsmiwiou8q7" path="res://Assets/2k_stars.jpg" id="3_s6dj5"]
@@ -11,21 +11,21 @@
 [ext_resource type="PackedScene" uid="uid://34nkbjn03rf1" path="res://Game Logic/Enemies/base_enemy.tscn" id="9_bleop"]
 [ext_resource type="PackedScene" uid="uid://cchhpijem6iw6" path="res://Game Logic/Enemies/elite_enemy.tscn" id="9_bwen8"]
 [ext_resource type="PackedScene" uid="uid://bv28fjqqk08lw" path="res://Game Logic/Fence.tscn" id="10_bwen8"]
+[ext_resource type="PackedScene" uid="uid://ru81ywaf75m1" path="res://Game Logic/Enemies/boss_enemy.tscn" id="12_td8ug"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="." groups=["camera"]]
 position = Vector2(576, 88)
-zoom = Vector2(0.1, 0.1)
 position_smoothing_speed = 150.0
 drag_left_margin = 0.1
 drag_top_margin = 0.1
 drag_right_margin = 0.1
 drag_bottom_margin = 0.1
 script = ExtResource("2_p1nsy")
-zoom_factor = 500.0
-zoom_max = 0.2
-zoom_min = 0.4
+zoom_factor = 300.0
+zoom_max = 0.05
+zoom_min = 0.5
 follow_speed = 5.0
 
 [node name="ControlAutomator" type="Node" parent="."]
@@ -40,13 +40,13 @@ offset_bottom = 40.0
 script = ExtResource("5_cfu14")
 metadata/_custom_type_script = "uid://bfur6mfjkecnr"
 
-[node name="referee" type="Node" parent="." node_paths=PackedStringArray("Camera") groups=["referee"]]
+[node name="referee" type="Node" parent="." node_paths=PackedStringArray("Camera", "boss") groups=["referee"]]
 script = ExtResource("5_dlona")
 ship_types = Array[PackedScene]([ExtResource("6_fy1hb"), ExtResource("7_quovy"), ExtResource("8_bleop")])
 Camera = NodePath("../Camera2D")
 enemy_types = Array[PackedScene]([ExtResource("9_bleop"), ExtResource("9_bwen8")])
 fence_scene = ExtResource("10_bwen8")
-num_enemies = 100
+boss = NodePath("../BossEnemy")
 BorderSize = 75000.0
 metadata/_custom_type_script = "uid://dfnoar87808dk"
 
@@ -8241,3 +8241,6 @@ texture = ExtResource("3_s6dj5")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 9600, 5400)
+
+[node name="BossEnemy" parent="." instance=ExtResource("12_td8ug")]
+position = Vector2(4832, -560)

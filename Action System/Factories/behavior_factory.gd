@@ -15,10 +15,10 @@ static func delayed_callback(function:Callable,duration:float = 0.01 ) -> Execut
 
     return new_executor
 
-static func rotate(angle:float, duration:float , drift:float = 0 ,blocking:bool = false,\
+static func rotate(isClockwise:bool,angle:float, duration:float , drift:float = 0 ,blocking:bool = false,\
  eased:bool = true, ease_type:Action.EaseType = Action.EaseType.easeInOutSine) -> Executor:
     var new_executor = ExecAutoActivate.new()
-    new_executor.add_child(ActionFactory.rotate_to(angle,duration,eased,ease_type,drift,blocking),true)
+    new_executor.add_child(ActionFactory.rotate_to(isClockwise,angle,duration,eased,ease_type,drift,blocking),true)
     
     return new_executor
 
