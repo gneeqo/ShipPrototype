@@ -10,6 +10,7 @@ class_name referee extends Node
 @export var num_enemies : int
 
 @export var BorderSize : float
+@export var hud:Hud
 
 
 var player_ship: Ship
@@ -64,6 +65,8 @@ func place_borders():
 func spread_enemies(amount_to_spread:int):
     var random = RandomNumberGenerator.new()
     
+    hud.AddToSmallTextQueue(str(amount_to_spread)+" enemies spawned")
+    
     for i in amount_to_spread:
         var rand_x = random.randi_range(-BorderSize,BorderSize)
         var rand_y = random.randi_range(-BorderSize,BorderSize)
@@ -109,6 +112,7 @@ func _process(dt:float):
     
     if enemy_timer >= 5:
         enemy_timer = 0
+        hud.AddToSmallTextQueue("enemy spawned")
         spread_enemies(1)
 
 
@@ -120,6 +124,6 @@ func ship_killed():
 func switch_ship(new_type:int):
     destroy_ship()
     player_ship_type = new_type
-    
+    hud.PostBigText("Switched to type " + str(new_type),1)
     var newSpawn = Callable(self,"spawn_ship")
     add_child(BehaviorFactory.delayed_callback(newSpawn,5.0))  

@@ -1,0 +1,44 @@
+class_name Hud extends Control
+
+@export var BigText:RichTextLabel
+@export var SmallText:RichTextLabel
+
+
+var SmallTextQueue:Array[String]
+var isDisplayingSmallText = false
+
+
+func _ready():
+    BigText.modulate.a = 0
+    SmallText.modulate.a = 0
+
+func PostBigText(text:String, duration:float):
+    BigText.text = text
+    
+    var textBehavior = BehaviorFactory.fade(1,duration,0,true)
+    BehaviorFactory.add_action_to_behavior(ActionFactory.fade(0,duration),textBehavior)
+    
+    add_child(textBehavior)
+
+func PostSmallText(text:String, duration:float):
+    SmallText.text = text
+    
+    var textBehavior = BehaviorFactory.fade(1,duration,0,true)
+    BehaviorFactory.add_action_to_behavior(ActionFactory.fade(0,duration,true,Action.EaseType.easeInOutSine,true),textBehavior)
+    BehaviorFactory.add_callback_to_behavior(Callable(self,"SmallTextDoneDisplaying"),textBehavior)
+    add_child(textBehavior)
+    
+func DisplayNextSmallTextQueue():
+    PostSmallText(SmallTextQueue.pop_front(),1)
+
+func SmallTextDoneDisplaying():
+    if SmallTextQueue.size() >0:
+        DisplayNextSmallTextQueue()
+    else:
+        isDisplayingSmallText = false
+    
+    
+func AddToSmallTextQueue(text:String):
+    SmallTextQueue.push_back(text)
+    if not isDisplayingSmallText:
+        DisplayNextSmallTextQueue()

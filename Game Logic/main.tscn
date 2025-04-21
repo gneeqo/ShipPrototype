@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cua2ibxfojkj"]
+[gd_scene load_steps=16 format=3 uid="uid://cua2ibxfojkj"]
 
 [ext_resource type="Script" uid="uid://dye8qq4klr1mj" path="res://Game Logic/ship_tracking_camera.gd" id="2_p1nsy"]
 [ext_resource type="Texture2D" uid="uid://ctlsmiwiou8q7" path="res://Assets/2k_stars.jpg" id="3_s6dj5"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ru81ywaf75m1" path="res://Game Logic/Enemies/boss_enemy.tscn" id="12_td8ug"]
 [ext_resource type="PackedScene" uid="uid://dqldjhlddpewe" path="res://Game Logic/Enemies/MissileShooter.tscn" id="13_25klq"]
 [ext_resource type="PackedScene" uid="uid://c76p4oedqw4iw" path="res://Game Logic/Enemies/BulletShooter.tscn" id="14_ft3dh"]
+[ext_resource type="PackedScene" uid="uid://cthpgpwge17n" path="res://hud.tscn" id="15_v4pbk"]
 
 [node name="Main" type="Node2D"]
 
@@ -8237,13 +8238,14 @@ region_rect = Rect2(0, 0, 9600, 5400)
 [node name="BossEnemy" parent="." instance=ExtResource("12_td8ug")]
 position = Vector2(3472, 360)
 
-[node name="referee" type="Node" parent="." node_paths=PackedStringArray("Camera") groups=["referee"]]
+[node name="referee" type="Node" parent="." node_paths=PackedStringArray("Camera", "hud") groups=["referee"]]
 script = ExtResource("5_dlona")
 ship_types = Array[PackedScene]([ExtResource("7_td8ug"), ExtResource("8_25klq"), ExtResource("9_ft3dh")])
 Camera = NodePath("../Camera2D")
 enemy_types = Array[PackedScene]([ExtResource("10_v4pbk"), ExtResource("11_75q4o")])
 fence_scene = ExtResource("12_7cs0q")
 BorderSize = 75000.0
+hud = NodePath("../CanvasLayer/Hud")
 metadata/_custom_type_script = "uid://dfnoar87808dk"
 
 [node name="MissileShooter" parent="." instance=ExtResource("13_25klq")]
@@ -8251,3 +8253,7 @@ position = Vector2(9976, -3032)
 
 [node name="BulletShooter" parent="." instance=ExtResource("14_ft3dh")]
 position = Vector2(-1400, 4312)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("15_v4pbk")]

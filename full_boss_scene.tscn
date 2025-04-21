@@ -8,6 +8,9 @@
 
 [node name="BossEnemy" parent="." instance=ExtResource("1_2ix1i")]
 position = Vector2(3472, 360)
+turn_jerk = 0.0
+max_turn_vel = 0.0
+max_turn_accel = 0.0
 
 [node name="MissileShooter" parent="." instance=ExtResource("2_ap4y7")]
 position = Vector2(9976, -3032)

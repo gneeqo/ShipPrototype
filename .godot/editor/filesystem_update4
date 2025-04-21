@@ -24,3 +24,6 @@ res://Game Logic/Weapons/enemy_bullet.gd
 res://Game Logic/Enemies/bullet_shooter.gd
 res://Game Logic/Enemies/boss_enemy.gd
 res://full_boss_scene.tscn
+res://hud.tscn
+res://hud.gd
+res://Game Logic/referee.gd
