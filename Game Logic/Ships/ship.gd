@@ -116,6 +116,15 @@ func process_input()->void:
     var modifier = (jerk_decrease_per_damage*maneuverability_decrease)
     var turn_modifier = (turn_jerk_decrease_per_damage*maneuverability_decrease)
     #accel or decel
+    
+    if Input.is_action_just_pressed("invincible"):
+        invincible = !invincible
+        if invincible:
+            get_tree().get_first_node_in_group("hud").AddToSmallTextQueue("Ship Invincible")
+        else:
+            get_tree().get_first_node_in_group("hud").AddToSmallTextQueue("Ship Vulnerable")
+
+    
     if Input.is_action_pressed("accelerate"):
         curr_thrust_accel += (thrust_jerk - modifier)
         linear_decel_active = false

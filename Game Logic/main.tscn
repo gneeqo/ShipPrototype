@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://34nkbjn03rf1" path="res://Game Logic/Enemies/base_enemy.tscn" id="10_v4pbk"]
 [ext_resource type="PackedScene" uid="uid://cchhpijem6iw6" path="res://Game Logic/Enemies/elite_enemy.tscn" id="11_75q4o"]
 [ext_resource type="PackedScene" uid="uid://bv28fjqqk08lw" path="res://Game Logic/Fence.tscn" id="12_7cs0q"]
-[ext_resource type="PackedScene" uid="uid://dqkrivu16jjhd" path="res://full_boss_scene.tscn" id="13_25klq"]
+[ext_resource type="PackedScene" uid="uid://ru81ywaf75m1" path="res://Game Logic/Enemies/boss_enemy.tscn" id="13_25klq"]
 [ext_resource type="PackedScene" uid="uid://cthpgpwge17n" path="res://hud.tscn" id="15_v4pbk"]
 
 [node name="Main" type="Node2D"]
@@ -8239,7 +8239,7 @@ ship_types = Array[PackedScene]([ExtResource("7_td8ug"), ExtResource("8_25klq"),
 Camera = NodePath("../Camera2D")
 enemy_types = Array[PackedScene]([ExtResource("10_v4pbk"), ExtResource("11_75q4o")])
 fence_scene = ExtResource("12_7cs0q")
-num_enemies = 150
+num_enemies = 20
 BorderSize = 75000.0
 hud = NodePath("../CanvasLayer/Hud")
 metadata/_custom_type_script = "uid://dfnoar87808dk"
@@ -8250,5 +8250,5 @@ metadata/_custom_type_script = "uid://dfnoar87808dk"
 offset_top = 0.0
 offset_bottom = 0.0
 
-[node name="full_boss_scene" parent="." instance=ExtResource("13_25klq")]
-position = Vector2(47608, -18696)
+[node name="BossEnemy" parent="." instance=ExtResource("13_25klq")]
+position = Vector2(5280, -1688)

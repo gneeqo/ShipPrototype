@@ -9,3 +9,12 @@ res://hud.gd
 res://Game Logic/Enemies/boss_enemy.gd
 res://Game Logic/Enemies/base_enemy.gd
 res://Game Logic/Weapons/missile.gd
+res://Game Logic/Enemies/BulletShootingTentacle.gd
+res://Game Logic/Enemies/EnemyGun.gd
+res://Game Logic/Weapons/enemy_big_bullet.tscn
+res://Game Logic/Weapons/enemy_big_bullet.gd
+res://Game Logic/Enemies/BulletShooter.tscn
+res://Game Logic/Weapons/enemy_bullet.tscn
+res://Game Logic/Weapons/enemy_missile.tscn
+res://Game Logic/Ships/Base Ship.tscn
+res://Game Logic/Ships/ship.gd

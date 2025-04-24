@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtrfq80opi7f7"]
+
+[ext_resource type="Script" uid="uid://dx36yojcxqegs" path="res://Game Logic/Weapons/enemy_big_bullet.gd" id="1_pr436"]
+[ext_resource type="Texture2D" uid="uid://c26wj6mafqr5s" path="res://Assets/Enemies/Chunks/Abyssal_Part_11_B_Medium.png" id="2_pr436"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adqcp"]
+size = Vector2(109.841, 210.47)
+
+[node name="EnemyBigBullet" type="RigidBody2D" groups=["player_bullet"]]
+collision_layer = 4
+collision_mask = 17
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_pr436")
+thrust_jerk = 2400.0
+turn_jerk = 10.0
+max_thrust = 4800.0
+max_vel = 9600.0
+max_turn_vel = 10.0
+max_turn_accel = 10.0
+total_lifetime = 10.0
+retarget_interval = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -0.99888
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_pr436")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.953, -4.20734)
+rotation = 1.57478
+scale = Vector2(0.509822, 0.493522)
+shape = SubResource("RectangleShape2D_adqcp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

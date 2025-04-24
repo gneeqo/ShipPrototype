@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ht65tgrt3vao" path="res://Assets/Particles/enemy_missile_trail.tscn" id="3_4b7gx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adqcp"]
-size = Vector2(251.191, 226.422)
+size = Vector2(109.841, 210.47)
 
 [node name="Missile" type="RigidBody2D" groups=["player_bullet"]]
 collision_layer = 4

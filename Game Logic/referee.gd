@@ -112,10 +112,10 @@ func _process(dt:float):
         
     enemy_timer +=dt
     
-    if enemy_timer >= 5:
+    if enemy_timer >= 20:
         enemy_timer = 0
        
-        spread_enemies(1)
+        spread_enemies(15)
 
 
 func ship_killed():
