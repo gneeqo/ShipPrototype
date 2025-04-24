@@ -15,21 +15,22 @@ func _ready():
 func PostBigText(text:String, duration:float):
     BigText.text = text
     
-    var textBehavior = BehaviorFactory.fade(1,duration,0,true)
-    BehaviorFactory.add_action_to_behavior(ActionFactory.fade(0,duration),textBehavior)
+    var textBehavior = BehaviorFactory.fade(1,duration,true)
+    BehaviorFactory.add_action_to_behavior(ActionFactory.fade(0,duration,true,Action.EaseType.easeInOutSine,true),textBehavior)
+    BigText.add_child(textBehavior)
     
-    add_child(textBehavior)
 
 func PostSmallText(text:String, duration:float):
     SmallText.text = text
     
-    var textBehavior = BehaviorFactory.fade(1,duration,0,true)
+    var textBehavior = BehaviorFactory.fade(1,duration,true)
     BehaviorFactory.add_action_to_behavior(ActionFactory.fade(0,duration,true,Action.EaseType.easeInOutSine,true),textBehavior)
     BehaviorFactory.add_callback_to_behavior(Callable(self,"SmallTextDoneDisplaying"),textBehavior)
-    add_child(textBehavior)
+    SmallText.add_child(textBehavior)
     
 func DisplayNextSmallTextQueue():
-    PostSmallText(SmallTextQueue.pop_front(),1)
+    PostSmallText(SmallTextQueue.pop_front(),0.8)
+    isDisplayingSmallText = true
 
 func SmallTextDoneDisplaying():
     if SmallTextQueue.size() >0:

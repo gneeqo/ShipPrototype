@@ -82,3 +82,4 @@ func destroy_enemy():
     add_child(BehaviorFactory.delayed_callback(kill_func,1))
     
     get_tree().get_first_node_in_group("camera").begin_shake(1,500)
+    get_tree().get_first_node_in_group("hud").PostBigText("Boss Destroyed",1)

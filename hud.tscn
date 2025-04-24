@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bboicdjo50vpg" path="res://hud.gd" id="1_37p78"]
 
-[node name="Hud" type="Control" node_paths=PackedStringArray("BigText", "SmallText")]
+[node name="Hud" type="Control" node_paths=PackedStringArray("BigText", "SmallText") groups=["hud"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,19 +17,23 @@ SmallText = NodePath("SmallText")
 
 [node name="BigText" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_right = 2296.0
-offset_bottom = 704.0
-theme_override_font_sizes/normal_font_size = 150
+offset_left = 48.0
+offset_top = -8.0
+offset_right = 1096.0
+offset_bottom = 248.0
+theme_override_font_sizes/normal_font_size = 50
 text = "lorem ipsum"
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SmallText" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_top = 576.0
-offset_right = 2296.0
-offset_bottom = 1280.0
-theme_override_font_sizes/normal_font_size = 75
+offset_left = 208.0
+offset_top = 408.0
+offset_right = 888.0
+offset_bottom = 608.0
+theme_override_font_sizes/normal_font_size = 25
 text = "lorem ipsum"
 horizontal_alignment = 1
 vertical_alignment = 1

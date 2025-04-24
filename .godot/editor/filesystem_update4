@@ -1,29 +1,11 @@
-res://Game Logic/Weapons/missile.tscn
+res://hud.tscn
 res://texture_tile.gdshader
-res://Game Logic/Weapons/missile.gd
-res://Game Logic/Enemies/elite_enemy.tscn
 res://Game Logic/main.tscn
 res://Game Logic/Enemies/base_enemy.tscn
-res://Game Logic/Ships/Base Ship.tscn
-res://Game Logic/Ships/nimble_ship.tscn
-res://Game Logic/Ships/rocket_ship.tscn
 res://Game Logic/Enemies/boss_enemy.tscn
-res://Game Logic/Ships/sluggish_ship.tscn
-res://Game Logic/Weapons/bullet.tscn
-res://Game Logic/Weapons/enemy_missile.tscn
-res://Assets/Particles/enemy_missile_explosion.tscn
-res://Assets/Particles/player_missile_explosion.tscn
-res://Game Logic/Weapons/enemy_missile.gd
-res://Game Logic/Ships/ship.gd
-res://Game Logic/Enemies/MissileShooter.tscn
-res://Game Logic/Enemies/missile_shooter.gd
-res://Action System/Actions/knockback.gd
-res://Game Logic/Enemies/BulletShooter.tscn
-res://Game Logic/Weapons/enemy_bullet.tscn
-res://Game Logic/Weapons/enemy_bullet.gd
-res://Game Logic/Enemies/bullet_shooter.gd
-res://Game Logic/Enemies/boss_enemy.gd
-res://full_boss_scene.tscn
-res://hud.tscn
-res://hud.gd
 res://Game Logic/referee.gd
+res://Action System/Factories/behavior_factory.gd
+res://hud.gd
+res://Game Logic/Enemies/boss_enemy.gd
+res://Game Logic/Enemies/base_enemy.gd
+res://Game Logic/Weapons/missile.gd

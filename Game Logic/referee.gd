@@ -65,8 +65,10 @@ func place_borders():
 func spread_enemies(amount_to_spread:int):
     var random = RandomNumberGenerator.new()
     
-    hud.AddToSmallTextQueue(str(amount_to_spread)+" enemies spawned")
-    
+    if amount_to_spread > 1: 
+        hud.AddToSmallTextQueue(str(amount_to_spread)+" enemies spawned")
+    else:
+        hud.AddToSmallTextQueue("1 enemy spawned")
     for i in amount_to_spread:
         var rand_x = random.randi_range(-BorderSize,BorderSize)
         var rand_y = random.randi_range(-BorderSize,BorderSize)
@@ -112,7 +114,7 @@ func _process(dt:float):
     
     if enemy_timer >= 5:
         enemy_timer = 0
-        hud.AddToSmallTextQueue("enemy spawned")
+       
         spread_enemies(1)
 
 

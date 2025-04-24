@@ -55,6 +55,8 @@ func destroy_enemy():
     add_child(BehaviorFactory.delayed_callback(hide_func,0.1))
     add_child(BehaviorFactory.delayed_callback(kill_func,1))
     
+    get_tree().get_first_node_in_group("hud").AddToSmallTextQueue("Enemy Destroyed")
+    
 
 
 func take_damage():

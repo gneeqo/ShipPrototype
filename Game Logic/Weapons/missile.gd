@@ -62,6 +62,9 @@ func retarget():
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
     
+    if not is_instance_valid(target):
+        retarget()
+    
     var current_facing: Vector2 = Vector2.from_angle(global_rotation)
     var facing_toward_target:Vector2 = (target.global_position - global_position).normalized()
     var angle_diff = asin(current_facing.cross(facing_toward_target) /(abs(current_facing).dot(abs(facing_toward_target))))

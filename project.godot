@@ -21,11 +21,6 @@ boot_splash/use_filter=false
 config/icon="uid://cid26dm4unmkx"
 config/windows_native_icon="res://ship.ico"
 
-[display]
-
-window/size/viewport_width=2304
-window/size/viewport_height=1296
-
 [editor]
 
 version_control/autoload_on_startup=true
@@ -45,6 +40,7 @@ player=""
 enemy_bullet=""
 camera=""
 Boss=""
+hud=""
 
 [input]
 
