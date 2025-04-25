@@ -4,6 +4,9 @@ class_name EnemyBullet extends RigidBody2D
 
 @export var max_thrust:float
 @export var max_vel:float
+@export var total_lifetime:float
+@onready var lifetime_timer = total_lifetime
+
 
 var curr_thrust:float = 0
 
@@ -12,14 +15,15 @@ var facing_vec: Vector2:
         return Vector2.from_angle(global_rotation)
 
 
-func _ready():
-    
+func _ready(): 
     #reparent to scene root
     reparent(get_node("/root/Main"))
     
 
-
-
+func _process(delta: float) -> void:
+    lifetime_timer-=delta
+    if lifetime_timer <=0:
+        destroy()
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
     curr_thrust += thrust_jerk

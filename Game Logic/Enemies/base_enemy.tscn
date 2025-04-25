@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://34nkbjn03rf1"]
+[gd_scene load_steps=6 format=3 uid="uid://34nkbjn03rf1"]
 
 [ext_resource type="Script" uid="uid://bykqx5iff5n1h" path="res://Game Logic/Enemies/base_enemy.gd" id="1_va76w"]
 [ext_resource type="PackedScene" uid="uid://u2duenp3whw2" path="res://Assets/Particles/enemy_death.tscn" id="2_eg2ls"]
 [ext_resource type="Texture2D" uid="uid://cwmw7dkv5ewac" path="res://Assets/Enemies/Abyssal_3_B_Medium_NoLight.png" id="3_5ev1f"]
+[ext_resource type="Texture2D" uid="uid://t8ihbdj1en8f" path="res://Assets/Enemies/Chunks/Abyssal_Part_3_B_Medium.png" id="4_eg2ls"]
 
-[node name="BaseEnemy" type="RigidBody2D" groups=["enemy"]]
+[sub_resource type="Curve" id="Curve_5jntv"]
+_data = [Vector2(0.0139373, 0.981429), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.55735, 0.0, 0, 0]
+point_count = 2
+
+[node name="BaseEnemy" type="RigidBody2D" node_paths=PackedStringArray("hit_effect") groups=["enemy"]]
 collision_layer = 0
 collision_mask = 16
 contact_monitor = true
@@ -17,6 +22,7 @@ max_vel = 750.0
 max_turn_vel = 10.0
 max_turn_accel = 4.0
 death_particle = ExtResource("2_eg2ls")
+hit_effect = NodePath("MainBodyHitEffect")
 
 [node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
 rotation = 1.5708
@@ -34,5 +40,19 @@ texture = ExtResource("3_5ev1f")
 [node name="PhysicsCollision" type="CollisionPolygon2D" parent="."]
 rotation = 1.5708
 polygon = PackedVector2Array(-64, 104, -128, 48, -128, 0, -112, -96, -32, -120, 0, -88, 32, -128, 112, -88, 120, -40, 128, 32, 64, 96, 0, 128)
+
+[node name="MainBodyHitEffect" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 1
+texture = ExtResource("4_eg2ls")
+lifetime = 0.3
+one_shot = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+angular_velocity_min = 500.0
+angular_velocity_max = 500.0
+scale_amount_curve = SubResource("Curve_5jntv")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

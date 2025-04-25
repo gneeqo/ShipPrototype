@@ -4,7 +4,7 @@ class_name chain_gun extends Weapon
 @export var fire_rate_decel : float = 1
 @export var max_fire_rate : float = 10
 @export var bullet_scene : PackedScene
-
+@export var kick_strength : float = 1
 var loaded_bullet:Bullet
 
 
@@ -49,6 +49,6 @@ func fire_weapon():
     new_bullet.linear_velocity = get_parent().linear_velocity
     get_parent().take_knockback(-Vector2.from_angle(get_parent().global_rotation\
     + randf_range(-curr_fire_rate,curr_fire_rate)),2)
-    get_parent().take_rotational_knockback(curr_fire_rate * kick_direction)
+    get_parent().take_rotational_knockback(kick_strength*curr_fire_rate * kick_direction)
     kick_direction = kick_direction * -1
     

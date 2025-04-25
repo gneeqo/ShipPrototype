@@ -16,6 +16,9 @@ class_name BaseEnemy extends RigidBody2D
 
 @export var knockback_taken_percent: float = 1.0
 
+@export var hit_effect : CPUParticles2D
+
+
 var health:int
 
 var curr_thrust:float = 0
@@ -55,15 +58,19 @@ func destroy_enemy():
     add_child(BehaviorFactory.delayed_callback(hide_func,0.1))
     add_child(BehaviorFactory.delayed_callback(kill_func,1))
     
-    get_tree().get_first_node_in_group("hud").AddToSmallTextQueue("Enemy Destroyed")
+    #this causes too much visual noise
+    #get_tree().get_first_node_in_group("hud").AddToSmallTextQueue("Enemy Destroyed")
+    get_tree().get_first_node_in_group("referee").enemy_killed()
+      
     
-
 
 func take_damage():
     health -=1
     if health <= 0:
         destroy_enemy()
-
+    var flicker = BehaviorFactory.fade(0.2,0.05,true)
+    BehaviorFactory.add_action_to_behavior(ActionFactory.fade(1,0.05,true,Action.EaseType.easeInOutSine,true),flicker)
+    add_child(flicker)
 
 func add_to_knockback(knockback:Vector2):
     curr_knockback_vector += knockback*knockback_taken_percent
@@ -125,4 +132,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
    if body.is_in_group("player_bullet") or body.is_in_group("player"):
         take_damage()
         var velocity = (PhysicsServer2D.body_get_direct_state(body.get_rid()).linear_velocity)
-        take_knockback(velocity.normalized(),clampf(velocity.length(),0,750))
+        take_knockback(velocity.normalized(),clampf(velocity.length(),60,750))
+        
+        if is_instance_valid(hit_effect):
+            hit_effect.global_position = body.global_position
+            hit_effect.emitting = true

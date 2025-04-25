@@ -12,12 +12,18 @@ class_name referee extends Node
 @export var BorderSize : float
 @export var hud:Hud
 
+@export var Boss:PackedScene
+
+@export var BossTimer:float
+var bossSpawned = false
 
 var player_ship: Ship
 var player_ship_type: int = 0
 
 
 var enemy_timer: float = 0
+
+var numEnemies:int = 0
 
 func _ready():
     spawn_ship()
@@ -79,13 +85,31 @@ func spread_enemies(amount_to_spread:int):
     
     
         
+func enemy_killed():
+    numEnemies-=1
+    hud.setNumEnemies(numEnemies)
 
 func spawn_enemy(enemy:PackedScene,location:Vector2):
     var new_enemy : BaseEnemy = enemy.instantiate()
     new_enemy.global_position = location
     get_parent().add_child.call_deferred(new_enemy)
+    numEnemies+=1
+    hud.setNumEnemies(numEnemies)
     
-      
+func spawn_boss():
+    var random = RandomNumberGenerator.new()
+    
+    var rand_x = random.randi_range(-BorderSize,BorderSize)
+    var rand_y = random.randi_range(-BorderSize,BorderSize)
+        
+    var new_enemy : BossEnemy = Boss.instantiate()
+    new_enemy.global_position = Vector2(rand_x,rand_y)
+    get_parent().add_child.call_deferred(new_enemy)
+    
+    
+    hud.PostBigText("Boss Spawned", 3)
+    
+    
 
 func spawn_ship():
     if not is_instance_valid(player_ship):
@@ -116,6 +140,11 @@ func _process(dt:float):
         enemy_timer = 0
        
         spread_enemies(15)
+
+    BossTimer-=dt
+    if BossTimer <=0 and not bossSpawned:
+        bossSpawned = true
+        spawn_boss()
 
 
 func ship_killed():

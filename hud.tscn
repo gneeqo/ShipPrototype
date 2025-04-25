@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bboicdjo50vpg" path="res://hud.gd" id="1_37p78"]
 
-[node name="Hud" type="Control" node_paths=PackedStringArray("BigText", "SmallText") groups=["hud"]]
+[node name="Hud" type="Control" node_paths=PackedStringArray("BigText", "SmallText", "Counter") groups=["hud"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,6 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_37p78")
 BigText = NodePath("BigText")
 SmallText = NodePath("SmallText")
+Counter = NodePath("EnemyCounter")
 
 [node name="BigText" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -37,3 +38,11 @@ theme_override_font_sizes/normal_font_size = 25
 text = "lorem ipsum"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="EnemyCounter" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 288.0
+offset_bottom = 56.0
+text = "Enemies:"

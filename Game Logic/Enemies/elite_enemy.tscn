@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cchhpijem6iw6"]
+[gd_scene load_steps=6 format=3 uid="uid://cchhpijem6iw6"]
 
 [ext_resource type="Script" uid="uid://drmdyembsm4q0" path="res://Game Logic/Enemies/elite_enemy.gd" id="1_w8ypj"]
 [ext_resource type="PackedScene" uid="uid://u2duenp3whw2" path="res://Assets/Particles/enemy_death.tscn" id="2_dnvvf"]
 [ext_resource type="Texture2D" uid="uid://yisxxdougm1p" path="res://Assets/Enemies/Abyssal_6_B_Medium_NoLight.png" id="2_w8ypj"]
+[ext_resource type="Texture2D" uid="uid://t8ihbdj1en8f" path="res://Assets/Enemies/Chunks/Abyssal_Part_3_B_Medium.png" id="4_dnvvf"]
 
-[node name="EliteEnemy" type="RigidBody2D" groups=["enemy"]]
+[sub_resource type="Curve" id="Curve_h125h"]
+_data = [Vector2(0.0139373, 0.981429), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.55735, 0.0, 0, 0]
+point_count = 2
+
+[node name="EliteEnemy" type="RigidBody2D" node_paths=PackedStringArray("hit_effect") groups=["enemy"]]
 collision_layer = 0
 collision_mask = 16
 contact_monitor = true
@@ -18,6 +23,7 @@ max_turn_vel = 10.0
 max_turn_accel = 3.0
 max_health = 4
 death_particle = ExtResource("2_dnvvf")
+hit_effect = NodePath("MainBodyHitEffect")
 
 [node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
 rotation = 1.5708
@@ -36,5 +42,19 @@ texture = ExtResource("2_w8ypj")
 [node name="PhysicsCollision" type="CollisionPolygon2D" parent="."]
 rotation = 1.5708
 polygon = PackedVector2Array(-100.096, 264.796, -200.191, 231.697, -250.239, 115.848, -250.239, -99.2985, -233.556, -231.697, 0, -248.246, 233.556, -231.697, 250.239, -99.2985, 250.239, 115.848, 200.191, 231.697, 100.096, 264.796, 24.1332, 227.117, 0, 66.199, -25.3582, 227.725)
+
+[node name="MainBodyHitEffect" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 1
+texture = ExtResource("4_dnvvf")
+lifetime = 0.3
+one_shot = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+angular_velocity_min = 500.0
+angular_velocity_max = 500.0
+scale_amount_curve = SubResource("Curve_h125h")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

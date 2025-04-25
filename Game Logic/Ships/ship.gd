@@ -84,6 +84,11 @@ func heal_damage():
 func take_damage():
     if invincible:
         return
+    
+    var flicker = BehaviorFactory.fade(0.2,0.05,true)
+    BehaviorFactory.add_action_to_behavior(ActionFactory.fade(1,0.05,true,Action.EaseType.easeInOutSine,true),flicker)
+    add_child(flicker)
+    
     damage_level +=1
     maneuverability_decrease+=1
     get_tree().get_first_node_in_group("camera").begin_shake(0.3,25)
@@ -195,7 +200,7 @@ func take_knockback(direction:Vector2,intensity:float):
     add_child(BehaviorFactory.knockback(direction,intensity,0.5))
     
 func take_rotational_knockback(intensity:float):
-    add_child(BehaviorFactory.rotational_knockback(0.1,clampf(intensity,-0.2,0.2)))
+    add_child(BehaviorFactory.rotational_knockback(0.1,clampf(intensity,-0.8,0.8)))
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
     process_input()
@@ -293,14 +298,14 @@ func send_telemetry():
 func _on_non_physical_collision_body_entered(body: Node2D) -> void:
    if(body.is_in_group("enemy") or body.is_in_group("enemy_bullet")):
         take_damage()
-        take_knockback((body.position - position).normalized(),2)
+        take_knockback((body.position - position).normalized(),15)
    
              
 
 func _on_non_physical_collision_area_entered(area: Area2D) -> void:
     if(area.is_in_group("enemy") or area.is_in_group("enemy_bullet")):
         take_damage()
-        take_knockback((area.position - position).normalized(),2)
+        take_knockback((area.position - position).normalized(),15)
 
 
 func _on_body_entered(body: Node) -> void:

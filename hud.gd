@@ -2,11 +2,17 @@ class_name Hud extends Control
 
 @export var BigText:RichTextLabel
 @export var SmallText:RichTextLabel
+@export var Counter:RichTextLabel
+
+
 
 
 var SmallTextQueue:Array[String]
 var isDisplayingSmallText = false
 
+
+func setNumEnemies(num:int):
+    Counter.text = str(num) + " Enemies Remaining"
 
 func _ready():
     BigText.modulate.a = 0

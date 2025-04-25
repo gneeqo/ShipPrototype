@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ru81ywaf75m1"]
+[gd_scene load_steps=17 format=3 uid="uid://ru81ywaf75m1"]
 
 [ext_resource type="Script" uid="uid://bqsn4j0wyxxl7" path="res://Game Logic/Enemies/boss_enemy.gd" id="1_uhr8a"]
 [ext_resource type="PackedScene" uid="uid://u2duenp3whw2" path="res://Assets/Particles/enemy_death.tscn" id="2_bcnsg"]
@@ -11,11 +11,18 @@
 [ext_resource type="Texture2D" uid="uid://bsoy3527ut7k0" path="res://Assets/Enemies/Chunks/Abyssal_Part_13_C_Medium.png" id="9_eu5lu"]
 [ext_resource type="PackedScene" uid="uid://dtrfq80opi7f7" path="res://Game Logic/Weapons/enemy_big_bullet.tscn" id="9_jv22u"]
 [ext_resource type="PackedScene" uid="uid://bn7mj0n7ar8uf" path="res://Game Logic/Weapons/enemy_missile.tscn" id="10_jv22u"]
+[ext_resource type="Texture2D" uid="uid://6efwoylcp46o" path="res://Assets/Enemies/Chunks/Abyssal_Part_16_B_Medium.png" id="12_sxg37"]
+[ext_resource type="Texture2D" uid="uid://cyp1e8qfxw0um" path="res://Assets/Enemies/Chunks/Abyssal_Part_6_B_Medium.png" id="13_e323m"]
+[ext_resource type="Texture2D" uid="uid://c673fjr1jpl6l" path="res://Assets/Enemies/Chunks/Abyssal_Part_2_B_Medium.png" id="14_4fe53"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dnpli"]
 radius = 64.0
 
-[node name="BossEnemy" type="RigidBody2D" node_paths=PackedStringArray("LeftTentacle", "RightTentacle") groups=["Boss", "enemy"]]
+[sub_resource type="Curve" id="Curve_evq5v"]
+_data = [Vector2(0.0139373, 0.981429), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.55735, 0.0, 0, 0]
+point_count = 2
+
+[node name="BossEnemy" type="RigidBody2D" node_paths=PackedStringArray("LeftTentacle", "RightTentacle", "LeftHorn", "RightHorn", "Orb", "OrbTarget", "hit_effect") groups=["Boss", "enemy"]]
 z_index = 1
 collision_layer = 0
 collision_mask = 16
@@ -24,12 +31,19 @@ max_contacts_reported = 3
 script = ExtResource("1_uhr8a")
 LeftTentacle = NodePath("LeftTentacle")
 RightTentacle = NodePath("RightTentacle")
-thrust_jerk = 10.0
+LeftHorn = NodePath("Horn")
+RightHorn = NodePath("Horn2")
+Orb = NodePath("BossEye")
+HornsInterval = 1.5
+OrbInterval = 5.0
+OrbHeight = 500.0
+OrbTarget = NodePath("OrbTarget")
 max_thrust = 50.0
 max_vel = 400.0
 max_health = 150
 death_particle = ExtResource("2_bcnsg")
 knockback_taken_percent = 0.0
+hit_effect = NodePath("MainBodyHitEffect")
 
 [node name="Area2D" type="Area2D" parent="." groups=["enemy"]]
 position = Vector2(13.6001, -476)
@@ -48,17 +62,18 @@ texture = ExtResource("2_uhr8a")
 position = Vector2(13.6001, -476)
 polygon = PackedVector2Array(-376, 928, -936, 968, -1016, 776, -888, 288, -976, -488, -864, -912, -624, -952, -272, -800, 0, -432, 248, -824, 600, -968, 800, -920, 944, -632, 944, -496, 856, 176, 976, 784, 952, 960, 384, 920, 0, 992)
 
-[node name="RightTentacle" type="Node2D" parent="." groups=["enemy"]]
+[node name="RightTentacle" type="Node2D" parent="." node_paths=PackedStringArray("hit_effect", "weapon") groups=["enemy"]]
 show_behind_parent = true
 position = Vector2(368, 104)
 rotation = -0.43229
 script = ExtResource("3_mu1j6")
 max_health = 25
 death_particle = ExtResource("2_bcnsg")
+hit_effect = NodePath("../TentacleHitEffect")
+weapon = NodePath("EnemyGun")
 metadata/_custom_type_script = "uid://drsjq447ias1x"
 
 [node name="Collider" type="Area2D" parent="RightTentacle" groups=["enemy"]]
-show_behind_parent = true
 position = Vector2(1314.4, -140)
 rotation = 1.42631
 scale = Vector2(5, 30)
@@ -66,6 +81,7 @@ collision_layer = 2
 collision_mask = 25
 
 [node name="Sprite2D" type="Sprite2D" parent="RightTentacle/Collider"]
+show_behind_parent = true
 texture = ExtResource("4_bcnsg")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightTentacle/Collider"]
@@ -85,14 +101,16 @@ metadata/_custom_type_script = "uid://ca0pcbptkuow6"
 position = Vector2(3496.42, -489.883)
 rotation = -0.115563
 
-[node name="LeftTentacle" type="Node2D" parent="." groups=["enemy"]]
+[node name="LeftTentacle" type="Node2D" parent="." node_paths=PackedStringArray("hit_effect", "weapon") groups=["enemy"]]
 show_behind_parent = true
-position = Vector2(-384, 80)
+position = Vector2(-376, 64)
 rotation = -2.75631
 scale = Vector2(1, -1)
 script = ExtResource("3_mu1j6")
 max_health = 25
 death_particle = ExtResource("2_bcnsg")
+hit_effect = NodePath("../TentacleHitEffect")
+weapon = NodePath("EnemyGun")
 metadata/_custom_type_script = "uid://drsjq447ias1x"
 
 [node name="Collider" type="Area2D" parent="LeftTentacle" groups=["enemy"]]
@@ -122,14 +140,16 @@ metadata/_custom_type_script = "uid://ca0pcbptkuow6"
 [node name="BulletTarget" type="Node2D" parent="LeftTentacle"]
 position = Vector2(3462.98, -641.572)
 
-[node name="Horn" type="Node2D" parent="." groups=["enemy"]]
+[node name="Horn" type="Node2D" parent="." node_paths=PackedStringArray("hit_effect", "weapon") groups=["enemy"]]
 show_behind_parent = true
 position = Vector2(24, -8)
-rotation = 3.49066
-scale = Vector2(1, -0.7)
+rotation = 0.320999
+scale = Vector2(-1, 0.7)
 script = ExtResource("3_mu1j6")
 max_health = 25
 death_particle = ExtResource("2_bcnsg")
+hit_effect = NodePath("../HornHitEffect")
+weapon = NodePath("EnemyGun")
 metadata/_custom_type_script = "uid://drsjq447ias1x"
 
 [node name="Collider" type="Area2D" parent="Horn" groups=["enemy"]]
@@ -159,7 +179,7 @@ metadata/_custom_type_script = "uid://ca0pcbptkuow6"
 [node name="BulletTarget" type="Node2D" parent="Horn"]
 position = Vector2(312, 2960)
 
-[node name="Horn2" type="Node2D" parent="." groups=["enemy"]]
+[node name="Horn2" type="Node2D" parent="." node_paths=PackedStringArray("hit_effect", "weapon") groups=["enemy"]]
 show_behind_parent = true
 position = Vector2(24, -16)
 rotation = -0.349066
@@ -167,6 +187,8 @@ scale = Vector2(1, 0.7)
 script = ExtResource("3_mu1j6")
 max_health = 25
 death_particle = ExtResource("2_bcnsg")
+hit_effect = NodePath("../HornHitEffect")
+weapon = NodePath("EnemyGun")
 metadata/_custom_type_script = "uid://drsjq447ias1x"
 
 [node name="Collider" type="Area2D" parent="Horn2" groups=["enemy"]]
@@ -196,7 +218,7 @@ metadata/_custom_type_script = "uid://ca0pcbptkuow6"
 [node name="BulletTarget" type="Node2D" parent="Horn2"]
 position = Vector2(312, 2960)
 
-[node name="BossEye" type="Node2D" parent="."]
+[node name="BossEye" type="Node2D" parent="." node_paths=PackedStringArray("hit_effect", "weapon")]
 show_behind_parent = true
 position = Vector2(-64, -1264)
 rotation = -0.826675
@@ -204,9 +226,13 @@ scale = Vector2(8, 8)
 script = ExtResource("3_mu1j6")
 max_health = 25
 death_particle = ExtResource("2_bcnsg")
+hit_effect = NodePath("../OrbhitEffect")
+weapon = NodePath("EnemyGun")
 metadata/_custom_type_script = "uid://drsjq447ias1x"
 
 [node name="Area2D" type="Area2D" parent="BossEye"]
+collision_layer = 2
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BossEye/Area2D"]
 shape = SubResource("CircleShape2D_dnpli")
@@ -226,6 +252,65 @@ metadata/_custom_type_script = "uid://ca0pcbptkuow6"
 
 [node name="BulletTarget" type="Node2D" parent="BossEye"]
 position = Vector2(73.8955, -58.5188)
+
+[node name="OrbTarget" type="Node2D" parent="."]
+position = Vector2(0, -1320)
+
+[node name="MainBodyHitEffect" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 1
+texture = ExtResource("12_sxg37")
+lifetime = 0.3
+one_shot = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+angular_velocity_min = 500.0
+angular_velocity_max = 500.0
+scale_amount_curve = SubResource("Curve_evq5v")
+
+[node name="TentacleHitEffect" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 1
+texture = ExtResource("13_e323m")
+lifetime = 0.3
+one_shot = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+angular_velocity_min = 500.0
+angular_velocity_max = 500.0
+scale_amount_curve = SubResource("Curve_evq5v")
+
+[node name="HornHitEffect" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 1
+texture = ExtResource("8_f7bx3")
+lifetime = 0.3
+one_shot = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+angular_velocity_min = 500.0
+angular_velocity_max = 500.0
+scale_amount_curve = SubResource("Curve_evq5v")
+
+[node name="OrbhitEffect" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 1
+texture = ExtResource("14_4fe53")
+lifetime = 0.3
+one_shot = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1000.0
+initial_velocity_max = 1000.0
+angular_velocity_min = 500.0
+angular_velocity_max = 500.0
+scale_amount_curve = SubResource("Curve_evq5v")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="RightTentacle/Collider" to="RightTentacle" method="_on_collider_body_entered"]
