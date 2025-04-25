@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://ru81ywaf75m1"]
+[gd_scene load_steps=18 format=3 uid="uid://ru81ywaf75m1"]
 
 [ext_resource type="Script" uid="uid://bqsn4j0wyxxl7" path="res://Game Logic/Enemies/boss_enemy.gd" id="1_uhr8a"]
 [ext_resource type="PackedScene" uid="uid://u2duenp3whw2" path="res://Assets/Particles/enemy_death.tscn" id="2_bcnsg"]
+[ext_resource type="PackedScene" uid="uid://bu4yxdra0spwx" path="res://Assets/Particles/boss_death.tscn" id="2_e323m"]
 [ext_resource type="Texture2D" uid="uid://bdx05vunnok2p" path="res://Assets/Enemies/Abyssal_Boss_4_B_Medium_NoLight.png" id="2_uhr8a"]
 [ext_resource type="Script" uid="uid://drsjq447ias1x" path="res://Game Logic/Enemies/boss_tentacle.gd" id="3_mu1j6"]
 [ext_resource type="Texture2D" uid="uid://cixrarwpho1x0" path="res://Assets/Enemies/Chunks/Abyssal_Part_5_B_Medium.png" id="4_bcnsg"]
@@ -38,6 +39,7 @@ HornsInterval = 1.5
 OrbInterval = 5.0
 OrbHeight = 500.0
 OrbTarget = NodePath("OrbTarget")
+explosion = ExtResource("2_e323m")
 max_thrust = 50.0
 max_vel = 400.0
 max_health = 150

@@ -137,3 +137,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
         if is_instance_valid(hit_effect):
             hit_effect.global_position = body.global_position
             hit_effect.emitting = true
+
+#this is for explosions
+func _on_area_2d_area_entered(area: Area2D) -> void:
+    if area.is_in_group("player_bullet") or area.is_in_group("player"):
+        take_damage()
+        var ship = get_tree().get_first_node_in_group("referee").player_ship
+        
+        if is_instance_valid(ship):
+            take_knockback((ship.global_position - global_position).normalized(),500)

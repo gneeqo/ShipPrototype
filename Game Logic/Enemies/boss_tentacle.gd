@@ -28,7 +28,7 @@ func destroy_enemy():
     
     
     add_child(BehaviorFactory.rotate(true,-global_rotation,75))
-    add_child(BehaviorFactory.translate(Vector2(1500,1500),25))
+    add_child(BehaviorFactory.translate(Vector2(randf_range(-2500,2500),randf_range(-2500,2500)),25))
     
     destroyed.emit()
     invincible = true   

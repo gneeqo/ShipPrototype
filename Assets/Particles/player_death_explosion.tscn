@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlr236dsnmvdq"]
+
+[ext_resource type="Script" uid="uid://o87xt4ai88ik" path="res://Assets/Particles/explosion.gd" id="1_be5v2"]
+[ext_resource type="PackedScene" uid="uid://gn7qjfmslbsu" path="res://Assets/Particles/RedExplosion.tscn" id="2_7k4kl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7wyvo"]
+radius = 2992.27
+
+[node name="PlayerMissileExplosion" type="Node2D" groups=["player_bullet"]]
+script = ExtResource("1_be5v2")
+total_lifetime = 1.0
+
+[node name="Area2D" type="Area2D" parent="." groups=["player_bullet"]]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_7wyvo")
+
+[node name="RedExplosion" parent="." instance=ExtResource("2_7k4kl")]
+amount = 1
+lifetime = 0.8
+explosiveness = 0.67
+scale_amount_min = 60.0
+scale_amount_max = 60.0
+color = Color(0, 0.0627451, 1, 1)

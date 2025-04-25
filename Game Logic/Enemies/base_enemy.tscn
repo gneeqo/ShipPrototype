@@ -55,4 +55,5 @@ angular_velocity_min = 500.0
 angular_velocity_max = 500.0
 scale_amount_curve = SubResource("Curve_5jntv")
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

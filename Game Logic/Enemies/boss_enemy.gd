@@ -14,6 +14,8 @@ class_name BossEnemy extends BaseEnemy
 
 @export var OrbTarget: Node2D
 
+@export var explosion:PackedScene
+
 
 var tentacle_timer:float
 var horn_timer:float
@@ -145,6 +147,10 @@ func destroy_enemy():
     add_child(BehaviorFactory.delayed_callback(hide_func,0.1))
     add_child(BehaviorFactory.delayed_callback(kill_func,1))
     
+    
+    call_deferred("create_explosion")
+    
+    
     get_tree().get_first_node_in_group("camera").begin_shake(1,300)
     get_tree().get_first_node_in_group("hud").PostBigText("Boss Destroyed",1)
     
@@ -159,3 +165,7 @@ func destroy_enemy():
     if(bob_orb):
         Orb.destroy_enemy()
     
+func create_explosion():
+    var deathExplosion = explosion.instantiate()
+    deathExplosion.global_position = global_position
+    get_parent().add_child(deathExplosion)

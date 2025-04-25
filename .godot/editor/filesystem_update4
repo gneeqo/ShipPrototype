@@ -16,3 +16,22 @@ res://Game Logic/Enemies/base_enemy.gd
 res://Game Logic/Enemies/elite_enemy.tscn
 res://hud.gd
 res://Game Logic/Enemies/boss_enemy.gd
+res://Assets/Particles/boss_death.tscn
+res://Assets/Particles/RedExplosion.tscn
+res://Assets/Particles/player_death_explosion.tscn
+res://Debug/control_automator.gd
+res://ship_telemetry_instance_0. Subject.translation
+res://ship_telemetry_instance_0. Verb.translation
+res://ship_telemetry_instance_0. Complement.translation
+res://ship_telemetry_instance_2. Subject.translation
+res://ship_telemetry_instance_1. Subject.translation
+res://ship_telemetry_instance_3. Subject.translation
+res://ship_telemetry_instance_3. Verb.translation
+res://ship_telemetry_instance_1. Verb.translation
+res://ship_telemetry_instance_2. Verb.translation
+res://ship_telemetry_instance_3. Complement.translation
+res://ship_telemetry_instance_2. Complement.translation
+res://ship_telemetry_instance_1. Complement.translation
+res://ship_telemetry_instance_4. Subject.translation
+res://ship_telemetry_instance_4. Verb.translation
+res://ship_telemetry_instance_4. Complement.translation

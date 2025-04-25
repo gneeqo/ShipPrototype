@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=3 uid="uid://bu4yxdra0spwx"]
+
+[ext_resource type="Texture2D" uid="uid://bojbp6irnu4gy" path="res://Assets/Enemies/Chunks/Abyssal_Part_1_B_Medium.png" id="1_4r35c"]
+[ext_resource type="Script" uid="uid://o87xt4ai88ik" path="res://Assets/Particles/explosion.gd" id="1_v8ope"]
+[ext_resource type="Texture2D" uid="uid://cixrarwpho1x0" path="res://Assets/Enemies/Chunks/Abyssal_Part_5_B_Medium.png" id="2_v8ope"]
+[ext_resource type="Texture2D" uid="uid://duvokylwndoly" path="res://Assets/Enemies/Chunks/Abyssal_Part_9_B_Medium.png" id="3_3gxxa"]
+[ext_resource type="PackedScene" uid="uid://gn7qjfmslbsu" path="res://Assets/Particles/RedExplosion.tscn" id="4_frp7k"]
+[ext_resource type="Texture2D" uid="uid://dll7xbietc32l" path="res://Assets/Particles/Particle Textures/explosion_symmetrical_red.png" id="5_ici4r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7wyvo"]
+radius = 850.412
+
+[sub_resource type="Curve" id="Curve_awbti"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0.00796813, 0), 0.0, 0.0, 0, 0, Vector2(0.263, 5), 0.0, 0.0, 0, 0, Vector2(1, 0.000844598), 0.0, 1.4, 0, 0]
+point_count = 3
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_g1p2x"]
+particles_animation = true
+particles_anim_h_frames = 10
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_483ol"]
+colors = PackedColorArray(0.986335, 0.698466, 0.628767, 0.701961, 1, 1, 1, 0)
+
+[node name="EnemyMissileExplosion" type="Node2D" groups=["enemy_bullet"]]
+script = ExtResource("1_v8ope")
+total_lifetime = 1.0
+
+[node name="Area2D" type="Area2D" parent="." groups=["enemy_bullet"]]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_7wyvo")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+scale = Vector2(10, 10)
+emitting = false
+amount = 3
+texture = ExtResource("1_4r35c")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.65
+emission_shape = 1
+emission_sphere_radius = 26.75
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 600.0
+angular_velocity_min = 30.0
+angular_velocity_max = 500.0
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_curve = SubResource("Curve_awbti")
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+scale = Vector2(10, 10)
+emitting = false
+amount = 3
+texture = ExtResource("2_v8ope")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.4
+emission_shape = 1
+emission_sphere_radius = 26.75
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 600.0
+angular_velocity_min = 30.0
+angular_velocity_max = 500.0
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_curve = SubResource("Curve_awbti")
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
+scale = Vector2(10, 10)
+emitting = false
+amount = 3
+texture = ExtResource("3_3gxxa")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 26.75
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 150.0
+initial_velocity_max = 600.0
+angular_velocity_min = 30.0
+angular_velocity_max = 500.0
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_curve = SubResource("Curve_awbti")
+
+[node name="RedExplosion" parent="." instance=ExtResource("4_frp7k")]
+material = SubResource("CanvasItemMaterial_g1p2x")
+scale = Vector2(10, 10)
+amount = 5
+texture = ExtResource("5_ici4r")
+scale_amount_curve = SubResource("Curve_awbti")
+color_ramp = SubResource("Gradient_483ol")
+anim_speed_min = 4.0
+anim_speed_max = 4.0

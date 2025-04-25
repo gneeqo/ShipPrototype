@@ -99,8 +99,8 @@ func spawn_enemy(enemy:PackedScene,location:Vector2):
 func spawn_boss():
     var random = RandomNumberGenerator.new()
     
-    var rand_x = random.randi_range(-BorderSize,BorderSize)
-    var rand_y = random.randi_range(-BorderSize,BorderSize)
+    var rand_x = random.randi_range(-BorderSize/4,BorderSize/4)
+    var rand_y = random.randi_range(-BorderSize/4,BorderSize/4)
         
     var new_enemy : BossEnemy = Boss.instantiate()
     new_enemy.global_position = Vector2(rand_x,rand_y)

@@ -12,6 +12,7 @@ class_name Ship extends RigidBody2D
 
 @export var weapon_1: Weapon
 @export var weapon_2: Weapon
+@export var explosion:PackedScene
 
 #for telemetry purposes
 @export var classification:int
@@ -264,6 +265,11 @@ func kill():
     
     get_tree().get_first_node_in_group("camera").begin_shake(1,100)
     Engine.time_scale = 1
+    var deathExplosion = explosion.instantiate()
+    deathExplosion.global_position = global_position
+    get_parent().add_child(deathExplosion)
+    
+    
 
 func send_telemetry():
     if not ShipTelemetry.telemetry_active:
